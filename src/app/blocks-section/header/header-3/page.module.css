@@ -1,0 +1,9 @@
+html.light #tab :global(.e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text),
+html.light #tab :global(.e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge) {
+    color: #4F46E5 !important;
+}
+
+html.dark #tab :global(.e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text),
+html.dark #tab :global(.e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge) {
+    color: #22d3ee !important;
+}

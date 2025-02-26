@@ -137,7 +137,9 @@ export default function MainPage() {
                                                                 <div className={styles['block-title']}>
                                                                     {block.name} {block.isNew && <span>New</span>}
                                                                 </div>
-                                                                <div className={styles['block-count']}>{`${block.subBlockList.length} Blocks`}</div>
+                                                                <div className={styles['block-count']}>
+                                                                    <div className={styles['block-count-radius']}>{`${block.subBlockList.length} Blocks`}</div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

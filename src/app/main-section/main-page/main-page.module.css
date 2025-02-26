@@ -177,7 +177,7 @@
 }
 
 .component-count {
-    background: #f9fafb;
+    background: #F3F4F6;
     font-size: 10px;
     display: flex;
     align-items: center;
@@ -253,6 +253,15 @@
     color: #6b7280;
     text-align: end;
     width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.block-count-radius {    
+    background: #F3F4F6;
+    border-radius: 12px;
+    padding: 2px 8px;
+    flex-shrink: 0;
 }
 
 @media (min-width: 1440px) {

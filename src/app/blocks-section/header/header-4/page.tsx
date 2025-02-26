@@ -1,12 +1,45 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { OverflowMode, TabComponent, TabItemDirective, TabItemsDirective } from "@syncfusion/ej2-react-navigations";
+import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import { ChipListComponent, ChipsDirective, ChipDirective } from "@syncfusion/ej2-react-buttons";
+import { DropDownButtonComponent } from "@syncfusion/ej2-react-splitbuttons";
+import styles from './page.module.css';
 
 export default function Header4() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
+    const tab = useRef<TabComponent | null>(null);
+    const [tabWidth, setTabWidth] = useState('100%');
+    const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
+    const updateTabItems = (): void => {
+        if (window.innerWidth < 640) {
+            setTabWidth('328px');
+            setOverflowMode('Popup');
+        } else {
+            setTabWidth('100%');
+            setOverflowMode('Extended');
+        }
+        tab.current?.refresh();
+        onTabCreated();
+    };
+
+    const onTabSelected = (args: any): void => {
+        args.previousItem?.querySelector(".e-badge")?.classList.remove("e-badge-primary");
+        args.selectedItem?.querySelector(".e-badge")?.classList.add("e-badge-primary");
+    };
+
+    const onTabCreated = (): void => {
+        setTimeout(() => {
+            const badge = tab.current?.element.querySelector(".e-toolbar-item.e-active")?.querySelector(".e-badge");
+            if (badge) {
+                badge.classList.add("e-badge-primary");
+            }
+        }, 50);
+    };
 
     /* SB Code - Start */
     const handleMessageEvent = (event: MessageEvent) => {
@@ -15,6 +48,10 @@ export default function Header4() {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'header-4' && blockData.theme) {
                     setTheme(blockData.theme);
+                    setTimeout(() => {
+                        tab.current?.refresh();
+                        onTabCreated();
+                    }, 250);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -26,9 +63,13 @@ export default function Header4() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
+        window.addEventListener('resize',updateTabItems);
+        tab.current?.refresh();
+        tab.current?.refreshActiveTabBorder();
         
         return () => {
             window.removeEventListener('message', handleMessageEvent);
+            window.removeEventListener('resize', updateTabItems);
         }
         /* SB Code - End */
     }, []);
@@ -37,11 +78,151 @@ export default function Header4() {
         switch (theme) {
             case 'tailwind':
                 return (
-                    <p>Your tailwind code goes here!</p>
-                ); 
+                    <section className="bg-white dark:bg-gray-800">
+                        <div className="pt-4 md:!pt-6" style={{ minHeight: "36rem" }}>
+                            <div className="flex justify-between mb-3">
+                                <div className="flex items-center">
+                                    <h1 className="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">Tickets</h1>
+                                </div>
+                                <div className="flex gap-3">
+                                    <ButtonComponent className="block sm:hidden sm:me-6" iconCss="e-icons e-filter" type="button"></ButtonComponent>
+                                    <DropDownButtonComponent id={styles.dropdown} className="block sm:hidden me-4" iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                </div>
+                            </div>
+                            <div className="flex items-center justify-between px-4 sm:px-6">
+                                <div id={styles.tab} className="w-full">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                        <TabItemsDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className='space-x-2 flex items-center'>
+                                                    <span>All</span>
+                                                    <span className='e-badge e-badge-pill !px-2'>141</span>
+                                                </div>
+                                            )} content={() => (
+                                                <div className="hidden sm:flex py-3 items-center gap-2">
+                                                    <ButtonComponent className="mr-2" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
+                                                    <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>
+                                                    <ChipListComponent className="flex flex-wrap gap-2" cssClass="e-outline !rounded-2xl" enableDelete>
+                                                        <ChipsDirective>
+                                                            <ChipDirective text="Status: Active"></ChipDirective>
+                                                            <ChipDirective text="Priority: High"></ChipDirective>
+                                                        </ChipsDirective>
+                                                    </ChipListComponent>
+                                                    <ButtonComponent cssClass="e-flat ml-1" content="Clear all" type="button"></ButtonComponent>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className='space-x-2 flex items-center'>
+                                                    <span className="sf-icon-inprogress text-base"></span>
+                                                    <span>In Progress</span><span className='e-badge e-badge-pill !px-2'>156</span>
+                                                </div>
+                                            )} content={() => (
+                                                <div className="hidden sm:flex py-3 items-center gap-2">
+                                                    <ButtonComponent className="mr-3" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
+                                                    <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>
+                                                    <ChipListComponent className="flex flex-wrap gap-2" cssClass="e-outline !rounded-2xl" enableDelete>
+                                                        <ChipsDirective>
+                                                            <ChipDirective text="Status: Active"></ChipDirective>
+                                                            <ChipDirective text="Priority: High"></ChipDirective>
+                                                        </ChipsDirective>
+                                                    </ChipListComponent>
+                                                    <ButtonComponent cssClass="e-flat ml-1" content="Clear all" type="button"></ButtonComponent>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective
+                                                headerTemplate={() => (
+                                                    <div className='space-x-2 flex items-center'><span className="e-icons e-clock e-medium"></span><span>Pending</span><span className='e-badge e-badge-pill !px-2'>18</span></div>
+                                                )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective
+                                                headerTemplate={() => (
+                                                    <div className='space-x-2 flex items-center'><span className="e-icons e-circle-check e-medium"></span><span>Resolved</span><span className='e-badge e-badge-pill !px-2'>18</span></div>
+                                                )}>
+                                            </TabItemDirective>
+                                        </TabItemsDirective>
+                                    </TabComponent>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                );
             case 'bootstrap5':
                 return (
-                    <p>Your bootstrap code goes here!</p>
+                    <section className="bg-body">
+                        <div className="pt-3 pt-md-4" style={{ minHeight: "36rem" }}>
+                            <div className="d-flex justify-content-between mb-3">
+                                <div className="d-flex align-items-center">
+                                    <h1 className="fs-6 fw-bold text-body ms-3 ms-sm-4 mb-0">Tickets</h1>
+                                </div>
+                                <div className="d-flex gap-3">
+                                    <ButtonComponent className="d-block d-sm-none me-sm-4" cssClass="e-outline" iconCss="e-icons e-filter" type="button"></ButtonComponent>
+                                    <DropDownButtonComponent id={styles.dropdown} className="d-block d-sm-none me-3" cssClass="e-outline" iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                </div>
+                            </div>
+                            <div className="d-flex align-items-center justify-content-between px-3 px-sm-4">
+                                <div id="tab" className="w-100">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                        <TabItemsDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <span>All</span>
+                                                    <span className="e-badge e-badge-pill px-2">141</span>
+                                                </div>
+                                            )} content={() => (
+                                                <div className="d-none d-sm-flex py-3 align-items-center gap-2">
+                                                    <ButtonComponent className="me-1" cssClass="e-outline" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
+                                                    <div className="border-start" style={{ height: "16px" }}></div>
+                                                    <ChipListComponent className="d-flex flex-wrap gap-2" cssClass="e-outline rounded-pill py-2" enableDelete>
+                                                        <ChipsDirective>
+                                                            <ChipDirective text="Status: Active"></ChipDirective>
+                                                            <ChipDirective text="Priority: High"></ChipDirective>
+                                                        </ChipsDirective>
+                                                    </ChipListComponent>
+                                                    <ButtonComponent cssClass="e-flat" content="Clear all" type="button"></ButtonComponent>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <span>In Progress</span>
+                                                    <span className="e-badge e-badge-pill px-2">156</span>
+                                                </div>
+                                            )} content={() => (
+                                                <div className="d-none d-sm-flex py-3 align-items-center gap-2">
+                                                    <ButtonComponent className="me-1" cssClass="e-outline" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
+                                                    <div className="border-start" style={{ height: "16px" }}></div>
+                                                    <ChipListComponent className="d-flex flex-wrap gap-2" cssClass="e-outline rounded-pill py-2" enableDelete>
+                                                        <ChipsDirective>
+                                                            <ChipDirective text="Status: Active"></ChipDirective>
+                                                            <ChipDirective text="Priority: High"></ChipDirective>
+                                                        </ChipsDirective>
+                                                    </ChipListComponent>
+                                                    <ButtonComponent cssClass="e-flat" content="Clear all" type="button"></ButtonComponent>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <span>Pending</span>
+                                                    <span className="e-badge e-badge-pill px-2">18</span>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                            <TabItemDirective headerTemplate={() => (
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <span>Resolved</span>
+                                                    <span className="e-badge e-badge-pill px-2">18</span>
+                                                </div>
+                                            )}>
+                                            </TabItemDirective>
+                                        </TabItemsDirective>
+                                    </TabComponent>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 );
         };
     };

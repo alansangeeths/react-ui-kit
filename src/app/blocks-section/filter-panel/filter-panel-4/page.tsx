@@ -1,14 +1,36 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
+import { AccordionComponent, AccordionItemDirective, AccordionItemsDirective, SidebarComponent, TabComponent, TabItemDirective, TabItemsDirective } from "@syncfusion/ej2-react-navigations";
+import styles from "./page.module.css";
 
 export default function FilterPanel4() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
+    const [width, setWidth] = useState("320px");
+    const sidebar = useRef<SidebarComponent | null>(null);
+    const requesterAccordion = useRef<AccordionComponent | null>(null);
+    const ticketAccordion = useRef<AccordionComponent | null>(null);
+    const assignee: string[] = ['Jane Smith - Support Engineer', 'Mark Johnson - Technical Lead ', 'Emily White - Support Specialist', 'Tom Harris - Product Expert'];
+    const tags: string[] = ['Technical Issue (type)', 'Bug (type)', 'Feature Request (type)', 'High Priority (priority)', 'Customer Impact (impact)', 'Backend (area)', 'Frontend (area)'];
+    const status: string[] = ['Open', 'In Progress', 'Closed'];
 
+    const setSidebarWidth = (): void => {
+        setWidth(window.innerWidth < 400 ? '100%' : '320px')
+    }
 
     /* SB Code - Start */
+    const refreshAccordion = (timeout: number): void => {
+        setTimeout(() => {
+            requesterAccordion.current?.refresh();
+            ticketAccordion.current?.refresh();
+        }, timeout);
+    }
+    
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
@@ -26,22 +48,206 @@ export default function FilterPanel4() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        
-        return () => {
-            window.removeEventListener('message', handleMessageEvent);
-        }
+        refreshAccordion(3000)
         /* SB Code - End */
+        window.addEventListener('resize', setSidebarWidth);
+
+        return () => {
+            /* SB Code - Start */
+            window.removeEventListener('message', handleMessageEvent);
+            /* SB Code - End */
+            window.removeEventListener('resize', setSidebarWidth);
+        }
     }, []);
 
     const getContent = () => {
         switch (theme) {
             case 'tailwind':
                 return (
-                    <p>Your tailwind code goes here!</p>
-                ); 
+                    <section className="bg-white dark:bg-gray-800">
+                        <div id={styles["filter-4"]} style={{ height: "780px", width: width, float: "right" }}>
+                            <SidebarComponent ref={sidebar} className="flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
+                                <div className="flex justify-between w-full border-b border-gray-200 dark:border-gray-600">
+                                    <div className="4/5">
+                                        <TabComponent headerPlacement="Top">
+                                            <TabItemsDirective>
+                                                <TabItemDirective
+                                                    headerTemplate={() => (
+                                                        <div className="flex items-center justify-center">
+                                                            <span className="e-icons text-base e-print-layout"></span>
+                                                            <span className="ml-2 font-semibold">Details</span>
+                                                        </div>
+                                                    )}
+                                                />
+                                                <TabItemDirective
+                                                    headerTemplate={() => (
+                                                        <div className="flex items-center justify-center">
+                                                            <span className="e-icons text-base e-grid-view"> </span>
+                                                            <span className="ml-2 font-semibold">Apps</span>
+                                                        </div>
+                                                    )}
+                                                />
+                                            </TabItemsDirective>
+                                        </TabComponent>
+                                    </div>
+                                    <div className="w-1/5 px-1 border-l border-gray-200 dark:border-gray-600 flex justify-center items-center">
+                                        <a className="e-icons e-chevron-right-double text-xl text-gray-500 dark:text-white cursor-pointer"></a>
+                                    </div>
+                                </div>
+                                <AccordionComponent ref={requesterAccordion} className="border-0 border-b bg-transparent" expandMode="Multiple">
+                                    <AccordionItemsDirective>
+                                        <AccordionItemDirective expanded={true} 
+                                        header={() => (
+                                            <div className="text-sm font-medium text-gray-900 dark:text-white">Requester Details</div>
+                                        )} 
+                                        content={() => (
+                                            <div className="flex items-center space-x-2 p-1">
+                                                <span className="e-avatar e-avatar-medium e-avatar-circle bg-primary-600 dark:bg-primary-400 text-sm text-white dark:text-black">MG</span>
+                                                <div>
+                                                    <h2 className="text-sm font-medium text-gray-900 dark:text-white">Michael Green</h2>
+                                                    <a className="text-xs font-normal text-gray-500 dark:text-gray-400" href="mailto:michael.green@example.com">michael.green@gmail.com</a>
+                                                </div>
+                                            </div>
+                                        )}>
+                                        </AccordionItemDirective>
+                                    </AccordionItemsDirective>
+                                </AccordionComponent>
+                                <AccordionComponent ref={ticketAccordion} className="border-0 bg-transparent" expandMode="Multiple">
+                                    <AccordionItemsDirective>
+                                        <AccordionItemDirective expanded={true}
+                                        header={() => (
+                                            <div className="text-sm font-medium text-gray-900 dark:text-white">Ticket Properties</div>
+                                        )} 
+                                        content={() => (
+                                            <div className="grid grid-cols-1 gap-4 w-full px-1 pb-1">
+                                                <div className="w-1/2">
+                                                    <label className="block my-1 text-sm font-medium text-gray-900 dark:text-white">Status</label>
+                                                    <DropDownListComponent dataSource={status} placeholder="Open"></DropDownListComponent>
+                                                </div>
+                                                <div>
+                                                    <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Assignee</label>
+                                                    <DropDownListComponent dataSource={assignee} placeholder="Select assignee"></DropDownListComponent>
+                                                </div>
+                                                <div>
+                                                    <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Response Due</label>
+                                                    <DatePickerComponent cssClass="shadow-none" placeholder="MM/DD/YYYY"></DatePickerComponent>
+                                                </div>
+                                                <div>
+                                                    <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Resolution Due</label>
+                                                    <DatePickerComponent cssClass="shadow-none" placeholder="MM/DD/YYYY"></DatePickerComponent>
+                                                </div>
+                                                <div>
+                                                    <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Tags</label>
+                                                    <DropDownListComponent dataSource={tags} placeholder="Enter tags"></DropDownListComponent>
+                                                </div>
+                                            </div>
+                                        )}>
+                                        </AccordionItemDirective>
+                                    </AccordionItemsDirective>
+                                </AccordionComponent>
+                            </SidebarComponent>
+                        </div>
+                        {/* SB Code - Start */}
+                        <div className="p-3 absolute top-0 right-0">
+                            <ButtonComponent cssClass="e-large e-round" iconCss="e-icons e-chevron-left" onClick={() => sidebar.current?.show()} type="button"></ButtonComponent>
+                        </div>
+                        {/* SB Code - End */}
+                    </section>
+                );
             case 'bootstrap5':
                 return (
-                    <p>Your bootstrap code goes here!</p>
+                    <section className="bg-body">
+                        <div style={{ height: "780px", width: width, float: "right" }}>
+                            <SidebarComponent ref={sidebar} className="d-flex flex-column bg-body" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true}>
+                                <div className="d-flex justify-content-between pt-2 w-100">
+                                    <div className="w-100">
+                                        <TabComponent headerPlacement="Top">
+                                            <TabItemsDirective>
+                                                <TabItemDirective 
+                                                    headerTemplate={() => ( 
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <span className="e-icons e-print-layout fs-6"></span>
+                                                            <span className="fw-medium fs-6 text-body">Details</span>
+                                                        </div>
+                                                    )} 
+                                                />
+                                                <TabItemDirective 
+                                                    headerTemplate={() => (
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <span className="e-icons e-grid-view fs-6"></span>
+                                                            <span className="fw-medium fs-6 text-body">Apps</span>
+                                                        </div>
+                                                    )}
+                                                />
+                                            </TabItemsDirective>
+                                        </TabComponent>
+                                    </div>
+                                    <div className="w-10 px-2 border-bottom border-subtle d-flex justify-content-center align-items-center">
+                                        <a className="e-icons e-chevron-right-double fs-6 text-decoration-none text-secondary" href="#" ></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <AccordionComponent ref={requesterAccordion} className="border-0 border-bottom bg-transparent" expandMode="Multiple">
+                                        <AccordionItemsDirective>
+                                            <AccordionItemDirective expanded={true} 
+                                                header={() => (
+                                                    <div className="fs-6 fw-medium text-body">Requester Details</div>
+                                                )} 
+                                                content={() => (
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <span className="e-avatar e-avatar-medium e-avatar-circle bg-primary text-white">MG</span>
+                                                        <div>
+                                                            <h2 className="fs-6 fw-medium text-body">Michael Green</h2>
+                                                            <a className="fs-6 fw-normal text-secondary" href="mailto:michael.green@example.com">michael.green@gmail.com</a>
+                                                        </div>
+                                                    </div>
+                                                )}>
+                                            </AccordionItemDirective>
+                                        </AccordionItemsDirective>
+                                    </AccordionComponent>
+                                    <AccordionComponent ref={ticketAccordion} className="border-0 bg-transparent" expandMode="Multiple">
+                                        <AccordionItemsDirective>
+                                            <AccordionItemDirective expanded={true} 
+                                                header={() => (
+                                                    <div className="fs-6 fw-medium text-body">Ticket Properties</div>
+                                                )} 
+                                                content={() => (
+                                                    <div className="row g-3 w-100 m-0 pb-1">
+                                                        <div className="col-6 px-1">
+                                                            <label className="mb-1 fs-6 fw-medium text-body">Status</label>
+                                                            <DropDownListComponent dataSource={status} placeholder="Open"></DropDownListComponent>
+                                                        </div>
+                                                        <div className="col-12 px-1">
+                                                            <label className="mb-1 fs-6 fw-medium text-body">Assignee</label>
+                                                            <DropDownListComponent dataSource={assignee} placeholder="Select assignee"></DropDownListComponent>
+                                                        </div>
+                                                        <div className="col-12 px-1">
+                                                            <label className="mb-1 fs-6 fw-medium text-body">Response Due</label>
+                                                            <DatePickerComponent cssClass="shadow-none" placeholder="MM/DD/YYYY"></DatePickerComponent>
+                                                        </div>
+                                                        <div className="col-12 px-1">
+                                                            <label className="mb-1 fs-6 fw-medium text-body">Resolution Due</label>
+                                                            <DatePickerComponent cssClass="shadow-none" placeholder="MM/DD/YYYY"></DatePickerComponent>
+                                                        </div>
+                                                        <div className="col-12 px-1">
+                                                            <label className="mb-1 fs-6 fw-medium text-body">Tags</label>
+                                                            <DropDownListComponent dataSource={tags} placeholder="Enter tags"></DropDownListComponent>
+                                                        </div>
+                                                    </div>
+                                                )}>
+                                            </AccordionItemDirective>
+                                        </AccordionItemsDirective>
+                                    </AccordionComponent>
+                                </div>
+                            </SidebarComponent>
+                        </div>
+                        {/* SB Code - Start */}
+                        <div className="p-3 position-absolute top-0 end-0">
+                            <ButtonComponent cssClass="e-large e-round" iconCss="e-icons e-chevron-left" type="button" onClick={() => sidebar.current?.show()}></ButtonComponent>
+                        </div>
+                        {/* SB Code - End */}
+                    </section>
+
                 );
         };
     };

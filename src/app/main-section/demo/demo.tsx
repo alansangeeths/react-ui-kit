@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import styles from './demo.module.css';
+import IframeComponent from "./iframe";
 
 declare let hljs: any;
 
@@ -45,23 +46,25 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
     const iframeURL = blockName + '/' + componentUrl;
 
     useEffect(() => {
-        const iframe = iframeRef.current;
-        if (iframe) {
-            iframe.removeEventListener('load', handleLoad);
-            iframe.addEventListener('load', handleLoad);
-            iframe.src = iframeURL;
-            return () => {
+        setTimeout(() => {
+            const iframe = iframeRef.current;
+            if (iframe) {
                 iframe.removeEventListener('load', handleLoad);
-            };
-        }
+                iframe.addEventListener('load', handleLoad);
+                iframe.src = iframeURL;
+                return () => {
+                    iframe.removeEventListener('load', handleLoad);
+                };
+            }
+        }, 100);
     }, []);
 
     useEffect(() => {
         const iframeDocument = iframeRef.current?.contentDocument || iframeRef.current?.contentWindow?.document;
         if (theme === 'tailwind') {
-            iframeDocument?.documentElement.classList.add(isDarkMode ? 'dark' : 'light');
+            iframeDocument?.documentElement?.classList.add(isDarkMode ? 'dark' : 'light');
         } else {
-            iframeDocument?.documentElement.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
+            iframeDocument?.documentElement?.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
         }
 
     }, [theme, isDarkMode]);
@@ -103,11 +106,10 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
         const targetElement = event.target as HTMLElement;
         const isPreview = targetElement.getAttribute('tab-text') === 'Preview';
         setIsPreviewMode(isPreview);
-        if (isPreview)
-        {
+        if (isPreview) {
             showPreview();
         }
-        else{
+        else {
             showSourceCode();
         }
     };
@@ -493,12 +495,12 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
                     </div>
                 </div>
                 <div className={styles['iframe-container']}>
-                    <iframe
+                    <IframeComponent
                         ref={iframeRef}
                         src={iframeURL}
                         className={styles['preview-container']}
                         title="Preview Content">
-                    </iframe>
+                    </IframeComponent>
                     <div ref={overlayRef} className={styles['iframe-overlay']}>
                         <img src="https://placehold.co/100x50?text=Loading..." alt="Loading Indicator" className={styles['overlay-image']} />
                     </div>

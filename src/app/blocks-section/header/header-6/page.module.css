@@ -1,0 +1,3 @@
+#dropdown :global(.e-caret) {
+    display: none;
+}

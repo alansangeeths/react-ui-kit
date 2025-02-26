@@ -12,7 +12,7 @@
   "dependencies": {
     "@syncfusion/ej2-react-buttons": "^27.2.4",
     "@syncfusion/ej2-react-calendars": "^27.2.3",
-    "@syncfusion/ej2-react-charts": "^28.2.5",
+    "@syncfusion/ej2-react-charts": "^27.2.2",
     "@syncfusion/ej2-react-dropdowns": "^27.2.5",
     "@syncfusion/ej2-react-grids": "^27.2.5",
     "@syncfusion/ej2-react-inputs": "^27.2.4",
@@ -22,7 +22,7 @@
     "@syncfusion/ej2-react-notifications": "^27.2.4",
     "@syncfusion/ej2-react-popups": "^27.2.2",
     "@syncfusion/ej2-react-progressbar": "^27.2.2",
-    "@syncfusion/ej2-react-querybuilder": "^28.2.3",
+    "@syncfusion/ej2-react-querybuilder": "^27.2.2",
     "@syncfusion/ej2-react-richtexteditor": "^27.2.5",
     "@syncfusion/ej2-react-splitbuttons": "^27.2.2",
     "next": "15.1.7",

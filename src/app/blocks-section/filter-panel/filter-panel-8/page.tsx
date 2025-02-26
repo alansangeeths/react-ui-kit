@@ -19,13 +19,6 @@ export default function FilterPanel8() {
     }
 
     /* SB Code - Start */
-    const refreshAccordion = (timeout: number): void => {
-        setTimeout(() => {
-            gettingStartedAccordion.current?.refresh();
-            billingAccordion.current?.refresh();
-            supportAccordion.current?.refresh();
-        }, timeout);
-    };
 
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {

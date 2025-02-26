@@ -88,8 +88,8 @@ export default function Statistics5() {
     ];
 
     const setYaxis = (data: any[]): object => {
-        let minValue = Math.min(...data.map(item => item.y));
-        let maxValue = Math.max(...data.map(item => item.y));
+        const minValue = Math.min(...data.map(item => item.y));
+        const maxValue = Math.max(...data.map(item => item.y));
 
         return {
             visible: false,

@@ -17,7 +17,11 @@ export default function FloatingMenu3() {
 
     const toggleDialog = (): void => {
         if (dialogRef.current) {
-            toggleState ? dialogRef.current.hide() : dialogRef.current.show();
+            if (toggleState) {
+                dialogRef.current.hide();
+            } else {
+                dialogRef.current.show();
+            }
             setToggleState(!toggleState);
         }
     };

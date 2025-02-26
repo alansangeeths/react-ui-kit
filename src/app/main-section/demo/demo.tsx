@@ -103,7 +103,13 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
         const targetElement = event.target as HTMLElement;
         const isPreview = targetElement.getAttribute('tab-text') === 'Preview';
         setIsPreviewMode(isPreview);
-        isPreview ? showPreview() : showSourceCode();
+        if (isPreview)
+        {
+            showPreview();
+        }
+        else{
+            showSourceCode();
+        }
     };
 
     const showPreview = () => {
@@ -242,7 +248,12 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
         toggleDropdown('hide');
         if (theme !== selectedTheme) {
             onHandleOverlayVisibility('show');
-            selectedTheme === 'tailwind' ? setThemeIndex(0) : setThemeIndex(1);
+            if (selectedTheme === 'tailwind') {
+                setThemeIndex(0);
+            }
+            else {
+                setThemeIndex(1);
+            }
             setTheme(selectedTheme);
             const message = JSON.stringify({
                 name: componentUrl,

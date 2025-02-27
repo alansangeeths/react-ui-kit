@@ -277,7 +277,7 @@ export default function Grid2() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="ticketId" headerText="Ticket ID" width="85"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.ticketId}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.ticketId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="issue" headerText="Issue Description" width="230" />
@@ -304,7 +304,7 @@ export default function Grid2() {
                                                 <div className="w-8 h-8">{data.assignee.avatar ? (
                                                         <span className="e-avatar e-avatar-circle e-avatar-small" style={{backgroundImage: `url('/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.assignee.avatar}')` }}></span>
                                                     ) : (
-                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${data.assignee.colorTheme === "Red" ? "!bg-red-100 !text-red-700 dark:!text-red-400" : data.assignee.colorTheme === "Green" ? "!bg-green-100 !text-green-700 dark:!text-green-500" : data.assignee.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700 dark:!text-cyan-600" : data.assignee.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700 dark:!text-orange-500" : ""}`}>{data.assignee.initial}</span>
+                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${data.assignee.colorTheme === "Red" ? "!bg-red-100 !text-red-700" : data.assignee.colorTheme === "Green" ? "!bg-green-100 !text-green-700" : data.assignee.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700" : data.assignee.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700" : ""}`}>{data.assignee.initial}</span>
                                                     )}
                                                 </div>
                                                 <div className="flex flex-col text-sm">
@@ -320,7 +320,7 @@ export default function Grid2() {
                                                 <div className="w-8 h-8">{data.createdBy.avatar ? (
                                                         <span className="e-avatar e-avatar-circle e-avatar-small" style={{ backgroundImage: `url('/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.createdBy.avatar}')` }}></span>
                                                     ) : (
-                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${data.createdBy.colorTheme === "Red" ? "!bg-red-100 !text-red-700 dark:!text-red-400" : data.createdBy.colorTheme === "Green" ? "!bg-green-100 !text-green-700 dark:!text-green-500" : data.createdBy.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700 dark:!text-cyan-600" : data.createdBy.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700 dark:!text-orange-500" : ""}`}>{data.createdBy.initial}</span>
+                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${data.createdBy.colorTheme === "Red" ? "!bg-red-100 !text-red-700" : data.createdBy.colorTheme === "Green" ? "!bg-green-100 !text-green-700" : data.createdBy.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700" : data.createdBy.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700" : ""}`}>{data.createdBy.initial}</span>
                                                     )}
                                                 </div>
                                                 <div className="text-sm text-gray-900 dark:text-gray-50">{data.createdBy.name}</div>
@@ -355,7 +355,7 @@ export default function Grid2() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="ticketId" headerText="Ticket ID" width="95"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.ticketId}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.ticketId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="issue" headerText="Issue Description" width="233" />

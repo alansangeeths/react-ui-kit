@@ -211,7 +211,7 @@ export default function Grid10() {
                                     <ColumnDirective field="totalSalesRep" headerText="Sales Representative" width="186"
                                         template={(data: any) => (
                                             <div className="flex gap-5 items-center">
-                                                <span className={`e-avatar e-avatar-circle e-avatar-small text-white dark:text-black ${ data.totalSalesRep.colorTheme === "Red" ? "!bg-red-600" : data.totalSalesRep.colorTheme === "Green" ? "!bg-green-600" : data.totalSalesRep.colorTheme === "Blue" ? "!bg-cyan-600" : data.totalSalesRep.colorTheme === "Orange" ? "!bg-orange-600" : data.totalSalesRep.colorTheme === "Purple" ? "!bg-indigo-600" : ""}`}>{data.totalSalesRep.initial}</span>
+                                                <span className={`e-avatar e-avatar-circle e-avatar-small text-white ${ data.totalSalesRep.colorTheme === "Red" ? "!bg-red-600" : data.totalSalesRep.colorTheme === "Green" ? "!bg-green-600" : data.totalSalesRep.colorTheme === "Blue" ? "!bg-cyan-600" : data.totalSalesRep.colorTheme === "Orange" ? "!bg-orange-600" : data.totalSalesRep.colorTheme === "Purple" ? "!bg-indigo-600" : ""}`}>{data.totalSalesRep.initial}</span>
                                                 <p>{data.totalSalesRep.name}</p>
                                             </div>
                                         )}

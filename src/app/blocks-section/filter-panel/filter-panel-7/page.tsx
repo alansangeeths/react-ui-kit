@@ -91,7 +91,7 @@ export default function FilterPanel7() {
                                             </ChipsDirective>
                                         </ChipListComponent>
                                         <hr className="border-gray-200 dark:border-gray-600 my-4" />
-                                        <p className="font-medium text-sm text-gray-900 dark:text-white mb-5">Levels</p>
+                                        <p className="font-medium text-sm text-gray-900 dark:text-white mb-5">Experience Level</p>
                                         <div className="flex flex-col gap-5 px-3 mb-6">
                                             <RadioButtonComponent label="Entry level" name="skills" value="Entry level" checked={true}></RadioButtonComponent>
                                             <RadioButtonComponent label="Mid level" name="skills" value="Mid level" ></RadioButtonComponent>
@@ -168,7 +168,7 @@ export default function FilterPanel7() {
                                             </ChipsDirective>
                                         </ChipListComponent>
                                         <hr className="border-top opacity-100" />
-                                        <p className="fw-medium text-body fs-6">Levels</p>
+                                        <p className="fw-medium text-body fs-6">Experience Level</p>
                                         <div className="d-flex flex-column gap-3 px-3 mb-4">
                                             <RadioButtonComponent label="Entry level" name="skills" value="Entry level" checked={true}></RadioButtonComponent>
                                             <RadioButtonComponent label="Mid level" name="skills" value="Mid level"></RadioButtonComponent>

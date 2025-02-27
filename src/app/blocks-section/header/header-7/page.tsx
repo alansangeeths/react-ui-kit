@@ -95,7 +95,7 @@ export default function Header7() {
                                 </div>
                             </div>
                             <div className="px-4 sm:px-6 py-4 sm:py-3">
-                                <div className="flex justify-between gap-8 sm:!gap-28">
+                                <div className="flex justify-between gap-3 sm:gap-6">
                                     <div className="block">
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Business Metrics</h3>
                                         <p className="mt-1 text-sm text-gray-900 dark:text-white">Overview of our sales pipeline, customer demographics, product subscriptions, and more.</p>

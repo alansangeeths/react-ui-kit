@@ -58,8 +58,8 @@ export default function Email1() {
                                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mr-3">To:</label>
                                         <MultiSelectComponent cssClass='e-bigger w-full pl-1' dataSource={[{ text: 'Thomas' }, { text: 'Henry' }]} fields={{ text: "text" }} value={["Thomas"]} placeholder="Select recipients" mode="Box"></MultiSelectComponent>
                                         <div className="absolute right-12" style={{ bottom:'8px' }}>
-                                            <a href="javascript:void(0);" className="mr-4 text-sm font-medium text-gray-700 dark:text-white">Cc</a>
-                                            <a href="javascript:void(0);" className="text-sm font-medium text-gray-700 dark:text-white">Bcc</a>
+                                            <a href="#" className="mr-4 text-sm font-medium text-gray-700 dark:text-white">Cc</a>
+                                            <a href="#" className="text-sm font-medium text-gray-700 dark:text-white">Bcc</a>
                                         </div>
                                     </div>
                                     <div className="mb-4 flex items-center">
@@ -79,7 +79,7 @@ export default function Email1() {
                                             <p>Please assist with resolving this issue as soon as possible. Let me know if you need any further details.</p>
                                             <p className="!mb-0">Best regards,</p>
                                             <p className="font-bold !mb-0">Peterson</p>
-                                            <p className="!mb-0"><a href="javascript:void(0);">peterson&#64;email.com</a></p>
+                                            <p className="!mb-0"><a href="#">peterson&#64;email.com</a></p>
                                             <Inject services={[Toolbar, HtmlEditor, Link, Image, Table]} />
                                         </RichTextEditorComponent>
                                     </div>
@@ -109,8 +109,8 @@ export default function Email1() {
                                         <label className="form-label small text-body-secondary ps-1 pe-3 mb-0">To:</label>
                                         <MultiSelectComponent cssClass="e-bigger ps-1" dataSource={[{ text: "Thomas" }, { text: "Henry" }]} fields={{ text: "text" }} value={["Thomas"]} mode="Box" placeholder="Select recipients"></MultiSelectComponent>
                                         <div className="position-absolute d-flex align-items-center end-0 me-4 pe-2" style={{ bottom:'8px' }}>
-                                            <a href="javascript:void(0);" className="me-3 small text-body-secondary text-decoration-none fw-medium">Cc</a>
-                                            <a href="javascript:void(0);" className="small text-body-secondary text-decoration-none fw-medium">Bcc</a>
+                                            <a href="#" className="me-3 small text-body-secondary text-decoration-none fw-medium">Cc</a>
+                                            <a href="#" className="small text-body-secondary text-decoration-none fw-medium">Bcc</a>
                                         </div>
                                     </div>
                                     <div className="mb-3 d-flex align-items-center">
@@ -130,7 +130,7 @@ export default function Email1() {
                                             <p>Please assist with resolving this issue as soon as possible. Let me know if you need any further details.</p>
                                             <p className="mb-0">Best regards,</p>
                                             <p className="fw-bold mb-0">Peterson</p>
-                                            <p className="mb-0"><a href="javascript:void(0);">peterson&#64;email.com</a></p>
+                                            <p className="mb-0"><a href="#">peterson&#64;email.com</a></p>
                                             <Inject services={[Toolbar, HtmlEditor, Link, Image, Table]} />
                                         </RichTextEditorComponent>
                                     </div>

@@ -41,11 +41,11 @@ export default function Footer1() {
                                 <span className="text-xl font-semibold">ShopNezt</span>
                             </div>
                             <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-3">
-                                <a href="javascript:void(0);" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Privacy Policy</a>
+                                <a href="#" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Privacy Policy</a>
                                 <div className="border self-stretch my-1 hidden dark:border-gray-600 sm:block"></div>
-                                <a href="javascript:void(0);" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Cookie Policy</a>
+                                <a href="#" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Cookie Policy</a>
                                 <div className="border self-stretch my-1 hidden dark:border-gray-600 sm:block"></div>
-                                <a href="javascript:void(0);" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Terms of Service</a>
+                                <a href="#" className="text-base lg:text-sm font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Terms of Service</a>
                             </div>
                             <div className="text-gray-500 dark:text-gray-400">© 2024 ShopNezt. All rights reserved.</div>
                         </footer>
@@ -60,11 +60,11 @@ export default function Footer1() {
                                 <h5 className="mb-0 text-body">ShopNezt</h5>
                             </div>
                             <div className="d-flex flex-column align-items-start justify-content-center gap-3 gap-sm-2 flex-sm-row">
-                                <a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small px-sm-2">Privacy Policy</a>
+                                <a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small px-sm-2">Privacy Policy</a>
                                 <div className="border align-self-stretch border-light-subtle d-none d-sm-block"></div>
-                                <a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Cookie Policy</a>
+                                <a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Cookie Policy</a>
                                 <div className="border align-self-stretch border-light-subtle d-none d-sm-block"></div>
-                                <a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small px-sm-2">Terms of Service</a>
+                                <a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small px-sm-2">Terms of Service</a>
                             </div>
                             <p className="text-body-secondary mt-2 mt-sm-0 mb-0">© 2024 ShopNezt. All rights reserved.</p>
                         </footer>

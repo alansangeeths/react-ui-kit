@@ -61,11 +61,11 @@ export default function Statistics1() {
                 return (
                     <section className="bg-gray-50 dark:bg-gray-900">
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
-                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
+                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
-                                            <div className="e-card-header !py-0 !justify-between items-center flex-row lg:!flex-col xl:!flex-row lg:items-start xl:items-center">
+                                            <div className="e-card-header !py-0 !justify-between items-center flex-row">
                                                 <h4 className="text-base font-medium text-gray-800 dark:text-gray-300">{data.metricName}</h4>
                                                 <p className="text-xl font-semibold text-gray-900 dark:text-white lg:mt-2 xl:mt-0">{data.currentValue}</p>
                                             </div>
@@ -86,10 +86,10 @@ export default function Statistics1() {
                         <div className="px-3 px-sm-4 px-xl-5 py-5">
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="col-12 col-sm-6 col-lg-3">
+                                    <div key={index} className="col-12 col-sm-6 col-xl-3">
                                         <div className="e-card e-bigger rounded-3 pt-4">
                                             <div className="e-card-stacked">
-                                                <div className="e-card-header py-0 px-4 flex-row justify-content-between align-items-center flex-lg-column flex-xl-row align-items-lg-start align-items-xl-center">
+                                                <div className="e-card-header py-0 px-4 flex-row justify-content-between align-items-center">
                                                     <h4 className="fs-6 fw-medium text-body-secondary mb-0 lh-base">{data.metricName}</h4>
                                                     <p className="text-body mt-lg-2 mt-xl-0 fs-5 fw-bold mb-0 lh-sm">{data.currentValue}</p>
                                                 </div>

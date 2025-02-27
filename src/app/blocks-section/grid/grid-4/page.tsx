@@ -245,7 +245,7 @@ export default function Grid4() {
                                 <ColumnsDirective>
                                     <ColumnDirective field="contactId" headerText="Contact ID" width="90"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.contactId}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.contactId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="profile" headerText="Profile" textAlign="Left" width="264"
@@ -255,7 +255,7 @@ export default function Grid4() {
                                                     {data.profile.avatar ? (
                                                         <span className="e-avatar e-avatar-circle e-avatar-small" style={{ backgroundImage: `url('/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.profile.avatar}')` }}></span>
                                                     ) : (
-                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${ data.profile.colorTheme === "Red" ? "!bg-red-100 !text-red-700 dark:!text-red-400" : data.profile.colorTheme === "Green" ? "!bg-green-100 !text-green-700 dark:!text-green-500" : data.profile.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700 dark:!text-cyan-600" : data.profile.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700 dark:!text-orange-500" : ""}`}>{data.profile.initial}</span>
+                                                        <span className={`e-avatar e-avatar-circle e-avatar-small ${ data.profile.colorTheme === "Red" ? "!bg-red-100 !text-red-700" : data.profile.colorTheme === "Green" ? "!bg-green-100 !text-green-700" : data.profile.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700" : data.profile.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700" : ""}`}>{data.profile.initial}</span>
                                                     )}
                                                 </div>
                                                 <div className="flex flex-col text-sm">
@@ -329,7 +329,7 @@ export default function Grid4() {
                                 <ColumnsDirective>
                                     <ColumnDirective field="contactId" headerText="Contact ID" width="100"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.contactId}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.contactId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="profile" headerText="Profile" textAlign="Left" width="264"

@@ -73,9 +73,9 @@ export default function Modals11() {
                                     <p className="font-semibold leading-normal">Submit Feedback</p>
                                 )}
                                 footerTemplate={() =>
-                                    <div className="flex flex-row justify-end gap-2 sm:gap-1 mb-2">
+                                    <div className="flex flex-col-reverse sm:flex-row justify-end gap-4 sm:gap-3 mb-2">
                                         <ButtonComponent cssClass="grow sm:grow-0 !ml-0" type="button">Cancel</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary grow sm:grow-0" type="submit">Submit Feedback</ButtonComponent>
+                                        <ButtonComponent cssClass="e-primary grow sm:grow-0 !ml-0" type="submit">Submit Feedback</ButtonComponent>
                                     </div>
                                 }
                             >
@@ -102,9 +102,9 @@ export default function Modals11() {
                                     <p className="fw-bold mb-0 text-body">Submit Feedback</p>
                                 )}
                                 footerTemplate={() =>
-                                    <div className="d-flex justify-content-end gap-2 gap-sm-1 py-1">
+                                    <div className="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 gap-sm-1 py-1">
                                         <ButtonComponent className="flex-grow-1 flex-sm-grow-0 ms-0" type="button">Cancel</ButtonComponent>
-                                        <ButtonComponent className="e-primary flex-grow-1 flex-sm-grow-0" type="submit">Submit Feedback</ButtonComponent>
+                                        <ButtonComponent className="e-primary flex-grow-1 flex-sm-grow-0 ms-0 ms-sm-2" type="submit">Submit Feedback</ButtonComponent>
                                     </div>
                                 }
                             >

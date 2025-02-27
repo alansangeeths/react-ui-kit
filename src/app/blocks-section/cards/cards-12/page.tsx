@@ -51,7 +51,7 @@ export default function Card12() {
                                             <div className="relative">
                                                 <span className="e-avatar e-avatar-circle absolute" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-5.jpg)" }}></span>
                                                 <span className="e-avatar e-avatar-circle absolute left-7" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-13.jpg)" }}></span>
-                                                <span className="e-avatar e-avatar-circle bg-indigo-600 text-white absolute left-14">2+</span>
+                                                <span className="e-avatar e-avatar-circle bg-primary-600 text-white absolute left-14">2+</span>
                                             </div>
                                             <RatingComponent cssClass="e-small" precision="Exact" value={3.5}></RatingComponent>
                                         </div>
@@ -70,7 +70,7 @@ export default function Card12() {
                                             <div className="relative">
                                                 <span className="e-avatar e-avatar-circle absolute" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-5.jpg)" }}></span>
                                                 <span className="e-avatar e-avatar-circle absolute left-7" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-13.jpg)" }}></span>
-                                                <span className="e-avatar e-avatar-circle bg-indigo-600 text-white absolute left-14">2+</span>
+                                                <span className="e-avatar e-avatar-circle bg-primary-600 text-white absolute left-14">2+</span>
                                             </div>
                                             <RatingComponent cssClass="e-small" precision="Exact" value={3.5}></RatingComponent>
                                         </div>
@@ -89,7 +89,7 @@ export default function Card12() {
                                             <div className="relative">
                                                 <span className="e-avatar e-avatar-circle absolute" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-5.jpg)" }}></span>
                                                 <span className="e-avatar e-avatar-circle absolute left-7" style={{ backgroundImage: "url(/react/essential-ui-kit/blocks/assets/images/common/avatar/avatar-13.jpg)" }}></span>
-                                                <span className="e-avatar e-avatar-circle bg-indigo-600 text-white absolute left-14">2+</span>
+                                                <span className="e-avatar e-avatar-circle bg-primary-600 text-white absolute left-14">2+</span>
                                             </div>
                                             <RatingComponent cssClass="e-small" precision="Exact" value={3.5}></RatingComponent>
                                         </div>

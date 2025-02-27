@@ -211,7 +211,7 @@ export default function Grid6() {
                                     />
                                     <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width="150"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.invoiceNumber}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.invoiceNumber}</a>
                                         )}
                                     />
                                     <ColumnDirective field="description" headerText="Description" width="214" />
@@ -265,7 +265,7 @@ export default function Grid6() {
                                     />
                                     <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width="165"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.invoiceNumber}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.invoiceNumber}</a>
                                         )}
                                     />
                                     <ColumnDirective field="description" headerText="Description" width="214" />

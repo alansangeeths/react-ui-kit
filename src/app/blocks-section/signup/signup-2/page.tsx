@@ -67,8 +67,8 @@ export default function SignUp2() {
                                                 <div className="flex items-start md:items-center justify-start mb-6">
                                                     <CheckBoxComponent cssClass="e-bigger md:mt-0 mt-1"></CheckBoxComponent>
                                                     <span className="pl-3 text-base text-gray-900 dark:text-white">I agree with{" "}
-                                                        <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">terms</a>{" "}and{" "}
-                                                        <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">privacy policy</a>
+                                                        <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">terms</a>{" "}and{" "}
+                                                        <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">privacy policy</a>
                                                     </span>
                                                 </div>
                                                 <div className="e-bigger">
@@ -99,7 +99,7 @@ export default function SignUp2() {
                                             </div>
                                             <span className="flex items-center justify-center gap-2 mt-5">
                                                 <p className="text-center text-base text-gray-900 dark:text-white">Already have an account?</p>
-                                                <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
+                                                <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
                                             </span>
                                         </div>
                                     </div>
@@ -140,8 +140,8 @@ export default function SignUp2() {
                                             <div className="mb-4">
                                                 <CheckBoxComponent cssClass="e-bigger"></CheckBoxComponent>
                                                 <span className="ms-2 text-body">I agree with{" "}
-                                                    <a href="javascript:void(0);" className="text-primary fs-6 px-0 text-decoration-none" style={{ paddingTop: '1px' }}>terms</a>{" "}and{" "}
-                                                    <a href="javascript:void(0);" className="text-primary fs-6 px-0 text-decoration-none" style={{ paddingTop: '1px' }}>privacy policy</a>
+                                                    <a href="#" className="text-primary fs-6 px-0 text-decoration-none" style={{ paddingTop: '1px' }}>terms</a>{" "}and{" "}
+                                                    <a href="#" className="text-primary fs-6 px-0 text-decoration-none" style={{ paddingTop: '1px' }}>privacy policy</a>
                                                 </span>
                                             </div>
                                             <div className="e-bigger">
@@ -170,7 +170,7 @@ export default function SignUp2() {
                                         </div>
                                         <span className="d-flex align-items-center justify-content-center gap-1 mt-3">
                                             <p className="text-center justify-center text-body mb-0">Already have an account?</p>
-                                            <a href="javascript:void(0);" className="text-primary py-0 text-decoration-none fs-6 fw-medium">Sign in</a>
+                                            <a href="#" className="text-primary py-0 text-decoration-none fs-6 fw-medium">Sign in</a>
                                         </span>
                                     </div>
                                 </div>

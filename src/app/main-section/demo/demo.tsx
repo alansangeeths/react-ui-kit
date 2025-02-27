@@ -46,20 +46,6 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
     const iframeURL = blockName + '/' + componentUrl;
 
     useEffect(() => {
-        setTimeout(() => {
-            const iframe = iframeRef.current;
-            if (iframe) {
-                iframe.removeEventListener('load', handleLoad);
-                iframe.addEventListener('load', handleLoad);
-                iframe.src = iframeURL;
-                return () => {
-                    iframe.removeEventListener('load', handleLoad);
-                };
-            }
-        }, 100);
-    }, []);
-
-    useEffect(() => {
         const iframeDocument = iframeRef.current?.contentDocument || iframeRef.current?.contentWindow?.document;
         if (theme === 'tailwind') {
             iframeDocument?.documentElement?.classList.add(isDarkMode ? 'dark' : 'light');
@@ -86,10 +72,25 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
+            const iframeDoc = iframeRef.current?.contentDocument || iframeRef.current?.contentWindow?.document;
+            iframeDoc?.removeEventListener("click", handleLinkClick);
         };
     }, []);
 
-    const handleLoad = () => addStylesheetsToIframe(theme);
+    
+    const handleLinkClick = (event) => {
+        const target = event.target.closest("a");
+        if (target && target.getAttribute("href") === "#") {
+            event.preventDefault();
+        }
+    };
+
+    const handleLoad = () => {
+        const iframeDoc = iframeRef.current?.contentDocument || iframeRef.current?.contentWindow?.document;    
+        iframeDoc?.addEventListener("click", handleLinkClick);
+
+        addStylesheetsToIframe(theme);
+    }
 
     const handleResize = () => {
         if (currentView === Mode.Tablet && window.innerWidth <= 996 && iframeRef.current) {
@@ -499,7 +500,8 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
                         ref={iframeRef}
                         src={iframeURL}
                         className={styles['preview-container']}
-                        title="Preview Content">
+                        title="Preview Content"
+                        handleLoad={handleLoad}>
                     </IframeComponent>
                     <div ref={overlayRef} className={styles['iframe-overlay']}>
                         <img src="https://placehold.co/100x50?text=Loading..." alt="Loading Indicator" className={styles['overlay-image']} />

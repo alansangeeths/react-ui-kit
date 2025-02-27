@@ -54,7 +54,7 @@ export default function SignOut2() {
                                                 </div>
                                                 <span className="flex items-center justify-center gap-2 mt-7">
                                                     <p className="text-center text-base text-gray-900 dark:text-white">Go to</p>
-                                                    <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
+                                                    <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
                                                 </span>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@ export default function SignOut2() {
                                             <p className="text-center text-light-emphasis m-0">Redirecting in 5 seconds</p>
                                             <div className="d-flex align-items-center justify-content-center gap-1 mt-4">
                                                 <p className="text-body mb-0">Go to</p>
-                                                <a href="javascript:void(0);" className="text-primary fs-6 p-0 text-decoration-none fw-medium">Sign in</a>
+                                                <a href="#" className="text-primary fs-6 p-0 text-decoration-none fw-medium">Sign in</a>
                                             </div>
                                         </div>
                                     </div>

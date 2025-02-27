@@ -70,7 +70,7 @@ export default function Statistics6() {
                 return (
                     <section className="bg-gray-50 dark:bg-gray-900">
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
-                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
+                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="e-card rounded-lg !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
@@ -82,7 +82,7 @@ export default function Statistics6() {
                                             </div>
                                             <div className="e-card-content !py-6 !px-6">
                                                 <p className="text-3xl !leading-10 font-semibold mb-4 xl:mb-6 text-gray-900 dark:text-white">{data.currentValue.toLocaleString()}</p>
-                                                <div className="flex flex-col-reverse xl:flex-row xl:justify-between">
+                                                <div className="flex justify-between items-center">
                                                     <span className="text-gray-500 dark:text-gray-400 mt-1 xl:mt-0">{data.previousValue.toLocaleString()} last month</span>
                                                     <div className={`e-badge flex items-center w-fit ${data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'}`}>
                                                         <span className={`e-icons mr-1 ${data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'}`}></span>
@@ -103,7 +103,7 @@ export default function Statistics6() {
                         <div className="px-3 px-sm-4 px-xl-5 py-5">
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="col-12 col-sm-6 col-lg-3">
+                                    <div key={index} className="col-12 col-sm-6 col-xl-3">
                                         <div className="e-card rounded-3 e-bigger shadow-lg">
                                             <div className="e-card-stacked">
                                                 <div className="e-card-header d-flex justify-content-between align-items-center py-3 px-4 bg-body-tertiary">
@@ -114,7 +114,7 @@ export default function Statistics6() {
                                                 </div>
                                                 <div className="e-card-content p-4">
                                                     <p className="fs-3 lh-sm fw-bold text-body">{data.currentValue.toLocaleString()}</p>
-                                                    <div className="d-flex flex-column-reverse flex-xl-row justify-content-xl-between w-auto">
+                                                    <div className="d-flex justify-content-between w-auto align-items-center">
                                                         <span className="text-body text-opacity-50 mt-2 mt-xl-0">{data.previousValue.toLocaleString()} last month</span>
                                                         <span className={`e-badge d-flex flex-row align-items-center justify-content-start flex-grow-0 ${data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'}`} style={{ width: 'fit-content' }}>
                                                             <span className={`e-icons me-1 ${data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'}`}></span>

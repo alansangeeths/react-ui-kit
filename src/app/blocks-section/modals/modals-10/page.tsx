@@ -89,7 +89,7 @@ export default function Modals10() {
                                                             <i className="e-icons e-user text-3xl dark:text-gray-300"></i>
                                                         </span>
                                                         <div id={styles["upload-template"]} className="grow">
-                                                            <a href="javascript:void(0);" className="font-medium text-primary-600 dark:text-primary-400" onClick={() => uploaders.current?.element?.click()}>Choose a profile image</a>
+                                                            <a href="#" className="font-medium text-primary-600 dark:text-primary-400" onClick={() => uploaders.current?.element?.click()}>Choose a profile image</a>
                                                             <p className="text-xs text-gray-700 dark:text-gray-200 mt-1">Choose a high-quality photo to help teammates recognize you.</p>
                                                             <UploaderComponent ref={uploaders} multiple={false} allowedExtensions='image/*' maxFileSize={2000000} selected={(e) => e.cancel = true}></UploaderComponent>
                                                         </div>
@@ -346,7 +346,7 @@ export default function Modals10() {
                                                             <i className="e-icons e-user fs-3"></i>
                                                         </span>
                                                         <div id={styles["upload-template"]} className="flex-grow-1">
-                                                            <a href="javascript:void(0);" className="fw-medium text-primary text-decoration-none" onClick={() => uploaders.current?.element?.click()}>Choose a profile image</a>
+                                                            <a href="#" className="fw-medium text-primary text-decoration-none" onClick={() => uploaders.current?.element?.click()}>Choose a profile image</a>
                                                             <p className="text-body-secondary mt-1 mb-0">Choose a high-quality photo to help teammates recognize you.</p>
                                                             <UploaderComponent ref={uploaders} multiple={false} allowedExtensions='image/*' maxFileSize={2000000} selected={(e) => e.cancel = true}></UploaderComponent>
                                                         </div>

@@ -11,7 +11,7 @@ export default function Statistics5() {
     const metricsData: any[] = [
         {
             id: 1,
-            metricName: 'Calories',
+            metricName: 'Patients',
             currentValue: 6025,
             currentPercentage: 8.95,
             trend: 'up',
@@ -137,16 +137,16 @@ export default function Statistics5() {
                 return (
                     <section className="bg-gray-50 dark:bg-gray-900">
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
-                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
+                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="e-card e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
-                                            <div className="e-card-header !justify-between lg:!flex-col xl:!flex-row !pb-0">
+                                            <div className="e-card-header !justify-between !pb-0">
                                                 <div className="flex gap-2 items-center">
-                                                    <span className={`text-base text-gray-500 dark:text-gray-400 ${data.metricName === 'Calories' ? 'sf-icon-users' : data.metricName === 'New This Week' ? 'sf-icon-user-plus-01' : data.metricName === 'Critical Alerts' ? 'sf-icon-notification-bell-02' : 'e-icons e-day'}`}></span>
+                                                    <span className={`text-base text-gray-500 dark:text-gray-400 ${data.metricName === 'Patients' ? 'sf-icon-users' : data.metricName === 'New This Week' ? 'sf-icon-user-plus-01' : data.metricName === 'Critical Alerts' ? 'sf-icon-notification-bell-02' : 'e-icons e-day'}`}></span>
                                                     <p className="text-sm font-medium text-gray-800 dark:text-gray-300">{data.metricName}</p>
                                                 </div>
-                                                <div className="lg:py-3 xl:py-0">
+                                                <div>
                                                     <ChartComponent id={data.id} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={setYaxis(data.metricPoints)} width="92" height="30" margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
                                                         <Inject services={[SplineAreaSeries]} />
                                                         <SeriesCollectionDirective>
@@ -168,8 +168,8 @@ export default function Statistics5() {
                                                 </div>
                                             </div>
                                             <div className="e-card-content flex-col !pb-6">
-                                                <p className="text-xl mb-2 !leading-7 font-semibold text-gray-800 dark:text-gray-300 mt-1 lg:mt-0 xl:mt-1">{data.currentValue.toLocaleString()}</p>
-                                                <div className="flex justify-between lg:flex-col-reverse xl:flex-row lg:gap-1 xl:gap-0">
+                                                <p className="text-xl mb-2 !leading-7 font-semibold text-gray-800 dark:text-gray-300 mt-1">{data.currentValue.toLocaleString()}</p>
+                                                <div className="flex justify-between">
                                                     <p className="text-sm text-gray-800 dark:text-gray-300">Since last week</p>
                                                     <div className={`flex gap-1 items-center font-semibold ${data.trend === 'up' ? 'text-green-700 dark:text-green-500' : 'text-red-600 dark:text-red-400'}`}>
                                                         <p className="text-sm">{data.currentPercentage}&#37;</p>
@@ -190,15 +190,15 @@ export default function Statistics5() {
                         <div className="px-3 px-sm-4 px-xl-5 py-5">
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="col-12 col-sm-6 col-lg-3">
+                                    <div key={index} className="col-12 col-sm-6 col-xl-3">
                                         <div className="e-card rounded-3 e-bigger">
                                             <div className="e-card-stacked">
-                                                <div className="e-card-header d-flex justify-content-between flex-lg-column flex-xl-row pb-0 pt-4 px-4">
-                                                    <div className="d-flex gap-2 align-items-center pb-lg-1 pb-xl-0">
-                                                        <span className={`fs-6 text-secondary ${data.metricName === 'Calories' ? 'sf-icon-users' : data.metricName === 'New This Week' ? 'sf-icon-user-plus-01' : data.metricName === 'Critical Alerts' ? 'sf-icon-notification-bell-02' : 'e-icons e-day'}`}></span>
+                                                <div className="e-card-header d-flex pb-0 pt-4 px-4 justify-content-between">
+                                                    <div className="d-flex gap-2 align-items-center">
+                                                        <span className={`fs-6 text-secondary ${data.metricName === 'Patients' ? 'sf-icon-users' : data.metricName === 'New This Week' ? 'sf-icon-user-plus-01' : data.metricName === 'Critical Alerts' ? 'sf-icon-notification-bell-02' : 'e-icons e-day'}`}></span>
                                                         <p className="fw-medium text-body-secondary lh-base mb-0">{data.metricName}</p>
                                                     </div>
-                                                    <div className="my-lg-2 my-xl-0" style={{ height: '30px' }}>
+                                                    <div style={{ height: '30px' }}>
                                                         <ChartComponent id={data.id} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={setYaxis(data.metricPoints)} width="92" height="30" margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
                                                             <Inject services={[SplineAreaSeries]} />
                                                             <SeriesCollectionDirective>
@@ -221,7 +221,7 @@ export default function Statistics5() {
                                                 </div>
                                                 <div className="e-card-content d-flex flex-column pb-4 px-4 pt-0">
                                                     <p className="fs-5 lh-sm mb-2 fw-bold text-body-secondary mt-1">{data.currentValue.toLocaleString()}</p>
-                                                    <div className="d-flex justify-content-between flex-lg-column-reverse flex-xl-row gap-lg-1 gap-xl-0">
+                                                    <div className="d-flex justify-content-between">
                                                         <p className="text-body-secondary mb-0">Since last week</p>
                                                         <div className={`d-flex gap-1 align-items-center fw-bold ${data.trend === 'up' ? 'text-success' : 'text-danger'}`}>
                                                             <p className="mb-0 lh-sm">{data.currentPercentage}&#37;</p>

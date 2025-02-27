@@ -61,7 +61,7 @@ export default function SigninOTP2() {
                                             </form>
                                             <span className="flex items-center justify-center gap-2 mt-7">
                                                 <p className="text-center text-gray-900 dark:text-white">Not yet received?</p>
-                                                <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base !p-0">Resend OTP</a>
+                                                <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base !p-0">Resend OTP</a>
                                             </span>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@ export default function SigninOTP2() {
                                         </form>
                                         <div className="d-flex align-items-center justify-content-center gap-2 mt-4">
                                             <p className="text-center text-body mb-0">Not yet received?</p>
-                                            <a href="javascript:void(0);" className="text-primary p-0 text-decoration-none fs-6 fw-medium">Resend OTP</a>
+                                            <a href="#" className="text-primary p-0 text-decoration-none fs-6 fw-medium">Resend OTP</a>
                                         </div>
                                     </div>
                                 </div>

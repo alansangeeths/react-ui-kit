@@ -49,53 +49,53 @@ export default function Footer4() {
                                     <div>
                                         <h3 className="text-gray-500 dark:text-gray-400 font-semibold text-sm">Product</h3>
                                         <ul className="mt-3 space-y-2 sm:text-nowrap">
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Watch demo</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Pricing</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Paid vs Free</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Accessibility</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Change log</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Status</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Watch demo</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Pricing</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Paid vs Free</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Accessibility</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Change log</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Status</a></li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h3 className="text-gray-500 dark:text-gray-400 font-semibold text-sm">Features</h3>
                                         <ul className="mt-3 space-y-2 sm:text-nowrap">
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Channels</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Search</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">App & Integrations</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Security</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Enterprise key</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Channels</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Search</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">App & Integrations</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Security</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Enterprise key</a></li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h3 className="text-gray-500 dark:text-gray-400 font-semibold text-sm">Solutions</h3>
                                         <ul className="mt-3 space-y-2 sm:text-nowrap">
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Customer service</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Sales</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Project management</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Marketing</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Security</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Media</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Customer service</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Sales</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Project management</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Marketing</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Security</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Media</a></li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h3 className="text-gray-500 dark:text-gray-400 font-semibold text-sm">Resources</h3>
                                         <ul className="mt-3 space-y-2 sm:text-nowrap">
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Help center</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">What's new</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Resource library</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Community</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Events</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Help center</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">What's new</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Resource library</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Community</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Events</a></li>
                                         </ul>
                                     </div>
                                     <div>
                                         <h3 className="text-gray-500 dark:text-gray-400 font-semibold text-sm">Company</h3>
                                         <ul className="mt-3 space-y-2 sm:text-nowrap">
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">About us</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">News</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Media kit</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Career</a></li>
-                                            <li><a href="javascript:void(0);" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Contact us</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">About us</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">News</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Media kit</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Career</a></li>
+                                            <li><a href="#" className="text-base font-medium py-1 text-primary-600 hover:underline dark:text-primary-400">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -108,17 +108,17 @@ export default function Footer4() {
                                     </li>
                                     <li className="flex items-center space-x-2">
                                         <i className="sf-icon-mail-02 text-gray-500 dark:text-gray-400 text-base"></i>
-                                        <a href="javascript:void(0);">contact&#64;shopnezt.com</a>
+                                        <a href="#">contact&#64;shopnezt.com</a>
                                     </li>
                                     <li className="flex items-center space-x-2">
                                         <i className="sf-icon-phone-01 text-gray-500 dark:text-gray-400 text-base"></i>
-                                        <a href="javascript:void(0);">(123) 456-7890</a>
+                                        <a href="#">(123) 456-7890</a>
                                     </li>
                                 </ul>
                                 <div className="flex gap-4">
-                                    <a href="javascript:void(0);" className="sf-icon-twitter text-2xl text-gray-500 dark:text-gray-400"></a>
-                                    <a href="javascript:void(0);" className="sf-icon-facebook text-2xl text-gray-500 dark:text-gray-400"></a>
-                                    <a href="javascript:void(0);" className="sf-icon-linkedin text-2xl text-gray-500 dark:text-gray-400"></a>
+                                    <a href="#" className="sf-icon-twitter text-2xl text-gray-500 dark:text-gray-400"></a>
+                                    <a href="#" className="sf-icon-facebook text-2xl text-gray-500 dark:text-gray-400"></a>
+                                    <a href="#" className="sf-icon-linkedin text-2xl text-gray-500 dark:text-gray-400"></a>
                                 </div>
                             </div>
                         </footer>
@@ -141,53 +141,53 @@ export default function Footer4() {
                                     <div className="col-6 col-sm-4 col-lg-2 px-0">
                                         <p className="small fw-bold mb-2 pb-1">Product</p>
                                         <ul className="d-flex flex-column gap-2 list-unstyled mb-0">
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Watch demo</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Pricing</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Paid vs Free</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Accessibility</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Change log</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Status</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Watch demo</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Pricing</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Paid vs Free</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Accessibility</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Change log</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Status</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6 col-sm-4 col-lg-2 px-0">
                                         <p className="small fw-bold mb-2 pb-1">Features</p>
                                         <ul className="d-flex flex-column gap-2 list-unstyled mb-0">
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Channels</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Search</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">App & Integrations</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Security</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Enterprise key</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Channels</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Search</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">App & Integrations</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Security</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Enterprise key</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6 col-sm-4 col-lg-2 px-0">
                                         <p className="small fw-bold mb-2 pb-1">Solutions</p>
                                         <ul className="d-flex flex-column gap-2 list-unstyled mb-0">
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Customer service</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Sales</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Project management</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Marketing</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Security</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Media</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Customer service</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Sales</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Project management</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Marketing</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Security</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Media</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6 col-sm-4 col-lg-2 px-0">
                                         <p className="small fw-bold mb-2 pb-1">Resources</p>
                                         <ul className="d-flex flex-column gap-2 list-unstyled mb-0">
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Help center</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">What's new</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Resource library</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Community</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Events</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Help center</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">What's new</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Resource library</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Community</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Events</a></li>
                                         </ul>
                                     </div>
                                     <div className="col-6 col-sm-4 col-lg-2 px-0">
                                         <p className="small fw-bold mb-2 pb-1">Company</p>
                                         <ul className="d-flex flex-column gap-2 list-unstyled mb-0">
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">About us</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">News</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Media kit</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Career</a></li>
-                                            <li><a href="javascript:void(0);" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Contact us</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">About us</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">News</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Media kit</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Career</a></li>
+                                            <li><a href="#" className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium small">Contact us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -200,17 +200,17 @@ export default function Footer4() {
                                     </li>
                                     <li className="d-flex align-items-center gap-2">
                                         <i className="sf-icon-mail-02 small fs-6"></i>
-                                        <a className="text-decoration-none text-body-secondary" href="javascript:void(0);">contact&#64;shopnezt.com</a>
+                                        <a className="text-decoration-none text-body-secondary" href="#">contact&#64;shopnezt.com</a>
                                     </li>
                                     <li className="d-flex align-items-center gap-2">
                                         <i className="sf-icon-phone-01 fs-6"></i>
-                                        <a className="text-decoration-none text-body-secondary" href="javascript:void(0);">(123) 456-7890</a>
+                                        <a className="text-decoration-none text-body-secondary" href="#">(123) 456-7890</a>
                                     </li>
                                 </ul>
                                 <div className="d-flex gap-3">
-                                    <a href="javascript:void(0);" className="sf-icon-twitter text-body-secondary fs-4 text-decoration-none"></a>
-                                    <a href="javascript:void(0);" className="sf-icon-facebook text-body-secondary fs-4 text-decoration-none"></a>
-                                    <a href="javascript:void(0);" className="sf-icon-linkedin text-body-secondary fs-4 text-decoration-none"></a>
+                                    <a href="#" className="sf-icon-twitter text-body-secondary fs-4 text-decoration-none"></a>
+                                    <a href="#" className="sf-icon-facebook text-body-secondary fs-4 text-decoration-none"></a>
+                                    <a href="#" className="sf-icon-linkedin text-body-secondary fs-4 text-decoration-none"></a>
                                 </div>
                             </div>
                         </footer>

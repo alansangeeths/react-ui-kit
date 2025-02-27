@@ -39,17 +39,6 @@ export default function Header6() {
         }
     };
 
-    const updateSelectedChips = (event: any): void => {
-        const chipElement = event.element;
-        if (chipElement.classList.contains('e-primary')) {
-            chipElement.classList.remove('e-primary');
-            chipElement.classList.add('e-outline');
-        } else {
-            chipElement.classList.remove('e-outline');
-            chipElement.classList.add('e-primary');
-        }
-    };
-
     /* SB Code - Start */
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
@@ -119,9 +108,9 @@ export default function Header6() {
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
-                                                            <ChipListComponent id="chip-filter" className="!rounded-2xl" click={updateSelectedChips}>
+                                                            <ChipListComponent id="chip-filter" className="!rounded-2xl">
                                                                 <ChipsDirective>
-                                                                    <ChipDirective cssClass={"e-primary !rounded-2xl"} text={"Review Today"}></ChipDirective>
+                                                                    <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Review Today"}></ChipDirective>
                                                                     <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Expired"}></ChipDirective>
                                                                     <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Upcoming"}></ChipDirective>
                                                                     <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Unassigned"}></ChipDirective>
@@ -199,9 +188,9 @@ export default function Header6() {
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-start me-2" style={{ height: "20px" }}></div>
-                                                            <ChipListComponent id="chip-filter" className="rounded-pill" click={updateSelectedChips}>
+                                                            <ChipListComponent id="chip-filter" className="rounded-pill">
                                                                 <ChipsDirective>
-                                                                    <ChipDirective cssClass="e-primary rounded-pill" text="Review Today"></ChipDirective>
+                                                                    <ChipDirective cssClass="e-outline rounded-pill" text="Review Today"></ChipDirective>
                                                                     <ChipDirective cssClass="e-outline rounded-pill" text="Expired"></ChipDirective>
                                                                     <ChipDirective cssClass="e-outline rounded-pill" text="Upcoming"></ChipDirective>
                                                                     <ChipDirective cssClass="e-outline rounded-pill" text="Unassigned"></ChipDirective>

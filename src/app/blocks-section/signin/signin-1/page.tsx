@@ -56,7 +56,7 @@ export default function Signin1() {
                                     </div>
                                     <div className="flex items-center justify-between mb-6">
                                         <CheckBoxComponent cssClass="e-bigger" label="Remember me"></CheckBoxComponent>
-                                        <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base" style={{ paddingRight: 0 }}>Forgot password?</a>
+                                        <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base" style={{ paddingRight: 0 }}>Forgot password?</a>
                                     </div>
                                     <div className="e-bigger mt-6">
                                         <ButtonComponent className="w-full e-primary" type="submit" onClick={(event) => event.preventDefault()}>Sign in</ButtonComponent>
@@ -65,7 +65,7 @@ export default function Signin1() {
                                 <div>
                                     <span className="flex items-center justify-center gap-2">
                                         <p className="text-center text-base text-gray-900 dark:text-white">Don't have an account yet?</p>
-                                        <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign up</a>
+                                        <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign up</a>
                                     </span>
                                     <div className="relative flex justify-center items-center mt-10">
                                         <span className="bg-gray-50 dark:bg-gray-950 px-2 z-10 absolute text-sm text-gray-700 dark:text-gray-300">Or continue with</span>
@@ -109,7 +109,7 @@ export default function Signin1() {
                                 </div>
                                 <div className="d-flex align-items-center justify-content-between">
                                     <CheckBoxComponent cssClass="e-bigger" label="Remember me"></CheckBoxComponent>
-                                    <a href="javascript:void(0);" className="text-primary fs-6 fw-medium text-decoration-none" style={{ paddingRight: 0, paddingTop: '4px' }}>Forgot password?</a>
+                                    <a href="#" className="text-primary fs-6 fw-medium text-decoration-none" style={{ paddingRight: 0, paddingTop: '4px' }}>Forgot password?</a>
                                 </div>
                                 <div className="mt-4 e-bigger">
                                     <ButtonComponent className="e-block e-primary" type="submit">Sign in</ButtonComponent>
@@ -117,7 +117,7 @@ export default function Signin1() {
                             </form>
                             <div className="d-flex flex-wrap align-items-center justify-content-center mt-3 gap-1">
                                 <p className="text-body w-sm-auto m-0">Don't have an account yet?</p>
-                                <a href="javascript:void(0);" className="text-primary fs-6 fw-medium text-decoration-none">Sign up</a>
+                                <a href="#" className="text-primary fs-6 fw-medium text-decoration-none">Sign up</a>
                             </div>
                             <div>
                                 <div className="d-flex justify-content-center align-items-center position-relative mt-3">

@@ -54,11 +54,11 @@ export default function ForgetPassword1() {
                                     </div>
                                 </form>
                                 <div className="e-bigger">
-                                    <ButtonComponent ejs-button className="w-full e-primary" type="submit">Send Reset Link</ButtonComponent>
+                                    <ButtonComponent className="w-full e-primary" type="submit">Send Reset Link</ButtonComponent>
                                 </div>
                                 <span className="flex items-center justify-center gap-2 mt-6">
                                     <p className="text-center text-gray-900 dark:text-white">Return to</p>
-                                    <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
+                                    <a href="#" className="text-primary-600 dark:text-primary-400 font-medium text-base p-0">Sign in</a>
                                 </span>
                             </div>
                         </div>
@@ -83,11 +83,11 @@ export default function ForgetPassword1() {
                                 </div>
                             </form>
                             <div className="e-bigger">
-                                <ButtonComponent ejs-button className="e-block e-primary" type="submit">Send Reset Link</ButtonComponent>
+                                <ButtonComponent className="e-block e-primary" type="submit">Send Reset Link</ButtonComponent>
                             </div>
                             <div className="d-flex align-items-center justify-content-center gap-1 mt-4">
                                 <p className="text-center text-body mb-0">Return to</p>
-                                <a href="javascript:void(0);" className="text-primary p-0 text-decoration-none fs-6 fw-medium">Sign in</a>
+                                <a href="#" className="text-primary p-0 text-decoration-none fs-6 fw-medium">Sign in</a>
                             </div>
                         </div>
                     </section>

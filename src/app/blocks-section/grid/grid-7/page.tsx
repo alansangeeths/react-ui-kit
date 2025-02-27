@@ -286,14 +286,14 @@ export default function Grid7() {
                                 <ColumnsDirective>
                                     <ColumnDirective field="transactionId" headerText="Transaction ID" width="116"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.transactionId}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.transactionId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="customerDetails" headerText="Customer Name" width="320"
                                         template={(data: any) => (
                                             <div className="flex gap-3 items-center py-1.5">
                                                 <div className="w-8 h-8">
-                                                    <span className={`e-avatar e-avatar-circle e-avatar-small ${ data.customerDetails.colorTheme === "Red" ? "!bg-red-100 !text-red-700 dark:!text-red-400" : data.customerDetails.colorTheme === "Green" ? "!bg-green-100 !text-green-700 dark:!text-green-500" : data.customerDetails.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700 dark:!text-cyan-600" : data.customerDetails.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700 dark:!text-orange-500" : data.customerDetails.colorTheme === "Purple" ? "!bg-indigo-100 !text-indigo-700 dark:!bg-cyan-800 dark:!text-cyan-400" : ""}`}>{data.customerDetails.initial}</span>
+                                                    <span className={`e-avatar e-avatar-circle e-avatar-small ${ data.customerDetails.colorTheme === "Red" ? "!bg-red-100 !text-red-700" : data.customerDetails.colorTheme === "Green" ? "!bg-green-100 !text-green-700" : data.customerDetails.colorTheme === "Blue" ? "!bg-cyan-100 !text-cyan-700" : data.customerDetails.colorTheme === "Orange" ? "!bg-orange-100 !text-orange-700" : data.customerDetails.colorTheme === "Purple" ? "!bg-indigo-100 !text-indigo-700" : ""}`}>{data.customerDetails.initial}</span>
                                                 </div>
                                                 <div className="flex flex-col text-sm">
                                                     <p className="text-gray-900 dark:text-gray-50">{data.customerDetails.name}</p>
@@ -359,7 +359,7 @@ export default function Grid7() {
                                 <ColumnsDirective>
                                     <ColumnDirective field="transactionId" headerText="Transaction ID" width="126"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.transactionId}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.transactionId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width="270"

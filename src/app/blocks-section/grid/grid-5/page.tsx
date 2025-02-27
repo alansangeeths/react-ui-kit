@@ -161,7 +161,7 @@ export default function Grid5() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="assetId" headerText="Asset ID" width="90"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.assetId}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.assetId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="hardware" headerText="Hardware" width="155" />
@@ -200,7 +200,7 @@ export default function Grid5() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="assetId" headerText="Asset ID" width="90"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.assetId}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.assetId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="hardware" headerText="Hardware" width="155" />

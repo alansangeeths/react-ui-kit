@@ -65,17 +65,17 @@ export default function FilterPanel2() {
                                 header={() => (
                                     <div>
                                         <p className="mb-2 font-semibold text-base">Advance Filters</p>
-                                        <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 text-sm font-semibold">Switch to basic filter</a>
+                                        <a href="#" className="text-primary-600 dark:text-primary-400 text-sm font-semibold">Switch to basic filter</a>
                                     </div>
                                 )}
                                 footerTemplate={() => (
                                     <>
                                         <hr className="border-gray-200 dark:border-gray-700" />
-                                        <div className="flex justify-between items-center flex-col sm:flex-row py-2 px-4">
-                                            <a href="javascript:void(0);" className="text-primary-600 dark:text-primary-400 text-sm hover:underline">Learn more</a>
-                                            <div className="sm:ml-auto space-x-3 mt-4 sm:mt-0 flex flex-row w-full sm:w-auto">
-                                                <ButtonComponent cssClass="e-outline e-primary border-0 inline-flex sm:w-auto w-full" content="Save filter" type="button"></ButtonComponent>
-                                                <ButtonComponent cssClass="e-primary inline-flex sm:w-auto w-full" content="Apply" type="button"></ButtonComponent>
+                                        <div className="flex flex-col-reverse sm:flex-row justify-between items-center w-full">
+                                            <a href="#" className="text-primary-600 dark:text-primary-400 pt-4 sm:pt-0 text-sm hover:underline">Learn more</a>
+                                            <div className="flex flex-col sm:flex-row w-full sm:w-auto !ml-0 sm:ml-auto gap-3 mt-2 sm:mt-0">
+                                                <ButtonComponent cssClass="e-outline e-primaryborder-0 w-full !ml-0 sm:!ml-auto sm:w-auto" content="Save filter" type="button"></ButtonComponent>
+                                                <ButtonComponent cssClass="e-primary w-full sm:w-auto !ml-0 sm:!ml-aut" content="Apply" type="button"></ButtonComponent>
                                             </div>
                                         </div>
                                     </>
@@ -139,15 +139,15 @@ export default function FilterPanel2() {
                                 header={() => (
                                     <div>
                                         <p className="mb-2 fw-bold fs-6 text-body lh-sm">Advanced Filters</p>
-                                        <a href="javascript:void(0);" className="text-primary fw-bold small text-decoration-none lh-sm">Switch to basic filter</a>
+                                        <a href="#" className="text-primary fw-bold small text-decoration-none lh-sm">Switch to basic filter</a>
                                     </div>
                                 )}
                                 footerTemplate={() => (
-                                    <div className="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row py-2 px-3">
-                                        <a href="javascript:void(0);" className="text-primary fs-6 text-center text-decoration-none">Learn more</a>
-                                        <div className="mt-3 mt-sm-0 d-flex flex-row gap-2">
-                                            <ButtonComponent cssClass="e-outline e-primary border-0 flex-grow-1 flex-sm-grow-0" type="button" content="Save filter"></ButtonComponent>
-                                            <ButtonComponent cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" content=" Apply"></ButtonComponent>
+                                    <div className="d-flex justify-content-between align-items-sm-center flex-column-reverse flex-sm-row py-2 px-3">
+                                        <a href="#" className="text-primary fs-6 text-center pt-3 sm:pt-0 text-decoration-none">Learn more</a>
+                                        <div className="mt-2 mt-sm-0 d-flex flex-column flex-sm-row gap-2">
+                                            <ButtonComponent cssClass="e-outline e-primary border-0 ms-0 flex-grow-1 flex-sm-grow-0" type="button" content="Save filter"></ButtonComponent>
+                                            <ButtonComponent cssClass="e-primary ms-0 flex-grow-1 flex-sm-grow-0 mt-2 mt-sm-0" type="button" content=" Apply"></ButtonComponent>
                                         </div>
                                     </div>
                                     

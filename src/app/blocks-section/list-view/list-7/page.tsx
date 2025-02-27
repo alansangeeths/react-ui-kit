@@ -108,7 +108,7 @@ export default function List7() {
                                         <div className="flex justify-between">
                                             <div className="flex items-center">
                                                 {data.letter ? (
-                                                    <span className={`e-avatar e-avatar-large shrink-0 !text-base ${data.tag === "report" ? "bg-indigo-100 dark:bg-cyan-800 text-indigo-600 dark:text-cyan-400" : "bg-orange-100 text-orange-700"}`}>{data.letter}</span>
+                                                    <span className={`e-avatar e-avatar-large shrink-0 !text-base ${data.tag === "report" ? "bg-indigo-100 text-indigo-600" : "bg-orange-100 text-orange-700"}`}>{data.letter}</span>
                                                 ) : (
                                                     <span className="e-avatar e-avatar-large shrink-0">
                                                         <img src={`/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.image}`} width={48} height={48} alt="profile picture" />

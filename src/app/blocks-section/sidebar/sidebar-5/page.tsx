@@ -92,8 +92,8 @@ export default function Sidebar5() {
                                         </AccordionItemsDirective>
                                     </AccordionComponent>
                                     <div id="toastmsg" className="!absolute" style={{ bottom: '25%' }}></div>
-                                    <ToastComponent ref={toast1} target="#toastmsg" position={{ X: 'Left', Y: 'Bottom' }} cssClass="e-toast-info" width="224" title={() => <div className="pr-2">Adaptive Tiles Meeting</div>} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast1.current?.show()}></ToastComponent>
-                                    <ToastComponent ref={toast2} target="#toastmsg" position={{ X: 'Left', Y: 'Top' }} cssClass="e-toast-warning" width="224" title={() => <div className="pr-2">Adaptive Tiles Meeting</div>} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast2.current?.show()}></ToastComponent>
+                                    <ToastComponent ref={toast1} target="#toastmsg" position={{ X: 'Left', Y: 'Bottom' }} cssClass="e-toast-info" width="224" content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast1.current?.show()}></ToastComponent>
+                                    <ToastComponent ref={toast2} target="#toastmsg" position={{ X: 'Left', Y: 'Top' }} cssClass="e-toast-warning" width="224" content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast2.current?.show()}></ToastComponent>
                                 </div>
                             </SidebarComponent>
                         </div>
@@ -134,8 +134,8 @@ export default function Sidebar5() {
                                         </AccordionItemsDirective>
                                     </AccordionComponent>
                                     <div id="toastmsg" className="position-absolute" style={{ bottom: '25%' }}></div>
-                                    <ToastComponent ref={toast1} target="#toastmsg" position={{ X: 'Left', Y: 'Bottom' }} cssClass="e-toast-info" width="224" title={() => <div>Adaptive Tiles Meeting</div>} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast1.current?.show()}></ToastComponent>
-                                    <ToastComponent ref={toast2} target="#toastmsg" position={{ X: 'Left', Y: 'Top' }} cssClass="e-toast-warning" width="224" title={() => <div>Adaptive Tiles Meeting</div>} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast2.current?.show()}></ToastComponent>
+                                    <ToastComponent ref={toast1} target="#toastmsg" position={{ X: 'Left', Y: 'Bottom' }} cssClass="e-toast-info" width="224" content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast1.current?.show()}></ToastComponent>
+                                    <ToastComponent ref={toast2} target="#toastmsg" position={{ X: 'Left', Y: 'Top' }} cssClass="e-toast-warning" width="224" content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast2.current?.show()}></ToastComponent>
                                 </div>
                             </SidebarComponent>
                         </div>

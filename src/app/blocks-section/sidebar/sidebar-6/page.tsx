@@ -124,7 +124,7 @@ export default function Sidebar6() {
                                             <p className="text-base px-4 py-3 text-gray-700 dark:text-gray-300">Bergside Projects</p>
                                             <ListViewComponent className="!border-0" dataSource={data2} template={(data: any) => (
                                                 <div className="e-list-wrapper flex items-center px-1">
-                                                    <span className={`e-icons e-bullet-3 !text-indigo-600 dark:!text-cyan-400`}></span>
+                                                    <span className={`e-icons e-bullet-3 !text-indigo-600 dark:!text-indigo-400`}></span>
                                                     <span className="text-base font-normal pl-4">
                                                         {data.field === 'Library' || data.field === 'Blocks' ? 'Tailwind ' + data.field : data.field}
                                                     </span>

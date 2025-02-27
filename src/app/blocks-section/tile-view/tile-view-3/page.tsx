@@ -123,7 +123,7 @@ export default function TileView3() {
                                     </div>
                                     <ListViewComponent className="!border-0" cssClass="e-list-template" dataSource={transactionDetails} template={(data: any) => (
                                         <div className="e-card flex-row gap-1 rounded-lg sm:gap-0 p-4">
-                                            <span className={`e-avatar e-avatar-large e-avatar-circle shrink-0 mr-2 sm:mr-4 ${data.paymentType === "Credit Card" ? "bg-green-100 text-green-700 dark:text-green-500" : data.paymentType === "Wire Transfer" ? "bg-indigo-100 dark:bg-cyan-800 text-indigo-600 dark:text-cyan-400" : data.paymentType === "Deposit" ? "bg-orange-100 text-orange-500 dark:text-orange-700" : "bg-cyan-100 dark:bg-sky-100 text-cyan-700 dark:text-cyan-600"}`}>
+                                            <span className={`e-avatar e-avatar-large e-avatar-circle shrink-0 mr-2 sm:mr-4 ${data.paymentType === "Credit Card" ? "bg-green-100 text-green-700 dark:text-green-500" : data.paymentType === "Wire Transfer" ? "bg-indigo-100 text-indigo-600" : data.paymentType === "Deposit" ? "bg-orange-100 text-orange-500 dark:text-orange-700" : "bg-cyan-100 dark:bg-sky-100 text-cyan-700 dark:text-cyan-600"}`}>
                                                 <i className="sf-icon-dollar text-2xl"></i>
                                             </span>
                                             <div className="e-card-stacked grow sm:space-y-3">
@@ -140,7 +140,7 @@ export default function TileView3() {
                                                 <div className="e-card-content !p-0 text-gray-700 dark:text-gray-200">
                                                     <div className="hidden items-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400 sm:flex flex-wrap">
                                                         <p className="flex items-center gap-2">
-                                                            Transaction ID:<a className="font-medium text-primary-600 hover:underline dark:text-primary-400" href="javascript:void(0);">{data.transactionId}</a>
+                                                            Transaction ID:<a className="font-medium text-primary-600 hover:underline dark:text-primary-400" href="#">{data.transactionId}</a>
                                                         </p>
                                                         <p className="flex gap-2">Payment Type:<span className="text-gray-700 dark:text-gray-200">{data.paymentType}</span></p>
                                                         <p className="flex gap-2">Category:<span className="text-gray-700 dark:text-gray-200">{data.category}</span></p>
@@ -216,7 +216,7 @@ export default function TileView3() {
                                                 <div className="e-card-content p-0">
                                                     <div className="d-none d-sm-flex align-items-center gap-4 fs-6 text-body-secondary flex-wrap row-gap-2">
                                                         <p className="d-flex align-items-center gap-2 mb-0">
-                                                            Transaction ID:<a className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium" href="javascript:void(0);">{data.transactionId}</a>
+                                                            Transaction ID:<a className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium" href="#">{data.transactionId}</a>
                                                         </p>
                                                         <p className="d-flex gap-2 mb-0">Payment Type:<span className="fw-medium">{data.paymentType}</span></p>
                                                         <p className="d-flex gap-2 mb-0">Category:<span className="fw-medium">{data.category}</span></p>

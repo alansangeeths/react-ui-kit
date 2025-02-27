@@ -65,7 +65,7 @@ export default function Statistics3() {
                 return (
                     <section className="bg-gray-50 dark:bg-gray-900">
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
-                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4 grow">
+                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4 grow">
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
@@ -79,14 +79,14 @@ export default function Statistics3() {
                                             </div>
                                             <div className="e-card-content !pb-6">
                                                 <p className="text-xl !leading-7 font-semibold mb-3 text-gray-900 dark:text-white">{data.currentValue}</p>
-                                                <div className="xl:flex">
+                                                <div className="flex">
                                                     <span className="flex items-center">
                                                         <span className={`e-badge e-badge-circle shrink-0 ${data.trend === "up" ? "e-badge-success sf-icon-analysis-arrow-up" : "e-badge-danger sf-icon-analysis-arrow-down"}`}></span>
                                                         <span className={`text-sm font-medium ml-1 ${data.trend === "up" ? "text-green-700 dark:text-green-500" : "text-red-600 dark:text-red-400"}`}>
                                                             {data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37;
                                                         </span>
                                                     </span>
-                                                    <p className="text-sm text-gray-800 dark:text-gray-300 ml-0 xl:ml-2 mt-1 xl:mt-0">compared to last week</p>
+                                                    <p className="text-sm text-gray-800 dark:text-gray-300 ml-2">compared to last week</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,7 +102,7 @@ export default function Statistics3() {
                         <div className="px-3 px-sm-4 px-xl-5 py-5">
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="col-12 col-sm-6 col-lg-3">
+                                    <div key={index} className="col-12 col-sm-6 col-xl-3">
                                         <div className="e-card e-bigger rounded-3 pt-4">
                                             <div className="e-card-stacked">
                                                 <div className="e-card-header d-flex justify-content-between px-4 mb-1 py-0">
@@ -115,14 +115,14 @@ export default function Statistics3() {
                                                 </div>
                                                 <div className="e-card-content pb-4 px-4 pt-0">
                                                     <p className="fs-5 fw-bold mb-3 lh-sm text-body">{data.currentValue}</p>
-                                                    <div className="d-xl-flex">
+                                                    <div className="d-flex">
                                                         <span className="d-flex align-items-center">
                                                             <span className={`e-badge e-badge-circle flex-shrink-0 small ${data.trend === "up" ? "e-badge-success sf-icon-analysis-arrow-up" : "e-badge-danger sf-icon-analysis-arrow-down"}`}></span>
                                                             <span className={`fw-medium ms-1 ${data.trend === "up" ? "text-success" : "text-danger"}`}>
                                                                 {data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37;
                                                             </span>
                                                         </span>
-                                                        <p className="text-body-secondary mt-2 mt-xl-0 ms-0 ms-xl-2 mb-0">compared to last week</p>
+                                                        <p className="text-body-secondary ms-2 mb-0">compared to last week</p>
                                                     </div>
                                                 </div>
                                             </div>

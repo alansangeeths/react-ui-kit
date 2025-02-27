@@ -141,9 +141,9 @@ export default function Modals7() {
                                 <div>
                                     <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center mb-5 sm:mb-6">
                                         <CheckBoxComponent label="Export time fields in minutes formats"></CheckBoxComponent>
-                                        <div className="flex flex-row-reverse sm:flex-row justify-end gap-4 sm:gap-3">
+                                        <div className="flex flex-row justify-end sm:gap-3">
                                             <ButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-export" type="button">Export</ButtonComponent>
-                                            <DropDownButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-table" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
+                                            <DropDownButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>
                                     </div>
                                     <GridComponent cssClass="e-bigger mb-1.5" dataSource={data} width="100%" allowSorting={true} allowFiltering={true}filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
@@ -163,7 +163,7 @@ export default function Modals7() {
                                                 </div>
                                             )}></ColumnDirective>
                                             <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={170} template={(data: any) => (
-                                                <a href="javascript:void(0);" className="text-sm text-primary-700 dark:text-primary-500 font-medium underline">{data.invoiceNumber}</a>
+                                                <a href="#" className="text-sm text-primary-700 dark:text-primary-500 font-medium underline">{data.invoiceNumber}</a>
                                             )}></ColumnDirective>
                                             <ColumnDirective field="description" headerText="Description" width={180} template={(data: any) => (
                                                 <p className="text-sm text-gray-700 dark:text-gray-200">{data.description}</p>
@@ -188,9 +188,9 @@ export default function Modals7() {
                                 <div>
                                     <div className="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-sm-center mb-4 mb-sm-3">
                                         <CheckBoxComponent label="Export time fields in minutes formats"></CheckBoxComponent>
-                                        <div className="d-flex flex-row-reverse flex-sm-row justify-content-end gap-3 gap-sm-2">
+                                        <div className="d-flex flex-row justify-content-end gap-3 gap-sm-2">
                                             <ButtonComponent className="flex-grow-1 flex-sm-grow-0 e-outline" iconCss="e-icons e-export" type="button">Export</ButtonComponent>
-                                            <DropDownButtonComponent className="flex-grow-1 flex-sm-grow-0 e-outline ms-sm-1" iconCss="e-icons e-table" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
+                                            <DropDownButtonComponent className="flex-grow-1 flex-sm-grow-0 e-outline ms-sm-1" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>
                                     </div>
                                     <GridComponent cssClass="e-bigger mb-1" dataSource={data} width="100%" allowSorting={true} allowFiltering={true} filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
@@ -208,7 +208,7 @@ export default function Modals7() {
                                                 </div>
                                             )}></ColumnDirective>
                                             <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={186} template={(data: any) => (
-                                                <a className="small text-primary fw-medium text-decoration-underline" href="javascript:void(0);">{data.invoiceNumber}</a>
+                                                <a className="small text-primary fw-medium text-decoration-underline" href="#">{data.invoiceNumber}</a>
                                             )}></ColumnDirective>
                                             <ColumnDirective field="description" headerText="Description" width={190} template={(data: any) => (
                                                 <p className="text-body mb-0">{data.description}</p>

@@ -178,7 +178,7 @@ export default function Chat2() {
                                                 const senderTemplate = (
                                                     <div className="flex justify-end ml-auto sm:mr-3 gap-3 items-start w-4/5 sm:w-9/12 lg:w-11/12">
                                                         <div className="flex flex-col gap-1 items-end">
-                                                            <div className="py-2 px-3 rounded-lg rounded-se-none bg-indigo-100 dark:bg-cyan-800">
+                                                            <div className="py-2 px-3 rounded-lg rounded-se-none bg-primary-100 dark:bg-primary-800">
                                                                 <div className="text-gray-900 dark:text-gray-50">{data.text}</div>
                                                             </div>
                                                             <div className="flex">

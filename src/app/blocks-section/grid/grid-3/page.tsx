@@ -248,7 +248,7 @@ export default function Grid3() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="invoiceId" headerText="Invoice ID" width="111"
                                         template={(data: any) => (
-                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);">{data.invoiceId}</a>
+                                            <a className="text-primary-700 dark:text-primary-500 font-medium" href="#">{data.invoiceId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="customerDetails" headerText="Customer Details" textAlign="Left" width="272"
@@ -331,7 +331,7 @@ export default function Grid3() {
                                     <ColumnDirective type="checkbox" isPrimaryKey={true} textAlign="Center" width="40" />
                                     <ColumnDirective field="invoiceId" headerText="Invoice ID" width="111"
                                         template={(data: any) => (
-                                            <a className="text-primary fw-medium text-decoration-none" href="javascript:void(0);">{data.invoiceId}</a>
+                                            <a className="text-primary fw-medium text-decoration-none" href="#">{data.invoiceId}</a>
                                         )}
                                     />
                                     <ColumnDirective field="customerDetails" headerText="Customer Details" textAlign="Left" width="272"

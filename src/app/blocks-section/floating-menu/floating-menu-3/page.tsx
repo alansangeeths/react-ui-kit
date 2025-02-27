@@ -78,7 +78,7 @@ export default function FloatingMenu3() {
                         <div id="target" className="w-full" style={{ height: isMobileView ? "625px" : "740px" }}>
                             <DialogComponent id={styles["floating-contact"]} className="sm:!rounded-t !rounded-none overflow-hidden !border-0" width="400px" minHeight="625px" height="625px" ref={dialogRef} open={setDialogPosition} created={() => dialogRef.current?.show()}
                                 header={() => (
-                                    <div className="flex flex-col justify-between items-center bg-indigo-100 dark:bg-cyan-800 py-12 px-6">
+                                    <div className="flex flex-col justify-between items-center bg-primary-100 dark:bg-primary-800 py-12 px-6">
                                         <span className="sf-icon-message-chat-circle text-3xl text-gray-500 dark:text-white"></span>
                                         <div className="text-center mt-3">
                                             <p className="text-xl font-semibold dark:text-gray-50">Contact Us</p>

@@ -101,7 +101,7 @@ export default function Modals8() {
                                             <DropDownListComponent className="w-full grow" placeholder="Select the number of views" created={() => { onCreated(0, 'e-grid-view'); }}></DropDownListComponent>
                                         </div>
                                     </div>
-                                    <p className="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Tracking criteria</p>
+                                    <p className="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Tracking Criteria</p>
                                     <div className="flex flex-col gap-4 sm:gap-3">
                                         <div className="flex flex-col sm:flex-row sm:items-center gap-1">
                                             <label className="flex items-center gap-1 w-44 text-sm font-medium shrink-0">Source<span className="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
@@ -149,7 +149,7 @@ export default function Modals8() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Track New Feature</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Track New Feature</ButtonComponent>
                             <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" isModal={true} showCloseIcon={true} width="515px" open={(e) => { e.preventFocus = true; }} beforeOpen={(e) => { e.maxHeight = "624px"; }}
                                 header={() => (
                                     <p className="fw-bold mb-0 text-body">Track New Feature</p>
@@ -174,7 +174,7 @@ export default function Modals8() {
                                             <DropDownListComponent className="w-100 flex-grow-1" placeholder="Select the number of views" created={() =>onCreated(0, "e-grid-view")}></DropDownListComponent>
                                         </div>
                                     </div>
-                                    <p className="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Tracking criteria</p>
+                                    <p className="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Tracking Criteria</p>
                                     <div className="row gap-3 gap-sm-2 gy-sm-1 mt-0">
                                         <div className="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
                                             <label className="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style={{ width: "175px" }}>Source<span className="e-icons e-circle-info text-secondary"></span></label>

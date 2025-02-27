@@ -67,7 +67,7 @@ export default function Modals6() {
                 return (
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
+                            <ButtonComponent className="h-fit my-5 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
                             <DialogComponent id={styles["dialog"]} key={'modal-6-tw'} ref={dialog} className="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '598px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="548px" isModal={true}
                                 header={() => (
                                     <div className="flex gap-3">

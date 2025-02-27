@@ -75,7 +75,7 @@ export default function Header6() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div className="pt-2 sm:pt-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-6-tw"} className="pt-2 sm:pt-4" style={{ minHeight: "36rem" }}>
                             <div className="px-4 sm:px-6">
                                 <div className="flex justify-between relative">
                                     <div className="pt-2 w-full">
@@ -135,16 +135,14 @@ export default function Header6() {
                                             </TabItemsDirective>
                                         </TabComponent>
                                     </div>
-                                    <div className="flex justify-between">
-                                        <div className="absolute top-0 end-0 -translate-y-1/2">
-                                            <div className="hidden lg:flex items-center gap-3 pt-2">
-                                                <ButtonComponent iconCss="e-icons e-filter" content="Filter" type="button"></ButtonComponent>
-                                                <DropDownButtonComponent iconCss="e-icons e-table" content="Columns" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
-                                            </div>
-                                            <div className="hidden sm:flex lg:hidden items-center gap-3 pt-2">
-                                                <ButtonComponent iconCss="e-icons e-filter" type="button"></ButtonComponent>
-                                                <DropDownButtonComponent iconCss="e-icons e-table" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
-                                            </div>
+                                    <div className="absolute top-0 end-0">
+                                        <div className="hidden lg:flex items-center gap-3 pt-2">
+                                            <ButtonComponent iconCss="e-icons e-filter" content="Filter" type="button"></ButtonComponent>
+                                            <DropDownButtonComponent iconCss="e-icons e-table" content="Columns" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                        </div>
+                                        <div className="hidden sm:flex lg:hidden items-center gap-3 pt-2">
+                                            <ButtonComponent iconCss="e-icons e-filter" type="button"></ButtonComponent>
+                                            <DropDownButtonComponent iconCss="e-icons e-table" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +153,7 @@ export default function Header6() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-6-bs"} className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
                             <div className="px-3 px-sm-4">
                                 <div className="d-flex justify-content-between position-relative">
                                     <div id="tab" className="w-100">

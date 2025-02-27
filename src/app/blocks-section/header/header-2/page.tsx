@@ -74,7 +74,7 @@ export default function Header2() {
                                 </div>
                                 <div className="gap-4 flex sm:hidden me-4">
                                     <ButtonComponent iconCss="e-icons e-plus" type="button"></ButtonComponent>
-                                    <ButtonComponent iconCss="e-icons e-upload-1" cssClass="e-primary" type="button"></ButtonComponent>
+                                    <ButtonComponent cssClass="e-primary" iconCss="e-icons e-upload-1" type="button"></ButtonComponent>
                                 </div>
                             </div>
                             <div className="flex justify-between items-center px-4 sm:px-6 relative">
@@ -88,7 +88,7 @@ export default function Header2() {
                                     </TabComponent>
                                 </div>
                                 <div className="relative pb-4">
-                                    <span className="e-badge e-bigger hidden sm:flex items-center justify-center absolute top-0 end-0 -translate-y-1/2" style={{ width: "95px" }}>85 documents</span>
+                                    <span className="e-badge e-bigger hidden sm:flex items-center justify-center absolute top-0 end-0" style={{ width: "95px" }}>85 documents</span>
                                 </div>
                             </div>
                         </div>

@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, SplineAreaSeries, Inject } from '@syncfusion/ej2-react-charts';
 
 export default function Statistics7() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
+    const chart = useRef<ChartComponent | null>(null);
 
     const metricsData: any[] = [
         {
@@ -80,12 +81,19 @@ export default function Statistics7() {
     ];
 
     /* SB Code - Start */
+    const refreshChart = (timeout: number) => {
+        setTimeout(() => {
+            chart.current?.refresh();
+        }, timeout);
+    };
+
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'statistics-7' && blockData.theme) {
                     setTheme(blockData.theme);
+                    refreshChart(1000);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -122,7 +130,7 @@ export default function Statistics7() {
                                                 <p className="leading-7 mt-2 text-xl font-semibold text-gray-900 dark:text-white">{data.currentValue}</p>
                                                 <p className="mt-1 text-gray-800 dark:text-gray-300">{data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37; from last month</p>
                                                 <div>
-                                                    <ChartComponent chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}style={{ display: "block" }}>
+                                                    <ChartComponent ref={chart} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}style={{ display: "block" }}>
                                                         <Inject services={[SplineAreaSeries]} />
                                                         <SeriesCollectionDirective>
                                                             <SeriesDirective dataSource={data.metricPoints} type="SplineArea" xName="x" yName="y" opacity={0.2} width={2} border={{ color: data.metricName === "Total Revenue" ? "#91BD34" : data.metricName === "Total Orders" ? "#01A8B5" : data.metricName === "Conversion Rate" ? "#FFB900" : data.metricName === "New Customers" ? "#91BD34" : "#000000", width: 2 }} fill={data.metricName === "Total Revenue" ? "#91BD34" : data.metricName === "Total Orders" ? "#01A8B5" : data.metricName === "Conversion Rate" ? "#FFB900" : data.metricName === "New Customers" ? "#91BD34" : "#000000"}></SeriesDirective>
@@ -154,7 +162,7 @@ export default function Statistics7() {
                                                     <p className="fs-5 lh-sm fw-bold text-body mb-2">{data.currentValue}</p>
                                                     <p className="text-body-secondary mb-0">{data.currentPercentage > 0 ? '+' : ''}{data.currentPercentage}&#37; from last month</p>
                                                     <div>
-                                                        <ChartComponent chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}>
+                                                        <ChartComponent ref={chart} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}>
                                                             <Inject services={[SplineAreaSeries]} />
                                                             <SeriesCollectionDirective>
                                                                 <SeriesDirective dataSource={data.metricPoints} type="SplineArea" xName="x" yName="y" opacity={0.2} width={2} border={{ color: (data.metricName === 'Total Revenue' ? '#0EAB44' : data.metricName === 'Total Orders' ? '#00EFA7' : data.metricName === 'Conversion Rate' ? '#FF9900' : data.metricName === 'New Customers' ? '#0EAB44' : '#000000'), width: 2 }} fill={data.metricName === 'Total Revenue' ? '#0EAB44' : data.metricName === 'Total Orders' ? '#00EFA7' : data.metricName === 'Conversion Rate' ? '#FF9900' : data.metricName === 'New Customers' ? '#0EAB44' : '#000000'}></SeriesDirective>

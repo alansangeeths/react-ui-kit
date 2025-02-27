@@ -19,7 +19,6 @@ export default function FilterPanel8() {
     }
 
     /* SB Code - Start */
-
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
@@ -37,6 +36,11 @@ export default function FilterPanel8() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
+        setTimeout(() => {
+            gettingStartedAccordion.current?.refresh();
+            billingAccordion.current?.refresh();
+            supportAccordion.current?.refresh();
+        }, 400);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

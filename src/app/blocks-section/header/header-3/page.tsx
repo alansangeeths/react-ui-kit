@@ -84,7 +84,7 @@ export default function Header3() {
                                 </div>
                                 <div className="flex sm:hidden gap-4">
                                     <ButtonComponent iconCss="e-icons e-search" type="button"></ButtonComponent>
-                                    <ButtonComponent className="me-4 sm:me-6" iconCss="e-icons e-filter" type="button"></ButtonComponent>
+                                    <ButtonComponent cssClass="me-4 sm:me-6" iconCss="e-icons e-filter" type="button"></ButtonComponent>
                                 </div>
                             </div>
                             <div className="flex items-center justify-between px-4 sm:px-6 relative">
@@ -127,7 +127,7 @@ export default function Header3() {
                                     </TabComponent>
                                 </div>
                                 <div className="hidden lg:flex justify-between items-center">
-                                    <div className="flex gap-3 pb-3 me-6 absolute top-0 end-0 -translate-y-1/2" style={{ width: '300px' }}>
+                                    <div className="flex gap-3 pb-3 me-6 absolute top-0 end-0" style={{ width: '300px' }}>
                                         <div className="e-input-group">
                                             <input className="e-input" type="text" placeholder="Search..." />
                                             <span className="e-input-group-icon e-icons e-search border-l-0"></span>
@@ -136,7 +136,7 @@ export default function Header3() {
                                     </div>
                                 </div>
                                 <div className="hidden sm:flex lg:hidden">
-                                    <div className="flex gap-3 pb-3 me-6 absolute top-0 end-0 -translate-y-1/2">
+                                    <div className="flex gap-3 pb-3 me-6 absolute top-0 end-0">
                                         <ButtonComponent iconCss="e-icons e-search" type="button"></ButtonComponent>
                                         <ButtonComponent iconCss="e-icons e-filter" type="button"></ButtonComponent>
                                     </div>
@@ -155,7 +155,7 @@ export default function Header3() {
                                 </div>
                                 <div className="d-flex d-sm-none gap-3">
                                     <ButtonComponent cssClass="e-outline" iconCss="e-icons e-search" type="button"></ButtonComponent>
-                                    <ButtonComponent className="me-3 me-sm-4" cssClass="e-outline" iconCss="e-icons e-filter" type="button"></ButtonComponent>
+                                    <ButtonComponent cssClass="e-outline me-3 me-sm-4" iconCss="e-icons e-filter" type="button"></ButtonComponent>
                                 </div>
                             </div>
                             <div className="d-flex align-items-center justify-content-between px-3 px-sm-4 position-relative">

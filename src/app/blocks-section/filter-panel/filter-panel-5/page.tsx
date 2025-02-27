@@ -52,7 +52,7 @@ export default function FilterPanel5() {
                 return (
                     <section className="bg-white dark:bg-gray-900">
                         <div style={{ height: "730px", width: width, float: "right" }}>
-                            <SidebarComponent ref={sidebar} className="w-full flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
+                            <SidebarComponent ref={sidebar} className="flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
                                 <div>
                                     <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
                                         <h2 className="text-base font-semibold text-gray-900 dark:text-white">Filter</h2>

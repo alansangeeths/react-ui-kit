@@ -32,15 +32,6 @@ export default function FilterPanel6() {
     }
 
     /* SB Code - Start */
-    const refreshAccordion = (timeout: number): void => {
-        setTimeout(() => {
-            industryAccordion.current?.refresh();
-            sizeAccordion.current?.refresh();
-            locationAccordion.current?.refresh();
-            typeAccordion.current?.refresh();
-        }, timeout);
-    };
-
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
@@ -58,7 +49,12 @@ export default function FilterPanel6() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        refreshAccordion(2000)
+        setTimeout(() => {
+            industryAccordion.current?.refresh();
+            sizeAccordion.current?.refresh();
+            locationAccordion.current?.refresh();
+            typeAccordion.current?.refresh();
+        }, 400);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

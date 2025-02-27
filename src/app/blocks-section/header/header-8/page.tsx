@@ -25,6 +25,9 @@ export default function Header8() {
             setMaxItems(2);
         }
         setOverflowMode(maxItems <= 2 ? BreadcrumbOverflowMode.Menu : BreadcrumbOverflowMode.None);
+        setTimeout(() => {
+            breadcrumb.current?.refresh();
+        }, 200);
     };
 
     /* SB Code - Start */

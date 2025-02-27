@@ -136,7 +136,7 @@ export default function Sidebar13() {
                                     </div>
                                 </div>
                                 <div id="toast" className="absolute bottom-0 right-0"></div>
-                                <ToastComponent ref={toast} target="#toast" position={{ X: 'Right', Y: 'Bottom' }} cssClass="e-toast-info" width={224} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast.current?.show()}></ToastComponent>
+                                <ToastComponent ref={toast} target="#toast" title="<div className='pr-2'>Adaptive Tiles Meeting</div>" position={{ X: 'Right', Y: 'Bottom' }} cssClass="e-toast-info" width={224} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast.current?.show()}></ToastComponent>
                             </SidebarComponent>
                         </div>
                         {/* SB Code - Start */}
@@ -213,7 +213,7 @@ export default function Sidebar13() {
                                             <p className={`fs-6 text-body ms-2 ps-1 mb-0 ${checkbox4 ? 'text-decoration-line-through' : ''}`}>Effortlessly resolve 70% of customer inquiries with our all-in-one platform.</p>
                                         </div>
                                         <div id="toast" className="position-absolute bottom-0 end-0"></div>
-                                        <ToastComponent ref={toast} target="#toast" position={{ X: 'Right', Y: 'Bottom' }} cssClass="e-toast-info" width={224} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast.current?.show()}></ToastComponent>
+                                        <ToastComponent ref={toast} target="#toast" title="<div>Adaptive Tiles Meeting</div>" position={{ X: 'Right', Y: 'Bottom' }} cssClass="e-toast-info" width={224} content={() => <div>There was a problem with your network connection</div>} showCloseButton={true} timeOut={0} newestOnTop={true} created={() => toast.current?.show()}></ToastComponent>
                                     </div>
                                 </div>
                             </SidebarComponent>

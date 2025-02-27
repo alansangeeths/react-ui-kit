@@ -53,7 +53,7 @@ export default function Modals2() {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === "modals-2" && blockData.theme) {
                     setTheme(blockData.theme);
-                    refreshDialog(1000);
+                    refreshDialog(200);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -142,7 +142,7 @@ export default function Modals2() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3" onClick={() => dialog.current?.show()} type="button">Create Ticket</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" onClick={() => dialog.current?.show()} type="button">Create Ticket</ButtonComponent>
                             <DialogComponent id={styles["dialogs"]} key={"modal-2-bs"} className="rounded-3 m-sm-2" ref={dialog} target="#dialog-container" isModal={true} showCloseIcon={true} width="492px" open={(event) => (event.preventFocus = true)} beforeOpen={(event) => (event.maxHeight = "790px")}
                                 header={() =>
                                     <div className="fw-bold mb-0 text-body">Create Ticket</div>

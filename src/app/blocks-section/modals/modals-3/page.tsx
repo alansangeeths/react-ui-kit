@@ -30,7 +30,7 @@ export default function Modals3() {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === "modals-3" && blockData.theme) {
                     setTheme(blockData.theme);
-                    refreshDialog(1000);
+                    refreshDialog(200);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -100,7 +100,7 @@ export default function Modals3() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: "580px" }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Personal Information</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Personal Information</ButtonComponent>
                             <DialogComponent ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" width="400px" isModal={true} showCloseIcon={true} open={(e) => { e.preventFocus = true; }}
                                 header={() => <div className="fw-bold mb-0 text-body">Personal Information</div>}
                                 footerTemplate={() => (

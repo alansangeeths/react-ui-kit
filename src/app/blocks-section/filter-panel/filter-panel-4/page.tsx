@@ -16,7 +16,7 @@ export default function FilterPanel4() {
     const requesterAccordion = useRef<AccordionComponent | null>(null);
     const ticketAccordion = useRef<AccordionComponent | null>(null);
     const assignee: string[] = ['Jane Smith - Support Engineer', 'Mark Johnson - Technical Lead ', 'Emily White - Support Specialist', 'Tom Harris - Product Expert'];
-    const tags: string[] = ['Technical Issue (type)', 'Bug (type)', 'Feature Request (type)', 'High Priority (priority)', 'Customer Impact (impact)', 'Backend (area)', 'Frontend (area)'];
+    const tags: string[] = ['Technical Issue (Type)', 'Bug (Type)', 'Feature Request (Type)', 'High Priority (Priority)', 'Customer Impact (Impact)', 'Backend (Area)', 'Frontend (Area)'];
     const status: string[] = ['Open', 'In Progress', 'Closed'];
 
     const setSidebarWidth = (): void => {

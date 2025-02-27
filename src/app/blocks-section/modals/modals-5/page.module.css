@@ -4,7 +4,7 @@
 
 #checkboxs :global(.e-checkbox.e-checkbox-left ) {
      display:flex;
-     gap: 8px;
+     gap: 4px;
 }
  
 #dialog :global(.e-dlg-header-content+.e-dlg-content) {

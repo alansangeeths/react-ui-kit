@@ -30,6 +30,9 @@ export default function Header10() {
             setMaxItems(3);
         }
         setOverflowMode(maxItems <= 3 ? BreadcrumbOverflowMode.Menu : BreadcrumbOverflowMode.None);
+        setTimeout(() => {
+            breadcrumb.current?.refresh();
+        }, 200);
     };
 
     const closeDropdown = (dropDown: DropDownButtonComponent): void => {

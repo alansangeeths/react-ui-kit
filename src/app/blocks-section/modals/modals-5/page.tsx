@@ -111,7 +111,7 @@ export default function Modals5() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: "660px" }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Manage Access</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Manage Access</ButtonComponent>
                             <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '660px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="540px" isModal={true}
                                 header={() => (
                                     <div>

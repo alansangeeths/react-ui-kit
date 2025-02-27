@@ -102,7 +102,7 @@ export default function Modals7() {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-7' && blockData.theme) {
                     setTheme(blockData.theme);
-                    refreshDialog(1000);
+                    refreshDialog(200);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -165,7 +165,7 @@ export default function Modals7() {
                                             <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={170} template={(data: any) => (
                                                 <a href="#" className="text-sm text-primary-700 dark:text-primary-500 font-medium underline">{data.invoiceNumber}</a>
                                             )}></ColumnDirective>
-                                            <ColumnDirective field="description" headerText="Description" width={180} template={(data: any) => (
+                                            <ColumnDirective field="description" headerText="Description" width={190} template={(data: any) => (
                                                 <p className="text-sm text-gray-700 dark:text-gray-200">{data.description}</p>
                                             )}></ColumnDirective>
                                         </ColumnsDirective>
@@ -179,7 +179,7 @@ export default function Modals7() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3  e-outline" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
                             <DialogComponent id={styles["dialogs"]} key={"modal-7-bs"} ref={dialog} className="rounded-3 m-sm-2 overflow-hidden" target="#dialog-container" beforeOpen={(e) => { e.maxHeight = '638px' }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="865px" isModal={true}
                                 header={() => (
                                     <p className="fw-bold text-body mb-0 lh-sm">Transaction Details</p>
@@ -210,7 +210,7 @@ export default function Modals7() {
                                             <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={186} template={(data: any) => (
                                                 <a className="small text-primary fw-medium text-decoration-underline" href="#">{data.invoiceNumber}</a>
                                             )}></ColumnDirective>
-                                            <ColumnDirective field="description" headerText="Description" width={190} template={(data: any) => (
+                                            <ColumnDirective field="description" headerText="Description" width={200} template={(data: any) => (
                                                 <p className="text-body mb-0">{data.description}</p>
                                             )}></ColumnDirective>
                                         </ColumnsDirective>

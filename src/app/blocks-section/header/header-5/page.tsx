@@ -65,7 +65,7 @@ export default function Header5() {
                         <div style={{ minHeight: "36rem" }}>
                             <div className="mx-4 sm:mx-6 py-2 sm:py-0 border-b sm:border-b-0 border-gray-200 dark:border-gray-600">
                                 <div className="flex items-center">
-                                    <div className="flex items-center flex-shrink-0 py-0 sm:py-2 pe-4 sm:pb-0 border-b-0 sm:border-b border-gray-200 dark:border-gray-600">
+                                    <div className="flex items-center flex-shrink-0 py-0 sm:py-2 pe-4 border-b-0 sm:border-b border-gray-200 dark:border-gray-600">
                                         <span className="e-avatar e-avatar-circle e-avatar-small flex-shrink-0 text-gray-700 dark:text-white">DM</span>
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white ml-3 hidden sm:block">David Miller</h3>
                                     </div>
@@ -78,7 +78,7 @@ export default function Header5() {
                                         </TabComponent>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 py-2.5 sm:py-2 absolute top-0 end-0 -translate-y-1/2 me-6">
+                                <div className="flex items-center gap-3 py-2.5 sm:py-2 absolute top-0 end-0 me-6">
                                     <DropDownButtonComponent cssClass="e-outline hidden lg:block" iconCss="e-icons e-video !text-base" content="Meeting" type="button" beforeOpen={(e) => (e.cancel = true)}></DropDownButtonComponent>
                                     <DropDownButtonComponent cssClass="e-outline block lg:hidden" iconCss="e-icons e-video !text-base" type="button" beforeOpen={(e) => (e.cancel = true)}></DropDownButtonComponent>
                                     <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>

@@ -122,7 +122,7 @@ export default function FilterPanel3() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div style={{ height: "810px", width: width, float: "right" }}>
+                        <div style={{ height: "824px", width: width, float: "right" }}>
                             <SidebarComponent ref={sidebar} className="d-flex flex-column bg-body" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true}>
                                 <div>
                                     <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
@@ -164,7 +164,7 @@ export default function FilterPanel3() {
                                                 <label className="fs-6 mb-1 fw-medium text-body">Status</label>
                                                 <DropDownListComponent dataSource={status} placeholder="Open"></DropDownListComponent>
                                             </div>
-                                            <div className="col-12 pb-2">
+                                            <div className="col-12 pb-4">
                                                 <label className="fs-6 mb-1 fw-medium text-body">Response Due</label>
                                                 <DatePickerComponent cssClass="shadow-none" placeholder="Pick a due date"></DatePickerComponent>
                                             </div>

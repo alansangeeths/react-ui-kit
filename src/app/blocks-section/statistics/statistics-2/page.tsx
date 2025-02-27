@@ -49,7 +49,7 @@ export default function Statistics2() {
     ];
 
     const isLastRowAndColumn = (index: number, length: number): any => {
-        const columnCount = width < 640 ? 1 : width < 1024 ? 3 : 5;
+        const columnCount = width < 576 ? 1 : width < 1024 ? 3 : 5;
         return {
             isLastRow: Math.floor(index / columnCount) === Math.ceil(length / columnCount) - 1,
             isLastColumn: (index + 1) % columnCount === 0
@@ -138,7 +138,7 @@ export default function Statistics2() {
                                     {metricsData.map((data, index) => {
                                         const { isLastRow, isLastColumn } = isLastRowAndColumn(index, metricsData.length);
                                         return (
-                                            <div key={index} className={`col-12 col-sm-4 col-lg-auto flex-lg-grow-1 ${!isLastRow ? 'border-bottom' : ''} ${!isLastColumn ? 'border-end d-sm-none d-md-block' : ''}`}>
+                                            <div key={index} className={`col-12 col-sm-4 col-lg-auto flex-lg-grow-1 ${!isLastRow ? 'border-bottom' : ''} ${!isLastColumn ? 'border-end' : ''}`}>
                                                 <div className="p-4">
                                                     <div className="e-card-stacked">
                                                         <div className="e-card-header d-flex align-items-center justify-content-start pt-0 pb-2 px-0 gap-1">

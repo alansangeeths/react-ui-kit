@@ -54,7 +54,7 @@ export default function Modals4() {
             /* SB Code - Start */
             window.removeEventListener('message', handleMessageEvent);
             /* SB Code - End */
-        window.removeEventListener("resize", checkWindowSize);
+            window.removeEventListener("resize", checkWindowSize);
         }
     }, []);
 
@@ -95,7 +95,7 @@ export default function Modals4() {
                                             <AccordionItemsDirective>
                                                 <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={activeStep === 0}
                                                     header={() =>
-                                                        <div className="flex gap-2.5 items-center">
+                                                        <div className="flex gap-2.5 items-center mr-4">
                                                             <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-users text-xl"></i></span>
                                                             <div className="flex flex-col gap-0.5">
                                                                 <p className="text-base">User Information</p>
@@ -130,7 +130,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={activeStep === 1}
                                                     header={() =>
-                                                        <div className="flex gap-2.5 items-center">
+                                                        <div className="flex gap-2.5 items-center mr-4">
                                                             <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-building-03 text-xl"></i></span>
                                                             <div className="flex flex-col gap-0.5">
                                                                 <p className="text-base">Workspace Access</p>
@@ -142,7 +142,7 @@ export default function Modals4() {
                                                         <div className="grid grid-cols-1 gap-3 p-1 pt-3">
                                                             <div className="flex flex-col gap-1">
                                                                 <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                    Work Space <span className="text-red-600 font-normal dark:text-red-400">*</span>
+                                                                Workspace <span className="text-red-600 font-normal dark:text-red-400">*</span>
                                                                 </label>
                                                                 <DropDownListComponent placeholder="Select a workspace"></DropDownListComponent>
                                                             </div>
@@ -157,7 +157,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={stepper.current?.activeStep === 2}
                                                     header={() =>
-                                                        <div className="flex gap-2.5 items-center">
+                                                        <div className="flex gap-2.5 items-center mr-4">
                                                             <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-shield text-xl"></i></span>
                                                             <div className="flex flex-col gap-0.5">
                                                                 <p className="text-base">Security Settings</p>
@@ -186,7 +186,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={stepper.current?.activeStep === 3}
                                                     header={() =>
-                                                        <div className="flex gap-2.5 items-center">
+                                                        <div className="flex gap-2.5 items-center mr-4">
                                                             <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-laptop-01 text-xl"></i></span>
                                                             <div className="flex flex-col gap-0.5">
                                                                 <p className="text-base">Resource Access</p>
@@ -270,7 +270,7 @@ export default function Modals4() {
                                 )}
                                 footerTemplate={() => (
                                     <div className="d-flex justify-content-end gap-2 py-1">
-                                        <ButtonComponent className="flex-grow-1 flex-sm-grow-0 ms-0" type="button">Cancel</ButtonComponent>
+                                        <ButtonComponent className="flex-grow-1 flex-sm-grow-0 ms-0 e-outline" type="button">Cancel</ButtonComponent>
                                         <ButtonComponent cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button">Add Member</ButtonComponent>
                                     </div>
                                 )}
@@ -291,7 +291,7 @@ export default function Modals4() {
                                             <AccordionItemsDirective>
                                                 <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 0} 
                                                     header={() =>
-                                                        <div className="d-flex gap-2 align-items-center">
+                                                        <div className="d-flex gap-2 align-items-center me-3">
                                                             <span className="e-avatar e-avatar rounded-3 border bg-body-secondary"><i className="e-icons sf-icon-users fs-4"></i></span>
                                                             <div className="d-flex flex-column ms-1">
                                                                 <p className="fs-6 fw-medium mb-0">User Information</p>
@@ -320,7 +320,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 1}
                                                     header={() =>
-                                                        <div className="d-flex gap-2 align-items-center">
+                                                        <div className="d-flex gap-2 align-items-center me-3">
                                                             <span className="e-avatar e-avatar rounded-3 border bg-body-secondary"><i className="e-icons sf-icon-building-03 fs-4"></i></span>
                                                             <div className="d-flex flex-column ms-1">
                                                                 <p className="fs-6 fw-medium mb-0">Workspace Access</p>
@@ -331,7 +331,7 @@ export default function Modals4() {
                                                     content={() =>
                                                         <div className="d-flex flex-column gap-2 p-1 mt-1 small text-body-secondary">
                                                             <div className="d-flex flex-column gap-1 mt-1">
-                                                                <label>Work Space <span className="text-danger">*</span></label>
+                                                                <label>Workspace <span className="text-danger">*</span></label>
                                                                 <DropDownListComponent placeholder="Select a workspace"></DropDownListComponent>
                                                             </div>
                                                             <div className="d-flex flex-column gap-1 mt-1">
@@ -343,7 +343,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 2}
                                                     header={() => (
-                                                        <div className="d-flex gap-2 align-items-center">
+                                                        <div className="d-flex gap-2 align-items-center me-3">
                                                             <span className="e-avatar e-avatar rounded-3 border bg-body-secondary">
                                                                 <i className="e-icons sf-icon-shield fs-4"></i>
                                                             </span>
@@ -374,7 +374,7 @@ export default function Modals4() {
                                                 ></AccordionItemDirective>
                                                 <AccordionItemDirective cssClass="border rounded-3 overflow-hidden" expanded={activeStep === 3}
                                                     header={() => (
-                                                        <div className="d-flex gap-2 align-items-center">
+                                                        <div className="d-flex gap-2 align-items-center me-3">
                                                             <span className="e-avatar e-avatar rounded-3 border bg-body-secondary">
                                                                 <i className="e-icons sf-icon-laptop-01 fs-4"></i>
                                                             </span>

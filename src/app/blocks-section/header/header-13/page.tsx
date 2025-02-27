@@ -98,7 +98,7 @@ export default function Header13() {
                                 </span>
                                 <DropDownButtonComponent ref={periodDropdown} content="Period: Custom" items={[{ text: 'Today' }, { text: 'Yesterday' }, { text: 'Last 7 Days' }, { text: 'Last 30 Days' }, { text: 'This Month' }, { text: 'Last Month' }, { text: 'Custom Range...' }]} type="button" ></DropDownButtonComponent>
                                 <span className="w-64">
-                                    <DateRangePickerComponent className="w-fill grow" placeholder="MM/DD/YYYY - MM/DD/YYYY"></DateRangePickerComponent>
+                                    <DateRangePickerComponent placeholder="MM/DD/YYYY - MM/DD/YYYY"></DateRangePickerComponent>
                                 </span>
                                 <DropDownButtonComponent ref={productDropdown} content="Product: All" items={[{ text: 'All Products' }, { text: 'Product A' }, { text: 'Product B' }, { text: 'Product C' }, { text: 'Product D' }, { text: 'Custom Selection...' }]} type="button"></DropDownButtonComponent>
                                 <DropDownButtonComponent ref={regionDropdown} content="Region: All" items={[{ text: 'All Regions' }, { text: 'North America' }, { text: 'Europe' }, { text: 'Asia-Pacific' }, { text: 'South America' }, { text: 'Middle East & Africa' }, { text: 'Custom Region...' }]} type="button"></DropDownButtonComponent>

@@ -138,7 +138,7 @@ export default function Modals6() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
                             <DialogComponent className="rounded-3 m-sm-2" key={'modal-6-bs'} ref={dialog} target="#dialog-container" isModal={true} showCloseIcon={true} width="548px" open={(event) => (event.preventFocus = true)} beforeOpen={(event) => (event.maxHeight = "598px")}
                                 header={() =>
                                     <div className="d-flex gap-2">

@@ -74,7 +74,7 @@ export default function Sidebar5() {
                                         <ListViewComponent className="border-0" dataSource={data} template={(data: any) => (
                                             <div className="e-list-wrapper flex items-center justify-between pr-2">
                                                 <div className="text-base leading-6 flex items-center">
-                                                    <span className={`e-icons ${data.fontIcon}`}></span>
+                                                    <span className={`e-icons text-base ${data.fontIcon}`}></span>
                                                     <span className="font-normal pl-4">{data.field}</span>
                                                 </div>
                                                 {data.field === 'Notifications' && (
@@ -117,7 +117,7 @@ export default function Sidebar5() {
                                     <ListViewComponent className="border-0 e-bigger" dataSource={data} template={(data: any) => (
                                         <div className="e-list-wrapper px-1 d-flex justify-content-between align-items-center">
                                             <div className="fs-6 lh-base">
-                                                <span className={`e-icons ${data.fontIcon}`}></span>
+                                                <span className={`e-icons fs-6 ${data.fontIcon}`}></span>
                                                 <span className="fw-normal ps-2 ms-1">{data.field}</span>
                                             </div>
                                             {data.field === 'Notifications' && (

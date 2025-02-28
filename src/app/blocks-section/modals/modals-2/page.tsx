@@ -43,7 +43,9 @@ export default function Modals2() {
     const refreshDialog = (timeout: number) => {
         setTimeout(() => {
             dialog.current?.show(window.innerWidth <= 640);
-            rte.current?.refresh();
+            setTimeout(()=>{
+                rte.current?.refresh();
+            }, 200);
         }, timeout);
     };
 

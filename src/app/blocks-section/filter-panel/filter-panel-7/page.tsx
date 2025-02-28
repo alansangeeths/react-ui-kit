@@ -150,9 +150,9 @@ export default function FilterPanel7() {
                                     <div className="p-3 border-bottom">
                                         <ChipListComponent id="chip-filter" selection="Multiple" click={updateSelectedChips}>
                                             <ChipsDirective>
-                                                <ChipDirective cssClass="e-primary rounded-pill" text="Remote"></ChipDirective>
-                                                <ChipDirective cssClass="e-primary rounded-pill" text="Immediate start"></ChipDirective>
-                                                <ChipDirective cssClass="e-primary rounded-pill" text="Full-Time"></ChipDirective>
+                                                <ChipDirective cssClass="e-active e-primary rounded-pill" text="Remote"></ChipDirective>
+                                                <ChipDirective cssClass="e-active e-primary rounded-pill" text="Immediate start"></ChipDirective>
+                                                <ChipDirective cssClass="e-active e-primary rounded-pill" text="Full-Time"></ChipDirective>
                                             </ChipsDirective>
                                         </ChipListComponent>
                                     </div>
@@ -160,8 +160,8 @@ export default function FilterPanel7() {
                                         <p className="fw-medium text-body fs-6">Required Skills</p>
                                         <ChipListComponent id="chip-filter" selection="Multiple" click={updateSelectedChips}>
                                             <ChipsDirective>
-                                                <ChipDirective cssClass="e-primary rounded" text="React"></ChipDirective>
-                                                <ChipDirective cssClass="e-primary rounded" text="TypeScript"></ChipDirective>
+                                                <ChipDirective cssClass="e-active e-primary rounded" text="React"></ChipDirective>
+                                                <ChipDirective cssClass="e-active e-primary rounded" text="TypeScript"></ChipDirective>
                                                 <ChipDirective cssClass="rounded" text="Node.js"></ChipDirective>
                                                 <ChipDirective cssClass="rounded" text="Python"></ChipDirective>
                                                 <ChipDirective cssClass="rounded" text="AWS" ></ChipDirective>

@@ -138,7 +138,7 @@ export default function FilterPanel5() {
                                         <div className="my-3">
                                             <label className="text-body fs-6 fw-medium">User Ratings</label>
                                             <div className="px-2">
-                                                <SliderComponent type="Range" value={[0, 4.5]} tooltip={tooltipInfo} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5, format: 'c0' }} style={{ width: "100%" }}></SliderComponent>
+                                                <SliderComponent type="Range" value={[0, 4.5]} tooltip={tooltipInfo} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5, format: 'c0' }} style={{ width:'256px', left:'5px' }}></SliderComponent>
                                             </div>
                                         </div>
                                     </div>

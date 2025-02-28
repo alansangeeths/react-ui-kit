@@ -57,7 +57,7 @@ export default function FilterPanel8() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-900">
-                        <div style={{ height: "1425px", width: width, float: "right" }}>
+                        <div style={{ height: "1450px", width: width, float: "right" }}>
                             <SidebarComponent ref={sidebar} className="flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
                                 <div>
                                     <div className="flex justify-between items-center p-4">
@@ -156,7 +156,7 @@ export default function FilterPanel8() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body" key={"filter-8-bs"}>
-                        <div style={{ height: "1425px", width: width, float: "right" }}>
+                        <div style={{ height: "1450px", width: width, float: "right" }}>
                             <SidebarComponent ref={sidebar} className="d-flex flex-column bg-body" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
                                 <div>
                                     <div className="d-flex justify-content-between align-items-center p-3">

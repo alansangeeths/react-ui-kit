@@ -22,7 +22,7 @@ export default function FilterPanel6() {
         if (container && !container.querySelector('.e-search')) {
             const searchIcon = document.createElement('span');
             searchIcon.className = 'e-icons e-search';
-            searchIcon.style.cssText = 'display: flex; align-items: center; margin: 0 10px;';
+            searchIcon.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
             container.insertAdjacentElement('afterbegin', searchIcon);
         }
     };
@@ -71,7 +71,7 @@ export default function FilterPanel6() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-900">
-                        <div style={{ height: "955px", width: width, float: "right" }}>
+                        <div style={{ height: "985px", width: width, float: "right" }}>
                             <SidebarComponent ref={sidebar} className="flex flex-col bg-white dark:bg-gray-800" width={width} isOpen={true} position="Right" type="Push" showBackdrop={true} closeOnDocumentClick={false} style={{ display: "block" }}>
                                 <div>
                                     <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
@@ -168,7 +168,7 @@ export default function FilterPanel6() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body" key={"filter-6-bs"}>
-                        <div style={{ height: "970px", width: width, float: "right" }}>
+                        <div style={{ height: "990px", width: width, float: "right" }}>
                             <SidebarComponent ref={sidebar} className="d-flex flex-column bg-body" width={width} isOpen={true} position="Right" type="Push" showBackdrop={true} closeOnDocumentClick={false} style={{ display: "block" }}>
                                 <div>
                                     <div className="d-flex justify-content-between align-items-center p-3 border-bottom">

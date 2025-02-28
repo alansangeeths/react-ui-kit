@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { DialogComponent } from '@syncfusion/ej2-react-popups';
-import { GridComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective, Inject, Sort, Filter } from '@syncfusion/ej2-react-grids';
 import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 import styles from './page.module.css';
@@ -133,7 +133,7 @@ export default function Modals7() {
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
                             <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
-                            <DialogComponent id={styles["dialogs"]} ref={dialog} key={"modal-7-tw"} className="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '624px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="835px" isModal={true}
+                            <DialogComponent id={styles["dialogs"]} ref={dialog} key={"modal-7-tw"} className="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '624px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="835px" isModal={true}
                                 header={() => (
                                     <p className="font-semibold leading-normal">Transaction Details</p>
                                 )}
@@ -146,12 +146,12 @@ export default function Modals7() {
                                             <DropDownButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>
                                     </div>
-                                    <GridComponent cssClass="e-bigger mb-1.5" dataSource={data} width="100%" allowSorting={true} allowFiltering={true}filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
+                                    <GridComponent cssClass="e-bigger mb-1.5" dataSource={data} width="100%" allowSorting={true} allowFiltering={true} filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
                                         <ColumnsDirective>
                                             <ColumnDirective field="transactionId" headerText="Transaction ID" width={165} template={(data: any) => (
                                                 <p className="text-sm text-gray-700 dark:text-gray-200">{data.transactionId}</p>
                                             )}></ColumnDirective>
-                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} template={(data: any) => (
+                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} allowFiltering={false} template={(data: any) => (
                                                 <div className="flex gap-2 items-center py-1.5">
                                                     <div className="w-8 h-8">
                                                         <span className="e-avatar e-avatar-circle e-avatar-small" style={{ backgroundImage: `url("/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.customerDetails.avatar}")` }}></span>
@@ -169,6 +169,7 @@ export default function Modals7() {
                                                 <p className="text-sm text-gray-700 dark:text-gray-200">{data.description}</p>
                                             )}></ColumnDirective>
                                         </ColumnsDirective>
+                                        <Inject services={[Sort, Filter]} />
                                     </GridComponent>
                                 </div>
                             </DialogComponent>
@@ -179,7 +180,7 @@ export default function Modals7() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3  e-outline" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
                             <DialogComponent id={styles["dialogs"]} key={"modal-7-bs"} ref={dialog} className="rounded-3 m-sm-2 overflow-hidden" target="#dialog-container" beforeOpen={(e) => { e.maxHeight = '638px' }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="865px" isModal={true}
                                 header={() => (
                                     <p className="fw-bold text-body mb-0 lh-sm">Transaction Details</p>
@@ -198,7 +199,7 @@ export default function Modals7() {
                                             <ColumnDirective field="transactionId" headerText="Transaction ID" width={168} template={(data: any) => (
                                                 <p className="text-body mb-0">{data.transactionId}</p>
                                             )}></ColumnDirective>
-                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} template={(data: any) => (
+                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} allowFiltering={false} template={(data: any) => (
                                                 <div className="d-flex gap-2 align-items-center py-1">
                                                     <span className="e-avatar e-avatar-circle e-avatar-small flex-shrink-0" style={{ backgroundImage: `url("/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.customerDetails.avatar}")` }}></span>
                                                     <div className="small ms-1 lh-base">
@@ -214,6 +215,7 @@ export default function Modals7() {
                                                 <p className="text-body mb-0">{data.description}</p>
                                             )}></ColumnDirective>
                                         </ColumnsDirective>
+                                        <Inject services={[Sort, Filter]} />
                                     </GridComponent>
                                 </div>
                             </DialogComponent>

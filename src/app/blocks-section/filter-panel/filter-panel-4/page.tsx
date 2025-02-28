@@ -23,14 +23,7 @@ export default function FilterPanel4() {
         setWidth(window.innerWidth < 400 ? '100%' : '320px')
     }
 
-    /* SB Code - Start */
-    const refreshAccordion = (timeout: number): void => {
-        setTimeout(() => {
-            requesterAccordion.current?.refresh();
-            ticketAccordion.current?.refresh();
-        }, timeout);
-    }
-    
+    /* SB Code - Start */    
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
@@ -48,7 +41,10 @@ export default function FilterPanel4() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        refreshAccordion(3000)
+        setTimeout(() => {
+            requesterAccordion.current?.refresh();
+            ticketAccordion.current?.refresh();
+        }, 400);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 
@@ -91,7 +87,7 @@ export default function FilterPanel4() {
                                         </TabComponent>
                                     </div>
                                     <div className="w-1/5 px-1 border-l border-gray-200 dark:border-gray-600 flex justify-center items-center">
-                                        <a className="e-icons e-chevron-right-double text-xl text-gray-500 dark:text-white cursor-pointer"></a>
+                                        <a href="#" className="e-icons e-chevron-right-double text-xl text-gray-500 dark:text-white cursor-pointer"></a>
                                     </div>
                                 </div>
                                 <AccordionComponent ref={requesterAccordion} className="border-0 border-b bg-transparent" expandMode="Multiple">
@@ -105,7 +101,7 @@ export default function FilterPanel4() {
                                                 <span className="e-avatar e-avatar-medium e-avatar-circle bg-primary-600 dark:bg-primary-400 text-sm text-white dark:text-black">MG</span>
                                                 <div>
                                                     <h2 className="text-sm font-medium text-gray-900 dark:text-white">Michael Green</h2>
-                                                    <a className="text-xs font-normal text-gray-500 dark:text-gray-400" href="mailto:michael.green@example.com">michael.green@gmail.com</a>
+                                                    <a href="#" className="text-xs font-normal text-gray-500 dark:text-gray-400">michael.green@gmail.com</a>
                                                 </div>
                                             </div>
                                         )}>
@@ -183,7 +179,7 @@ export default function FilterPanel4() {
                                         </TabComponent>
                                     </div>
                                     <div className="w-10 px-2 border-bottom border-subtle d-flex justify-content-center align-items-center">
-                                        <a className="e-icons e-chevron-right-double fs-6 text-decoration-none text-secondary" href="#" ></a>
+                                        <a href="#" className="e-icons e-chevron-right-double fs-6 text-decoration-none text-secondary" ></a>
                                     </div>
                                 </div>
                                 <div>
@@ -197,8 +193,8 @@ export default function FilterPanel4() {
                                                     <div className="d-flex align-items-center gap-2">
                                                         <span className="e-avatar e-avatar-medium e-avatar-circle bg-primary text-white">MG</span>
                                                         <div>
-                                                            <h2 className="fs-6 fw-medium text-body">Michael Green</h2>
-                                                            <a className="fs-6 fw-normal text-secondary" href="mailto:michael.green@example.com">michael.green@gmail.com</a>
+                                                            <h2 className="fs-6 mb-1 fw-medium text-body">Michael Green</h2>
+                                                            <a href="#" className="fs-6 fw-normal text-secondary">michael.green@gmail.com</a>
                                                         </div>
                                                     </div>
                                                 )}>

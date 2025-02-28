@@ -260,7 +260,7 @@ export default function Modals4() {
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: "600px" }}>
-                            <ButtonComponent className="mx-auto my-3" type="button" onClick={() => dialog.current?.show()}>Add Team Member</ButtonComponent>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Team Member</ButtonComponent>
                             <DialogComponent id={styles["dialogs"]} className="rounded-3 m-sm-2" ref={dialog} isModal={true} showCloseIcon={true} width="545px" target="#dialog-container" open={(e) => { e.preventFocus = true; }}
                                 header={() => (
                                     <div>

@@ -63,7 +63,7 @@ export default function Header4() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        window.addEventListener('resize',updateTabItems);
+        window.addEventListener('resize', updateTabItems);
         tab.current?.refresh();
         tab.current?.refreshActiveTabBorder();
         
@@ -86,7 +86,9 @@ export default function Header4() {
                                 </div>
                                 <div className="flex gap-3">
                                     <ButtonComponent cssClass="block sm:hidden sm:me-6" iconCss="e-icons e-filter" type="button"></ButtonComponent>
-                                    <DropDownButtonComponent id={styles.dropdown} cssClass="block sm:hidden me-4" iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                    <span className="block sm:hidden me-4">
+                                        <DropDownButtonComponent id={styles.dropdown} iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                    </span>
                                 </div>
                             </div>
                             <div className="flex items-center justify-between px-4 sm:px-6">
@@ -102,7 +104,7 @@ export default function Header4() {
                                                 <div className="hidden sm:flex py-3 items-center gap-2">
                                                     <ButtonComponent className="mr-2" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
                                                     <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>
-                                                    <ChipListComponent cssClass="e-outline !rounded-2xl flex flex-wrap gap-2" enableDelete>
+                                                    <ChipListComponent cssClass="e-outline !rounded-2xl" enableDelete>
                                                         <ChipsDirective>
                                                             <ChipDirective text="Status: Active"></ChipDirective>
                                                             <ChipDirective text="Priority: High"></ChipDirective>
@@ -121,7 +123,7 @@ export default function Header4() {
                                                 <div className="hidden sm:flex py-3 items-center gap-2">
                                                     <ButtonComponent cssClass="mr-3" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
                                                     <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>
-                                                    <ChipListComponent cssClass="e-outline !rounded-2xl flex flex-wrap gap-2" enableDelete>
+                                                    <ChipListComponent cssClass="e-outline !rounded-2xl" enableDelete>
                                                         <ChipsDirective>
                                                             <ChipDirective text="Status: Active"></ChipDirective>
                                                             <ChipDirective text="Priority: High"></ChipDirective>
@@ -158,7 +160,9 @@ export default function Header4() {
                                 </div>
                                 <div className="d-flex gap-3">
                                     <ButtonComponent cssClass="e-outline d-block d-sm-none me-sm-4" iconCss="e-icons e-filter" type="button"></ButtonComponent>
-                                    <DropDownButtonComponent id={styles.dropdown} cssClass="e-outline d-block d-sm-none me-3" iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                    <span className="d-block d-sm-none me-3">
+                                        <DropDownButtonComponent id={styles.dropdown} cssClass="e-outline" iconCss="e-icons e-more-vertical-1" beforeOpen={(e) => (e.cancel = true)} type="button"></DropDownButtonComponent>
+                                    </span>
                                 </div>
                             </div>
                             <div className="d-flex align-items-center justify-content-between px-3 px-sm-4">
@@ -174,7 +178,7 @@ export default function Header4() {
                                                 <div className="d-none d-sm-flex py-3 align-items-center gap-2">
                                                     <ButtonComponent cssClass="e-outline me-1" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
                                                     <div className="border-start" style={{ height: "16px" }}></div>
-                                                    <ChipListComponent cssClass="e-outline rounded-pill py-2 d-flex flex-wrap gap-2" enableDelete>
+                                                    <ChipListComponent cssClass="e-outline rounded-pill" enableDelete>
                                                         <ChipsDirective>
                                                             <ChipDirective text="Status: Active"></ChipDirective>
                                                             <ChipDirective text="Priority: High"></ChipDirective>
@@ -193,7 +197,7 @@ export default function Header4() {
                                                 <div className="d-none d-sm-flex py-3 align-items-center gap-2">
                                                     <ButtonComponent cssClass="e-outline me-1" iconCss="e-icons e-filter" content="Add filters" type="button"></ButtonComponent>
                                                     <div className="border-start" style={{ height: "16px" }}></div>
-                                                    <ChipListComponent cssClass="e-outline rounded-pill py-2 d-flex flex-wrap gap-2" enableDelete>
+                                                    <ChipListComponent cssClass="e-outline rounded-pill" enableDelete>
                                                         <ChipsDirective>
                                                             <ChipDirective text="Status: Active"></ChipDirective>
                                                             <ChipDirective text="Priority: High"></ChipDirective>

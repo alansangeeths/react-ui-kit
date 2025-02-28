@@ -106,9 +106,9 @@
   --tw-contain-style:  ;
 }
 
-/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/
-
 /*
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -144,7 +144,7 @@ html,
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family:
+  font-family: 
     Inter, 
     ui-sans-serif,
     system-ui,
@@ -433,7 +433,6 @@ menu {
 /*
 Reset default styling for dialogs.
 */
-
 dialog {
   padding: 0;
 }
@@ -474,7 +473,6 @@ button,
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
-
 :disabled {
   cursor: default;
 }
@@ -508,7 +506,6 @@ video {
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
-
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
@@ -853,9 +850,6 @@ video {
 }
 .ml-auto {
   margin-left: auto;
-}
-.mr-0 {
-  margin-right: 0px;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -1218,10 +1212,6 @@ video {
 }
 .grow {
   flex-grow: 1;
-}
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .cursor-pointer {
   cursor: pointer;
@@ -1705,10 +1695,6 @@ video {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity, 1));
-}
-.bg-indigo-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity, 1));
 }
 .bg-orange-100 {
   --tw-bg-opacity: 1;
@@ -2471,17 +2457,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
 }
-.dark\:\!bg-cyan-800:is(.dark *) {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(21 94 117 / var(--tw-bg-opacity, 1)) !important;
-}
 .dark\:\!bg-cyan-900:is(.dark *) {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(22 78 99 / var(--tw-bg-opacity, 1)) !important;
-}
-.dark\:bg-cyan-400:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity, 1));
 }
 .dark\:bg-cyan-800:is(.dark *) {
   --tw-bg-opacity: 1;
@@ -2547,10 +2525,6 @@ video {
   --tw-text-opacity: 1 !important;
   color: rgb(103 232 249 / var(--tw-text-opacity, 1)) !important;
 }
-.dark\:\!text-cyan-400:is(.dark *) {
-  --tw-text-opacity: 1 !important;
-  color: rgb(34 211 238 / var(--tw-text-opacity, 1)) !important;
-}
 .dark\:\!text-cyan-600:is(.dark *) {
   --tw-text-opacity: 1 !important;
   color: rgb(8 145 178 / var(--tw-text-opacity, 1)) !important;
@@ -2566,6 +2540,10 @@ video {
 .dark\:\!text-green-500:is(.dark *) {
   --tw-text-opacity: 1 !important;
   color: rgb(34 197 94 / var(--tw-text-opacity, 1)) !important;
+}
+.dark\:\!text-indigo-400:is(.dark *) {
+  --tw-text-opacity: 1 !important;
+  color: rgb(129 140 248 / var(--tw-text-opacity, 1)) !important;
 }
 .dark\:\!text-orange-500:is(.dark *) {
   --tw-text-opacity: 1 !important;
@@ -2586,10 +2564,6 @@ video {
 .dark\:text-cyan-300:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(103 232 249 / var(--tw-text-opacity, 1));
-}
-.dark\:text-cyan-400:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(34 211 238 / var(--tw-text-opacity, 1));
 }
 .dark\:text-cyan-50:is(.dark *) {
   --tw-text-opacity: 1;
@@ -2713,6 +2687,10 @@ video {
   .sm\:mx-6 {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .sm\:\!ml-auto {
+    margin-left: auto !important;
   }
 
   .sm\:mb-2 {
@@ -2977,10 +2955,6 @@ video {
     justify-content: space-between !important;
   }
 
-  .sm\:\!gap-28 {
-    gap: 7rem !important;
-  }
-
   .sm\:gap-0 {
     gap: 0px;
   }
@@ -3150,10 +3124,6 @@ video {
   .sm\:py-7 {
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
-  }
-
-  .sm\:pb-0 {
-    padding-bottom: 0px;
   }
 
   .sm\:pb-2 {
@@ -3343,12 +3313,24 @@ video {
     flex-direction: row;
   }
 
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:items-center {
     align-items: center;
   }
 
   .md\:gap-0 {
     gap: 0px;
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:gap-6 {
@@ -3602,14 +3584,6 @@ video {
     flex-direction: row;
   }
 
-  .lg\:\!flex-col {
-    flex-direction: column !important;
-  }
-
-  .lg\:flex-col-reverse {
-    flex-direction: column-reverse;
-  }
-
   .lg\:items-start {
     align-items: flex-start;
   }
@@ -3626,12 +3600,12 @@ video {
     gap: 0px;
   }
 
-  .lg\:gap-1 {
-    gap: 0.25rem;
-  }
-
   .lg\:gap-10 {
     gap: 2.5rem;
+  }
+
+  .lg\:gap-2 {
+    gap: 0.5rem;
   }
 
   .lg\:gap-3 {
@@ -3677,11 +3651,6 @@ video {
   .lg\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .lg\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
   }
 
   .lg\:py-8 {
@@ -3754,20 +3723,8 @@ video {
     margin-bottom: 2rem;
   }
 
-  .xl\:ml-2 {
-    margin-left: 0.5rem;
-  }
-
-  .xl\:mr-2 {
-    margin-right: 0.5rem;
-  }
-
   .xl\:mt-0 {
     margin-top: 0px;
-  }
-
-  .xl\:mt-1 {
-    margin-top: 0.25rem;
   }
 
   .xl\:block {
@@ -3776,10 +3733,6 @@ video {
 
   .xl\:inline-block {
     display: inline-block;
-  }
-
-  .xl\:flex {
-    display: flex;
   }
 
   .xl\:w-1\/2 {
@@ -3826,20 +3779,12 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .xl\:\!flex-row {
-    flex-direction: row !important;
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:items-center {
-    align-items: center;
-  }
-
-  .xl\:justify-between {
-    justify-content: space-between;
   }
 
   .xl\:gap-0 {
@@ -3870,11 +3815,6 @@ video {
   .xl\:px-11 {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
-  }
-
-  .xl\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
   }
 
   .xl\:py-6 {

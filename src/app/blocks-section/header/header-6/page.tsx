@@ -108,7 +108,7 @@ export default function Header6() {
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
-                                                            <ChipListComponent id="chip-filter" className="!rounded-2xl">
+                                                            <ChipListComponent>
                                                                 <ChipsDirective>
                                                                     <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Review Today"}></ChipDirective>
                                                                     <ChipDirective cssClass={"e-outline !rounded-2xl"} text={"Expired"}></ChipDirective>
@@ -186,7 +186,7 @@ export default function Header6() {
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-start me-2" style={{ height: "20px" }}></div>
-                                                            <ChipListComponent id="chip-filter" className="rounded-pill">
+                                                            <ChipListComponent>
                                                                 <ChipsDirective>
                                                                     <ChipDirective cssClass="e-outline rounded-pill" text="Review Today"></ChipDirective>
                                                                     <ChipDirective cssClass="e-outline rounded-pill" text="Expired"></ChipDirective>

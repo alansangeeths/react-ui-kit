@@ -3,21 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 import { OverflowMode, TabComponent, TabItemDirective, TabItemsDirective } from "@syncfusion/ej2-react-navigations";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import styles from "./page.module.css";
 
 export default function Header2() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328px');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
@@ -60,7 +58,7 @@ export default function Header2() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div className="pt-4 sm:pt-6" style={{ minHeight: "36rem" }}>
+                        <div key={"header-2-tw"} className="pt-4 sm:pt-6" style={{ minHeight: "36rem" }}>
                             <div className="ms-4 sm:ms-6">
                                 <p className="text-xs font-semibold text-gray-600 dark:text-gray-400">My Workspace</p>
                             </div>
@@ -78,8 +76,8 @@ export default function Header2() {
                                 </div>
                             </div>
                             <div className="flex justify-between items-center px-4 sm:px-6 relative">
-                                <div className="w-full">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                                <div id={styles.tab} className="w-full">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                         <TabItemsDirective>
                                             <TabItemDirective headerTemplate={() => <div>All files</div>}></TabItemDirective>
                                             <TabItemDirective headerTemplate={() => <div>Starred</div>}></TabItemDirective>
@@ -97,7 +95,7 @@ export default function Header2() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-2-bs"} className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
                             <div className="ms-3 ms-sm-4">
                                 <p className="small fw-bold text-secondary mb-1">My Workspace</p>
                             </div>
@@ -115,8 +113,8 @@ export default function Header2() {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-between align-items-center pt-1 px-3 px-sm-4 position-relative">
-                                <div className="w-100" id="tab">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                                <div id={styles.tab} className="w-100">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                         <TabItemsDirective>
                                             <TabItemDirective headerTemplate={() => <div>All files</div>}></TabItemDirective>
                                             <TabItemDirective headerTemplate={() => <div>Starred</div>}></TabItemDirective>

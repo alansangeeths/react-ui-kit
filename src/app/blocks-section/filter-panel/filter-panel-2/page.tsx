@@ -71,7 +71,7 @@ export default function FilterPanel2() {
                                 footerTemplate={() => (
                                     <>
                                         <hr className="border-gray-200 dark:border-gray-700" />
-                                        <div className="flex flex-col-reverse sm:flex-row justify-between items-center w-full">
+                                        <div className="flex flex-col-reverse sm:flex-row justify-between items-center w-full sm:pt-4 sm:pb-2">
                                             <a href="#" className="text-primary-600 dark:text-primary-400 pt-4 sm:pt-0 text-sm hover:underline">Learn more</a>
                                             <div className="flex flex-col sm:flex-row w-full sm:w-auto !ml-0 sm:ml-auto gap-3 mt-4 sm:mt-0">
                                                 <ButtonComponent cssClass="e-outline e-primary border-0 w-full !ml-0 sm:!ml-auto sm:w-auto" content="Save filter" type="button"></ButtonComponent>
@@ -144,7 +144,7 @@ export default function FilterPanel2() {
                                 )}
                                 footerTemplate={() => (
                                     <div className="d-flex justify-content-between align-items-sm-center flex-column-reverse flex-sm-row py-1 px-1">
-                                        <a href="#" className="text-primary fs-6 text-center pt-3 sm:pt-0 text-decoration-none">Learn more</a>
+                                        <a href="#" className="text-primary fs-6 text-center pt-3 pt-sm-0 text-decoration-none">Learn more</a>
                                         <div className="d-flex flex-column flex-sm-row gap-2">
                                             <ButtonComponent cssClass="e-outline e-primary border-0 ms-0 flex-grow-1 flex-sm-grow-0" type="button" content="Save filter"></ButtonComponent>
                                             <ButtonComponent cssClass="e-primary ms-0 flex-grow-1 flex-sm-grow-0 mt-2 mt-sm-0" type="button" content=" Apply"></ButtonComponent>
@@ -154,7 +154,7 @@ export default function FilterPanel2() {
                             >
                                 <div className="dialog-content">
                                     <p className="text-body-secondary fs-6">Apply this rule to the tickets that meet
-                                        <span className="fw-medium">All</span> of these conditions
+                                        <span className="fw-medium"> All</span> of these conditions
                                     </p>
                                     <div className={`border rounded-3 ${recordLength !== 0 ? "pt-1" : ""}`}>
                                         <QueryBuilderComponent ref={queryBuilder1Ref} change={onRuleUpdate}>

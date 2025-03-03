@@ -3,21 +3,19 @@
 import { useEffect, useRef, useState } from "react";
 import { OverflowMode, TabComponent, TabItemDirective, TabItemsDirective } from "@syncfusion/ej2-react-navigations";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import styles from "./page.module.css";
 
 export default function Header1() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328px');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
@@ -60,7 +58,7 @@ export default function Header1() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div className="pt-4 sm:pt-6" style={{ minHeight: "36rem" }}>
+                        <div key={"header-1-tw"} className="pt-4 sm:pt-6" style={{ minHeight: "36rem" }}>
                             <div className="flex justify-between">
                                 <div className="flex items-center">
                                     <h1 className="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">Notification</h1>
@@ -69,8 +67,8 @@ export default function Header1() {
                                     <ButtonComponent cssClass="e-flat" iconCss="e-icons e-settings" type="button"></ButtonComponent>
                                 </div>
                             </div>
-                            <div className="flex mt-3 px-4 sm:px-6 w-full justify-between items-center">
-                                <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                            <div id={styles.tab} className="flex mt-3 px-4 sm:px-6 w-full justify-between items-center">
+                                <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                     <TabItemsDirective>
                                         <TabItemDirective headerTemplate={() => <div>Overview</div>}></TabItemDirective>
                                         <TabItemDirective headerTemplate={() => <div>Shared</div>}></TabItemDirective>
@@ -84,7 +82,7 @@ export default function Header1() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-1-bs"} className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
                             <div className="d-flex justify-content-between">
                                 <div className="d-flex align-items-center">
                                     <h1 className="fs-6 fw-bold text-body ms-3 ms-sm-4 mb-0">Notification</h1>
@@ -93,8 +91,8 @@ export default function Header1() {
                                     <ButtonComponent cssClass="e-flat" iconCss="e-icons e-settings" type="button"></ButtonComponent>
                                 </div>
                             </div>
-                            <div id="tab" className="d-flex mt-3 px-3 px-sm-4 w-100 justify-content-between align-items-center">
-                                <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                            <div id={styles.tab} className="d-flex mt-3 px-3 px-sm-4 w-100 justify-content-between align-items-center">
+                                <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                     <TabItemsDirective>
                                         <TabItemDirective headerTemplate={() => <div>Overview</div>}></TabItemDirective>
                                         <TabItemDirective headerTemplate={() => <div>Shared</div>}></TabItemDirective>

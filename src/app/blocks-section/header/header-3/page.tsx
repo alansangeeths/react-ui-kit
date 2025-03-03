@@ -10,15 +10,12 @@ export default function Header3() {
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328px');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
@@ -77,7 +74,7 @@ export default function Header3() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div className="pt-4 lg:!pt-6" style={{ minHeight: '36rem' }}>
+                        <div key={"header-3-tw"} className="pt-4 lg:!pt-6" style={{ minHeight: '36rem' }}>
                             <div className="flex justify-between pb-3">
                                 <div className="flex items-center">
                                     <h1 className="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">Employees</h1>
@@ -89,7 +86,7 @@ export default function Header3() {
                             </div>
                             <div className="flex items-center justify-between px-4 sm:px-6 relative">
                                 <div id={styles.tab} className="w-full">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
                                         <TabItemsDirective>
                                             <TabItemDirective
                                                 headerTemplate={() => (
@@ -148,7 +145,7 @@ export default function Header3() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-3-bs"} className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
                             <div className="d-flex justify-content-between pb-3">
                                 <div className="d-flex align-items-center">
                                     <h1 className="fs-6 fw-bold text-body ms-3 ms-sm-4 mb-0">Employees</h1>
@@ -159,8 +156,8 @@ export default function Header3() {
                                 </div>
                             </div>
                             <div className="d-flex align-items-center justify-content-between px-3 px-sm-4 position-relative">
-                                <div className="w-100">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                <div id={styles.tab} className="w-100">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
                                         <TabItemsDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className="d-flex align-items-center gap-2">

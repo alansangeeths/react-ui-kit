@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { BreadcrumbComponent, BreadcrumbOverflowMode } from "@syncfusion/ej2-react-navigations";
 import { DropDownButtonComponent, SplitButtonComponent } from "@syncfusion/ej2-react-splitbuttons";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 export default function Header9() {
     /* SB Code - Start */

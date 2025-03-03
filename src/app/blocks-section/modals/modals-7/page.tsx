@@ -141,7 +141,7 @@ export default function Modals7() {
                                 <div>
                                     <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center mb-5 sm:mb-6">
                                         <CheckBoxComponent label="Export time fields in minutes formats"></CheckBoxComponent>
-                                        <div className="flex flex-row justify-end sm:gap-3">
+                                        <div className="flex flex-row justify-end gap-3">
                                             <ButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-export" type="button">Export</ButtonComponent>
                                             <DropDownButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>

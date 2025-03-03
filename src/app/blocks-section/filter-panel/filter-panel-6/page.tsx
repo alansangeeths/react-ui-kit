@@ -54,7 +54,7 @@ export default function FilterPanel6() {
             sizeAccordion.current?.refresh();
             locationAccordion.current?.refresh();
             typeAccordion.current?.refresh();
-        }, 400);
+        }, 800);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

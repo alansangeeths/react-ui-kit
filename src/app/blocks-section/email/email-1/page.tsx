@@ -41,6 +41,18 @@ export default function Email1() {
         };
         /* SB Code - End */
     }, []);
+
+    /* SB Code - Start */
+    useEffect(() => {
+        const colorPalettes: NodeListOf<Element> = document.querySelectorAll(".e-container.e-color-palette");
+        for (let i = 0; i < colorPalettes.length; i++) {
+            const elem = colorPalettes[i] as HTMLElement;
+            if (elem.style.width) {
+                elem.style.removeProperty("width");
+            }
+        }
+    }, [theme]); 
+    /* SB Code - End */ 
     
     const getContent = () => {
         switch (theme) {

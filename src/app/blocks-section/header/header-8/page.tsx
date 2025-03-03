@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BreadcrumbComponent, BreadcrumbOverflowMode } from "@syncfusion/ej2-react-navigations";
 import { SwitchComponent, ButtonComponent, ChipListComponent, ChipsDirective, ChipDirective } from "@syncfusion/ej2-react-buttons";
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 export default function Header8() {
     /* SB Code - Start */

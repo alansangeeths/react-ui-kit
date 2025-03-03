@@ -26,7 +26,7 @@ export default function Modals4() {
         setStepperStyle(isVertical ? { minHeight: '286px' } : {});
         setTimeout(()=>{
             stepper.current?.refresh();
-        }, 200);
+        }, 300);
         dialog.current?.show(isVertical);
     }
 

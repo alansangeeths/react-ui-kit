@@ -29,7 +29,7 @@ export default function Modals10() {
             dialog.current?.show(window.innerWidth <= 640);
             setTimeout(()=>{
                 rte.current?.refresh();
-            }, 200);
+            }, 400);
         }, timeout);
     };
 
@@ -53,7 +53,7 @@ export default function Modals10() {
         window.addEventListener('message', handleMessageEvent);
         setTimeout(()=>{
             rte.current?.refresh();
-        }, 200);
+        }, 300);
         /* SB Code - End */
         checkWindowSize();
         window.addEventListener("resize", checkWindowSize);

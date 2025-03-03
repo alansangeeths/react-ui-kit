@@ -40,7 +40,7 @@ export default function FilterPanel8() {
             gettingStartedAccordion.current?.refresh();
             billingAccordion.current?.refresh();
             supportAccordion.current?.refresh();
-        }, 400);
+        }, 800);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

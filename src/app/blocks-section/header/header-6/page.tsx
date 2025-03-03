@@ -13,7 +13,6 @@ export default function Header6() {
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
     const dropdown = useRef<DropDownButtonComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
     const headerData: any = { new: 156, verificationDue: 23, approvalDue: 18 };
 
@@ -24,10 +23,8 @@ export default function Header6() {
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328x');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
@@ -78,8 +75,8 @@ export default function Header6() {
                         <div key={"header-6-tw"} className="pt-2 sm:pt-4" style={{ minHeight: "36rem" }}>
                             <div className="px-4 sm:px-6">
                                 <div className="flex justify-between relative">
-                                    <div className="pt-2 w-full">
-                                        <TabComponent ref={tab} selectedItem={1} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                                    <div id={styles.tab} className="pt-2 w-full">
+                                        <TabComponent ref={tab} selectedItem={1} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                             <TabItemsDirective>
                                                 <TabItemDirective headerTemplate={() => (
                                                     <div className="d-flex align-items-center gap-2">
@@ -156,8 +153,8 @@ export default function Header6() {
                         <div key={"header-6-bs"} className="pt-3 pt-sm-4" style={{ minHeight: "36rem" }}>
                             <div className="px-3 px-sm-4">
                                 <div className="d-flex justify-content-between position-relative">
-                                    <div id="tab" className="w-100">
-                                        <TabComponent ref={tab} selectedItem={1} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                                    <div id={styles.tab} className="w-100">
+                                        <TabComponent ref={tab} selectedItem={1} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                             <TabItemsDirective>
                                                 <TabItemDirective headerTemplate={() => (
                                                     <div className="d-flex align-items-center gap-2">
@@ -171,7 +168,7 @@ export default function Header6() {
                                                     </div>
                                                 )} content={() => (
                                                     <div>
-                                                        <div className="d-flex d-lg-none align-items-center mt-4">
+                                                        <div className="d-flex d-lg-none align-items-center mt-3">
                                                             <div className="e-input-group me-3" style={{ width: "240px" }}>
                                                                 <input className="e-input" type="text" placeholder="Search" />
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>

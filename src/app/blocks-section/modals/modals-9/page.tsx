@@ -240,8 +240,8 @@ export default function Modals9() {
                                             content={() => (
                                                 <div>
                                                     <h2 className="font-medium text-base mt-6 mb-3">Security</h2>
-                                                    <div className="e-card shadow-none px-4 py-3 mb-4">
-                                                        <div className="e-card-content flex flex-col sm:flex-row gap-3 justify-between sm:items-center !p-0">
+                                                    <div className="e-card shadow-none px-4 py-2 mb-4">
+                                                        <div className="e-card-content flex flex-col sm:flex-row gap-3 justify-between sm:items-center !p-0 !py-1">
                                                             <div className="flex gap-3 items-center">
                                                                 <span className="text-base e-icons e-eye text-gray-500 dark:text-gray-300"></span>
                                                                 <div>
@@ -252,8 +252,8 @@ export default function Modals9() {
                                                             <ButtonComponent className="w-fit ml-7 sm:ml-0 mr-1" type="button">Update</ButtonComponent>
                                                         </div>
                                                     </div>
-                                                    <div className="e-card shadow-none px-4 py-3 mb-6">
-                                                        <div className="e-card-content flex flex-col sm:flex-row gap-3 justify-between sm:items-center !p-0">
+                                                    <div className="e-card shadow-none px-4 py-2 mb-6">
+                                                        <div className="e-card-content flex flex-col sm:flex-row gap-3 justify-between sm:items-center !p-0 !py-1">
                                                             <div className="flex gap-3 items-center">
                                                                 <span className="text-base sf-icon-mobile-01 text-gray-500 dark:text-gray-300"></span>
                                                                 <div>
@@ -265,8 +265,8 @@ export default function Modals9() {
                                                         </div>
                                                     </div>
                                                     <h2 className="font-medium text-base mb-3">Accounts</h2>
-                                                    <div className="e-card shadow-none px-4 py-3 mb-4">
-                                                        <div className="e-card-content flex items-start sm:items-center !p-0">
+                                                    <div className="e-card shadow-none px-4 py-2 mb-4">
+                                                        <div className="e-card-content flex items-start sm:items-center !p-0 !py-1">
                                                             <img className="w-6 shrink-0 mr-3 mt-2 sm:mt-0" src="/react/essential-ui-kit/blocks/assets/images/common/brand-logos/svg/microsoft.svg" alt="microsoft logo" />
                                                             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 grow">
                                                                 <div>
@@ -277,8 +277,8 @@ export default function Modals9() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="e-card shadow-none px-4 py-3 mb-5">
-                                                        <div className="e-card-content flex items-start sm:items-center !p-0">
+                                                    <div className="e-card shadow-none px-4 py-2 mb-5">
+                                                        <div className="e-card-content flex items-start sm:items-center !p-0 !py-1">
                                                             <img className="w-6 shrink-0 mr-3 mt-2 sm:mt-0" src="/react/essential-ui-kit/blocks/assets/images/common/brand-logos/svg/twitter.svg" alt="twitter logo" />
                                                             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 grow">
                                                                 <div>
@@ -324,7 +324,7 @@ export default function Modals9() {
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
                             <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>My Settings</ButtonComponent>
-                            <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" height="100%" beforeOpen={(event) => { event.maxHeight = '650px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="644px" isModal={true}
+                            <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" height="100%" beforeOpen={(event) => { event.maxHeight = '670px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="644px" isModal={true}
                                 header={() => (
                                     <p className="fw-bold text-body mb-0 lh-sm">My Settings</p>
                                 )}

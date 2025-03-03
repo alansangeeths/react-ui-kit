@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { OverflowMode, TabComponent, TabItemDirective, TabItemsDirective } from "@syncfusion/ej2-react-navigations";
 import { DropDownButtonComponent } from "@syncfusion/ej2-react-splitbuttons";
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import styles from "./page.module.css";
 
 export default function Header5() {
     /* SB Code - Start */
@@ -11,18 +12,16 @@ export default function Header5() {
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
     const responsivetab = useRef<TabComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328px');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
+        responsivetab.current?.refresh();
     };
 
     /* SB Code - Start */
@@ -62,7 +61,7 @@ export default function Header5() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div style={{ minHeight: "36rem" }}>
+                        <div key={"header-5-tw"} style={{ minHeight: "36rem" }}>
                             <div className="mx-4 sm:mx-6 py-2 sm:py-0 border-b sm:border-b-0 border-gray-200 dark:border-gray-600">
                                 <div className="flex items-center">
                                     <div className="flex items-center flex-shrink-0 py-0 sm:py-2 pe-4 border-b-0 sm:border-b border-gray-200 dark:border-gray-600">
@@ -70,7 +69,7 @@ export default function Header5() {
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white ml-3 hidden sm:block">David Miller</h3>
                                     </div>
                                     <div className="pt-2.5 hidden sm:block w-full relative">
-                                        <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                                        <TabComponent ref={tab} heightAdjustMode="Auto">
                                             <TabItemsDirective>
                                                 <TabItemDirective headerTemplate={() => <div>Messages</div>}></TabItemDirective>
                                                 <TabItemDirective headerTemplate={() => <div>Project Files</div>}></TabItemDirective>
@@ -87,8 +86,8 @@ export default function Header5() {
                                     <ButtonComponent cssClass="block sm:hidden" iconCss="e-icons e-more-vertical-1" type="button" ></ButtonComponent>
                                 </div>
                             </div>
-                            <div className="mx-4 sm:mx-6 block sm:hidden">
-                                <TabComponent ref={responsivetab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                            <div id={styles.tab} className="mx-4 sm:mx-6 block sm:hidden">
+                                <TabComponent ref={responsivetab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                     <TabItemsDirective>
                                         <TabItemDirective headerTemplate={() => <div>Messages</div>}></TabItemDirective>
                                         <TabItemDirective headerTemplate={() => <div>Project Files</div>}></TabItemDirective>
@@ -101,7 +100,7 @@ export default function Header5() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div style={{ minHeight: "36rem" }}>
+                        <div key={"header-5-bs"} style={{ minHeight: "36rem" }}>
                             <div className="px-3 px-sm-4 pt-2 pt-sm-0">
                                 <div className="d-flex align-items-center">
                                     <div className="d-none d-sm-flex align-items-center flex-shrink-0 py-2 my-1 pe-4 border-bottom">
@@ -111,8 +110,8 @@ export default function Header5() {
                                     <div className="d-block d-sm-none">
                                         <span className="e-avatar e-avatar-circle e-avatar-small flex-shrink-0 text-body">DM</span>
                                     </div>
-                                    <div id="tab" className="pt-3 d-none d-sm-block w-100 position-relative">
-                                        <TabComponent ref={tab} heightAdjustMode="Auto" overflowMode="Popup">
+                                    <div className="pt-3 d-none d-sm-block w-100 position-relative">
+                                        <TabComponent ref={tab} heightAdjustMode="Auto">
                                             <TabItemsDirective>
                                                 <TabItemDirective headerTemplate={() => <div>Messages</div>}></TabItemDirective>
                                                 <TabItemDirective headerTemplate={() => <div>Project Files</div>}></TabItemDirective>
@@ -130,8 +129,8 @@ export default function Header5() {
                                     <ButtonComponent className="d-block d-sm-none" cssClass="e-outline" iconCss="e-icons e-more-vertical-1" type="button"></ButtonComponent>
                                 </div>
                             </div>
-                            <div id="tab" className="px-3 px-sm-4 pt-3 d-block d-sm-none">
-                                <TabComponent ref={responsivetab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode}>
+                            <div id={styles.tab} className="px-3 px-sm-4 pt-3 d-block d-sm-none">
+                                <TabComponent ref={responsivetab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode}>
                                     <TabItemsDirective>
                                         <TabItemDirective headerTemplate={() => <div>Messages</div>}></TabItemDirective>
                                         <TabItemDirective headerTemplate={() => <div>Project Files</div>}></TabItemDirective>

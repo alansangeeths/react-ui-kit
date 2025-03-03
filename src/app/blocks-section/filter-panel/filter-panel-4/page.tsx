@@ -44,7 +44,7 @@ export default function FilterPanel4() {
         setTimeout(() => {
             requesterAccordion.current?.refresh();
             ticketAccordion.current?.refresh();
-        }, 400);
+        }, 800);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

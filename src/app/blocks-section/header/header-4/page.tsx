@@ -5,22 +5,19 @@ import { OverflowMode, TabComponent, TabItemDirective, TabItemsDirective } from 
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import { ChipListComponent, ChipsDirective, ChipDirective } from "@syncfusion/ej2-react-buttons";
 import { DropDownButtonComponent } from "@syncfusion/ej2-react-splitbuttons";
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
 export default function Header4() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
     const tab = useRef<TabComponent | null>(null);
-    const [tabWidth, setTabWidth] = useState('100%');
     const [overflowMode, setOverflowMode] = useState<OverflowMode>('Popup');
 
     const updateTabItems = (): void => {
         if (window.innerWidth < 640) {
-            setTabWidth('328px');
             setOverflowMode('Popup');
         } else {
-            setTabWidth('100%');
             setOverflowMode('Extended');
         }
         tab.current?.refresh();
@@ -79,7 +76,7 @@ export default function Header4() {
             case 'tailwind':
                 return (
                     <section className="bg-white dark:bg-gray-800">
-                        <div className="pt-4 md:!pt-6" style={{ minHeight: "36rem" }}>
+                        <div key={"header-4-tw"} className="pt-4 md:!pt-6" style={{ minHeight: "36rem" }}>
                             <div className="flex justify-between mb-3">
                                 <div className="flex items-center">
                                     <h1 className="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">Tickets</h1>
@@ -93,7 +90,7 @@ export default function Header4() {
                             </div>
                             <div className="flex items-center justify-between px-4 sm:px-6">
                                 <div id={styles.tab} className="w-full">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
                                         <TabItemsDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className='space-x-2 flex items-center'>
@@ -153,7 +150,7 @@ export default function Header4() {
             case 'bootstrap5':
                 return (
                     <section className="bg-body">
-                        <div className="pt-3 pt-md-4" style={{ minHeight: "36rem" }}>
+                        <div key={"header-4-bs"} className="pt-3 pt-md-4" style={{ minHeight: "36rem" }}>
                             <div className="d-flex justify-content-between mb-3">
                                 <div className="d-flex align-items-center">
                                     <h1 className="fs-6 fw-bold text-body ms-3 ms-sm-4 mb-0">Tickets</h1>
@@ -166,8 +163,8 @@ export default function Header4() {
                                 </div>
                             </div>
                             <div className="d-flex align-items-center justify-content-between px-3 px-sm-4">
-                                <div id="tab" className="w-100">
-                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={tabWidth} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
+                                <div id={styles.tab} className="w-100">
+                                    <TabComponent ref={tab} heightAdjustMode="Auto" width={"100%"} overflowMode={overflowMode} created={onTabCreated} selected={onTabSelected}>
                                         <TabItemsDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className="d-flex align-items-center gap-2">
@@ -190,6 +187,7 @@ export default function Header4() {
                                             </TabItemDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className="d-flex align-items-center gap-2">
+                                                    <span className="sf-icon-inprogress fs-6"></span>
                                                     <span>In Progress</span>
                                                     <span className="e-badge e-badge-pill px-2">156</span>
                                                 </div>
@@ -209,6 +207,7 @@ export default function Header4() {
                                             </TabItemDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className="d-flex align-items-center gap-2">
+                                                    <span className="e-icons e-clock e-medium"></span>
                                                     <span>Pending</span>
                                                     <span className="e-badge e-badge-pill px-2">18</span>
                                                 </div>
@@ -216,6 +215,7 @@ export default function Header4() {
                                             </TabItemDirective>
                                             <TabItemDirective headerTemplate={() => (
                                                 <div className="d-flex align-items-center gap-2">
+                                                    <span className="e-icons e-circle-check e-medium"></span>
                                                     <span>Resolved</span>
                                                     <span className="e-badge e-badge-pill px-2">18</span>
                                                 </div>

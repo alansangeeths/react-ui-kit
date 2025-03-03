@@ -87,7 +87,7 @@ export default function Statistics7() {
                 if (chartInstance) {
                     chartInstance.refresh();
                 }
-            }, 400);
+            }, 600);
         });
     };  
 

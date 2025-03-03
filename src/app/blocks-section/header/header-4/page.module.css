@@ -8,6 +8,11 @@
     color: #22d3ee !important;
 }
 
+#tab :global(.e-tab-wrap) {
+    display: flex;
+    align-items: center;
+}
+
 #dropdown :global(.e-caret) {
     display: none;
 }

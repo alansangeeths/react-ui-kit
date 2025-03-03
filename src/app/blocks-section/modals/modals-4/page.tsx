@@ -24,7 +24,9 @@ export default function Modals4() {
         stepper.current.orientation = isVertical ? 'vertical' : 'horizontal';
         stepper.current.labelPosition = isVertical ? 'end' : 'bottom';
         setStepperStyle(isVertical ? { minHeight: '286px' } : {});
-        stepper.current?.refresh();
+        setTimeout(()=>{
+            stepper.current?.refresh();
+        }, 200);
         dialog.current?.show(isVertical);
     }
 

@@ -143,9 +143,9 @@ export default function FilterPanel2() {
                                     </div>
                                 )}
                                 footerTemplate={() => (
-                                    <div className="d-flex justify-content-between align-items-sm-center flex-column-reverse flex-sm-row py-1 px-3">
+                                    <div className="d-flex justify-content-between align-items-sm-center flex-column-reverse flex-sm-row py-1 px-1">
                                         <a href="#" className="text-primary fs-6 text-center pt-3 sm:pt-0 text-decoration-none">Learn more</a>
-                                        <div className="mt-2 mt-sm-0 d-flex flex-column flex-sm-row gap-2">
+                                        <div className="d-flex flex-column flex-sm-row gap-2">
                                             <ButtonComponent cssClass="e-outline e-primary border-0 ms-0 flex-grow-1 flex-sm-grow-0" type="button" content="Save filter"></ButtonComponent>
                                             <ButtonComponent cssClass="e-primary ms-0 flex-grow-1 flex-sm-grow-0 mt-2 mt-sm-0" type="button" content=" Apply"></ButtonComponent>
                                         </div>

@@ -51,6 +51,9 @@ export default function Modals10() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
+        setTimeout(()=>{
+            rte.current?.refresh();
+        }, 200);
         /* SB Code - End */
         checkWindowSize();
         window.addEventListener("resize", checkWindowSize);

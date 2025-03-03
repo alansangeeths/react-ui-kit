@@ -74,7 +74,7 @@ export default function Statistics3() {
                                                     <h3 className="text-sm font-medium text-gray-800 dark:text-gray-300">{data.metricName}</h3>
                                                 </div>
                                                 <span className="e-avatar e-avatar-circle e-avatar-small">
-                                                    <span className={`text-base ${{ "Total Revenue": "sf-icon-dollar", "Total Leads": "sf-icon-users", "High Interest Leads": "sf-icon-users", "Qualified Leads": "sf-icon-cart" }[data.metricName] || ""}`}></span>
+                                                    <span className={`text-base ${{ "Total Revenue": "sf-icon-dollar", "Total Leads": "sf-icon-users", "High Interest Leads": "sf-icon-users", "Qualified Leads": "sf-icon-user-tick-02" }[data.metricName] || ""}`}></span>
                                                 </span>
                                             </div>
                                             <div className="e-card-content !pb-6">
@@ -110,7 +110,7 @@ export default function Statistics3() {
                                                         <h3 className="small fw-medium text-body-secondary mb-0 lh-base">{data.metricName}</h3>
                                                     </div>
                                                     <span className="e-avatar e-avatar-circle e-avatar-small">
-                                                        <span className={`fs-6 ${{ "Total Revenue": "sf-icon-dollar", "Total Leads": "sf-icon-users", "High Interest Leads": "sf-icon-users", "Qualified Leads": "sf-icon-cart" }[data.metricName] || ""}`}></span>
+                                                        <span className={`fs-6 ${{ "Total Revenue": "sf-icon-dollar", "Total Leads": "sf-icon-users", "High Interest Leads": "sf-icon-users", "Qualified Leads": "sf-icon-user-tick-02" }[data.metricName] || ""}`}></span>
                                                     </span>
                                                 </div>
                                                 <div className="e-card-content pb-4 px-4 pt-0">

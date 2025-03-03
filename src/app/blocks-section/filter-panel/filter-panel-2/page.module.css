@@ -23,3 +23,7 @@
 #dialog :global(.e-dialog .e-footer-content) {
     border-radius: 0 !important;
 }
+
+#dialog :global(.e-rule-field .e-input-group) {
+    width: 225px !important;
+}

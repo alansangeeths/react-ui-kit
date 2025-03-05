@@ -133,7 +133,7 @@ export default function Modals7() {
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
                             <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
-                            <DialogComponent id={styles["dialogs"]} ref={dialog} key={"modal-7-tw"} className="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '624px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="835px" isModal={true}
+                            <DialogComponent id={styles["dialogs"]} ref={dialog} key={"modal-7-tw"} className="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '630px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="835px" isModal={true}
                                 header={() => (
                                     <p className="font-semibold leading-normal">Transaction Details</p>
                                 )}

@@ -77,10 +77,10 @@ export default function Header5() {
                                         </TabComponent>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 py-2.5 sm:py-2 absolute top-0 end-0 me-6">
+                                <div className="flex gap-3 py-2.5 sm:py-2 absolute top-0 end-0 me-6">
                                     <DropDownButtonComponent cssClass="e-outline hidden lg:block" iconCss="e-icons e-video !text-base" content="Meeting" type="button" beforeOpen={(e) => (e.cancel = true)}></DropDownButtonComponent>
                                     <DropDownButtonComponent cssClass="e-outline block lg:hidden" iconCss="e-icons e-video !text-base" type="button" beforeOpen={(e) => (e.cancel = true)}></DropDownButtonComponent>
-                                    <div className="border-l border-gray-200 dark:border-gray-600 h-5"></div>
+                                    <div className="border-l border-gray-200 dark:border-gray-600 h-5 self-center"></div>
                                     <ButtonComponent cssClass="e-outline hidden sm:block" iconCss="sf-icon-share-arrow-02" type="button"></ButtonComponent>
                                     <ButtonComponent cssClass="e-outline hidden sm:block" iconCss="sf-icon-table-layout" type="button"></ButtonComponent>
                                     <ButtonComponent cssClass="block sm:hidden" iconCss="e-icons e-more-vertical-1" type="button" ></ButtonComponent>

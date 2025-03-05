@@ -67,7 +67,7 @@ export default function Modals4() {
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: "600px" }}>
                             <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Add Team Member</ButtonComponent>
-                            <DialogComponent id={styles["dialogs"]} className="rounded-none sm:rounded-lg sm:m-4" width="552px" ref={dialog} isModal={true} target="#dialog-container" showCloseIcon={true} open={(e) => { e.preventFocus = true; }}
+                            <DialogComponent id={styles["dialogs"]} className="rounded-none sm:rounded-lg sm:m-4" width="545px" ref={dialog} isModal={true} target="#dialog-container" showCloseIcon={true} open={(e) => { e.preventFocus = true; }}
                                 header={() => (
                                     <div>
                                         <p className="mb-0.5 font-semibold leading-normal">Add Team Member</p>

@@ -11,7 +11,7 @@ export default function FilterPanel5() {
     /* SB Code - End */
     const [width, setWidth] = useState("320px");
     const sidebar = useRef<SidebarComponent | null>(null);
-    const tooltipInfo = { isVisible: true, format: 'c0' };
+    const tooltipInfo = { isVisible: true };
 
     const setSidebarWidth = (): void => {
         setWidth(window.innerWidth < 400 ? '100%' : '320px')
@@ -55,7 +55,7 @@ export default function FilterPanel5() {
                             <SidebarComponent ref={sidebar} className="flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true} style={{ display: "block" }}>
                                 <div>
                                     <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
-                                        <h2 className="text-base font-semibold text-gray-900 dark:text-white">Filter</h2>
+                                        <h2 className="text-base font-semibold text-gray-900 dark:text-white">Filters</h2>
                                         <ButtonComponent cssClass="e-flat text-base" iconCss=" e-icons e-close" content=" " type="button" onClick={() => sidebar.current?.toggle()}></ButtonComponent>
                                     </div>
                                     <div className="p-4">
@@ -84,7 +84,7 @@ export default function FilterPanel5() {
                                         <div className="my-4">
                                             <label className="text-sm font-medium text-gray-900 dark:text-white">User Ratings</label>
                                             <div className="px-3">
-                                                <SliderComponent type="Range" value={[0, 4.5]} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5, format: 'c0' }} tooltip={tooltipInfo} style={{ width:'256px', left:'5px' }}></SliderComponent>
+                                                <SliderComponent type="Range" value={[0, 4.5]} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5}} tooltip={tooltipInfo} style={{ width:'256px', left:'5px' }}></SliderComponent>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@ export default function FilterPanel5() {
                             <SidebarComponent ref={sidebar} className="d-flex flex-column bg-body" position="Right" type="Push" width={width} isOpen={true} closeOnDocumentClick={false} showBackdrop={true}>
                                 <div>
                                     <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
-                                        <h2 className="h6 mb-0 fw-bold">Filter</h2>
+                                        <h2 className="h6 mb-0 fw-bold">Filters</h2>
                                         <ButtonComponent cssClass="e-flat fs-6" iconCss="e-icons e-close" content=" " onClick={() => sidebar.current?.toggle()}></ButtonComponent>
                                     </div>
                                     <div className="p-3">
@@ -138,7 +138,7 @@ export default function FilterPanel5() {
                                         <div className="my-3">
                                             <label className="text-body fs-6 fw-medium">User Ratings</label>
                                             <div className="px-2">
-                                                <SliderComponent type="Range" value={[0, 4.5]} tooltip={tooltipInfo} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5, format: 'c0' }} style={{ width:'256px', left:'5px' }}></SliderComponent>
+                                                <SliderComponent type="Range" value={[0, 4.5]} tooltip={tooltipInfo} min={0} max={5} step={1} ticks={{ placement: 'After', largeStep: 5 }} style={{ width:'256px', left:'5px' }}></SliderComponent>
                                             </div>
                                         </div>
                                     </div>

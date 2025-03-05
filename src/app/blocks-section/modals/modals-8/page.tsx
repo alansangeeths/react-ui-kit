@@ -81,7 +81,7 @@ export default function Modals8() {
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
                             <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Track New Feature</ButtonComponent>
-                            <DialogComponent id={styles["dialog"]} className="rounded-none sm:rounded-lg sm:m-4" ref={dialog} width="515px" isModal={true} target="#dialog-container" showCloseIcon={true} beforeOpen={(event) => { event.maxHeight = '624px'; }} open={(e) => { e.preventFocus = true; }}
+                            <DialogComponent id={styles["dialog"]} className="rounded-none sm:rounded-lg sm:m-4" ref={dialog} key={"modal-8-tw"} width="515px" isModal={true} target="#dialog-container" showCloseIcon={true} beforeOpen={(event) => { event.maxHeight = '624px'; }} open={(e) => { e.preventFocus = true; }}
                                 header={() => <div className="font-semibold leading-normal">Track New Feature</div>} 
                                 footerTemplate={() => (
                                     <div className="flex flex-row justify-end gap-2 sm:gap-1 mt-1 sm:mt-0 mb-2">
@@ -150,7 +150,7 @@ export default function Modals8() {
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
                             <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Track New Feature</ButtonComponent>
-                            <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" isModal={true} showCloseIcon={true} width="515px" open={(e) => { e.preventFocus = true; }} beforeOpen={(e) => { e.maxHeight = "624px"; }}
+                            <DialogComponent id={styles["dialog"]} ref={dialog} key={"modal-8-bs"} className="rounded-3 m-sm-2" target="#dialog-container" isModal={true} showCloseIcon={true} width="515px" open={(e) => { e.preventFocus = true; }} beforeOpen={(e) => { e.maxHeight = "630px"; }}
                                 header={() => (
                                     <p className="fw-bold mb-0 text-body">Track New Feature</p>
                                 )}

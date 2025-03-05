@@ -69,7 +69,7 @@ export default function Modals2() {
         window.addEventListener("message", handleMessageEvent);
         setTimeout(()=>{
             rte.current?.refresh();
-        }, 300);
+        }, 600);
         /* SB Code - End */
         checkWindowSize();
         window.addEventListener("resize", checkWindowSize);

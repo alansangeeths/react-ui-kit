@@ -64,7 +64,7 @@ export default function FilterPanel2() {
                             <DialogComponent ref={dialogRef} className="absolute border-b-0 border-t-0" target=".dialog-target" position={{ X: "right" }} showCloseIcon={true} isModal={true} width="810px" minHeight="800px" created={() => dialogRef.current?.show()} open={(e) => (e.preventFocus = true)}
                                 header={() => (
                                     <div>
-                                        <p className="mb-2 font-semibold text-base">Advance Filters</p>
+                                        <p className="mb-2 font-semibold text-base">Advanced Filters</p>
                                         <a href="#" className="text-primary-600 dark:text-primary-400 text-sm font-semibold">Switch to basic filter</a>
                                     </div>
                                 )}
@@ -86,7 +86,7 @@ export default function FilterPanel2() {
                                         Apply this rule to the tickets that meet <span className="text-gray-900 dark:text-white font-medium">All</span> of these conditions
                                     </p>
                                     <div className={`border border-gray-200 dark:border-gray-600 rounded-lg ${recordLength !== 0 ? "pt-1" : ""}`}>
-                                        <QueryBuilderComponent ref={queryBuilder1Ref} change={onRuleUpdate}>
+                                        <QueryBuilderComponent ref={queryBuilder1Ref} change={onRuleUpdate} fieldModel={{ width: '200px' }} operatorModel={{ width: '200px' }}>
                                             <ColumnsDirective>
                                                 <ColumnDirective field="Tickets" label="Tickets" type="string"></ColumnDirective>
                                                 <ColumnDirective field="Agent Reply Count" label="Agent Reply Count" type="string" operators={filterOperators}></ColumnDirective>
@@ -108,7 +108,7 @@ export default function FilterPanel2() {
                                         Apply this rule to the tickets that meet <span className="text-gray-900 dark:text-white font-medium">Any</span> of these conditions
                                     </p>
                                     <div className={`border border-gray-200 dark:border-gray-600 rounded-lg ${recordData !== 0 ? "pt-1" : ""}`}>
-                                        <QueryBuilderComponent ref={queryBuilder2Ref} change={onRuleAdd}>
+                                        <QueryBuilderComponent ref={queryBuilder2Ref} change={onRuleAdd} fieldModel={{ width: '200px' }} operatorModel={{ width: '200px' }}>
                                             <ColumnsDirective>
                                                 <ColumnDirective field="Ticket" label="Tickets" type="string"></ColumnDirective>
                                                 <ColumnDirective field="Agent" label="Agent" type="string"></ColumnDirective>
@@ -157,7 +157,7 @@ export default function FilterPanel2() {
                                         <span className="fw-medium"> All</span> of these conditions
                                     </p>
                                     <div className={`border rounded-3 ${recordLength !== 0 ? "pt-1" : ""}`}>
-                                        <QueryBuilderComponent ref={queryBuilder1Ref} change={onRuleUpdate}>
+                                        <QueryBuilderComponent ref={queryBuilder1Ref} change={onRuleUpdate} fieldModel={{ width: '200px' }} operatorModel={{ width: '200px' }}>
                                             <ColumnsDirective>
                                                 <ColumnDirective field="Tickets" label="Tickets" type="string"></ColumnDirective>
                                                 <ColumnDirective field="Agent Reply Count" label="Agent Reply Count" type="string" operators={filterOperators}></ColumnDirective>
@@ -180,7 +180,7 @@ export default function FilterPanel2() {
                                         <span className="fw-medium text-body-secondary"> Any </span> of these conditions
                                     </p>
                                     <div className={`border rounded-3 ${recordData !== 0 ? "pt-1" : ""}`}>
-                                        <QueryBuilderComponent ref={queryBuilder2Ref} change={onRuleAdd}>
+                                        <QueryBuilderComponent ref={queryBuilder2Ref} change={onRuleAdd} fieldModel={{ width: '200px' }} operatorModel={{ width: '200px' }}>
                                             <ColumnsDirective>
                                                 <ColumnDirective field="Ticket" label="Tickets" type="string"></ColumnDirective>
                                                 <ColumnDirective field="Agent" label="Agent" type="string"></ColumnDirective>

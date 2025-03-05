@@ -67,7 +67,7 @@ export default function Modals6() {
                 return (
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="h-fit my-5 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
+                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
                             <DialogComponent id={styles["dialog"]} key={'modal-6-tw'} ref={dialog} className="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '598px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="548px" isModal={true}
                                 header={() => (
                                     <div className="flex gap-3">
@@ -96,7 +96,7 @@ export default function Modals6() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="flex flex-col gap-1 order-1 sm:order-none">
                                                 <label>Company <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                                <TextBoxComponent ref={textbox1} type="text" placeholder="Enter the company name" created={()=>{addIcon(textbox1, "e-search")}}></TextBoxComponent>
+                                                <TextBoxComponent ref={textbox1} type="text" placeholder="Enter the company name" created={()=>{addIcon(textbox1, "e-search !pr-0")}}></TextBoxComponent>
                                             </div>
                                             <div className="flex flex-col gap-1">
                                                 <label>Website</label>
@@ -106,7 +106,7 @@ export default function Modals6() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="flex flex-col gap-1 order-1 sm:order-none">
                                                 <label>Location <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                                <TextBoxComponent className="ml-0" type="text" ref={textbox2} placeholder="Enter the city or state" created={()=>{addIcon(textbox2, "e-location")}}></TextBoxComponent>
+                                                <TextBoxComponent className="ml-0" type="text" ref={textbox2} placeholder="Enter the city or state" created={()=>{addIcon(textbox2, "e-location !pr-0")}}></TextBoxComponent>
                                             </div>
                                             <div className="flex flex-col gap-1">
                                                 <label>Employment type <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>

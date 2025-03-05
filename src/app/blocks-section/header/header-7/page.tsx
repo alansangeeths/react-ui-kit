@@ -113,7 +113,7 @@ export default function Header7() {
                                         <ButtonComponent cssClass="e-primary" type="button">
                                             <div className="flex items-center gap-1">
                                                 <span className="e-icons e-plus e-medium"></span>
-                                                <span className="ml-1 hidden lg:block">Add report</span>
+                                                <span className="ml-1 hidden lg:block">Add Report</span>
                                             </div>
                                         </ButtonComponent>
                                     </div>
@@ -171,7 +171,7 @@ export default function Header7() {
                                         <ButtonComponent cssClass="e-primary" type="button">
                                             <div className="d-flex align-items-center gap-1">
                                                 <span className="e-icons e-plus e-medium"></span>
-                                                <span className="ms-1 d-none d-lg-block">Add report</span>
+                                                <span className="ms-1 d-none d-lg-block">Add Report</span>
                                             </div>
                                         </ButtonComponent>
                                     </div>

@@ -29,7 +29,7 @@ export default function Modals10() {
             dialog.current?.show(window.innerWidth <= 640);
             setTimeout(()=>{
                 rte.current?.refresh();
-            }, 400);
+            }, 700);
         }, timeout);
     };
 

@@ -92,7 +92,7 @@ export default function Header6() {
                                                     <div>
                                                         <div className="flex lg:hidden items-center mt-4">
                                                             <div className="e-input-group w-60 me-3">
-                                                                <input className="e-input" type="text" placeholder="Search" />
+                                                                <input className="e-input" type="text" placeholder="Search..." />
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
@@ -101,7 +101,7 @@ export default function Header6() {
                                                         <div className="border-b border-gray-200 mt-4 dark:border-gray-600 block sm:hidden"></div>
                                                         <div className="hidden lg:flex py-3 items-center">
                                                             <div className="e-input-group w-60 me-3">
-                                                                <input className="e-input" type="text" placeholder="Search" />
+                                                                <input className="e-input" type="text" placeholder="Search..." />
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
@@ -170,7 +170,7 @@ export default function Header6() {
                                                     <div>
                                                         <div className="d-flex d-lg-none align-items-center mt-3">
                                                             <div className="e-input-group me-3" style={{ width: "240px" }}>
-                                                                <input className="e-input" type="text" placeholder="Search" />
+                                                                <input className="e-input" type="text" placeholder="Search..." />
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-start me-2" style={{ height: "20px" }}></div>
@@ -179,7 +179,7 @@ export default function Header6() {
                                                         <div className="border-bottom mt-4 d-block d-sm-none"></div>
                                                         <div className="d-none d-lg-flex py-3 align-items-center">
                                                             <div className="e-input-group me-3" style={{ width: "240px" }}>
-                                                                <input className="e-input" type="text" placeholder="Search" />
+                                                                <input className="e-input" type="text" placeholder="Search..." />
                                                                 <span className="e-input-group-icon e-icons e-search border-start-0"></span>
                                                             </div>
                                                             <div className="border-start me-2" style={{ height: "20px" }}></div>

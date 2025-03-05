@@ -74,7 +74,7 @@ export default function Modals9() {
                                 footerTemplate={() =>
                                     <div className="flex justify-end gap-2 sm:gap-1 py-2">
                                         <ButtonComponent cssClass="grow sm:grow-0 !ml-0" type="button">Discard</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary grow sm:grow-0 !ml-0" type="button">Save Changes</ButtonComponent>
+                                        <ButtonComponent cssClass="e-primary grow sm:grow-0" type="button">Save Changes</ButtonComponent>
                                     </div>
                                 }
                             >
@@ -125,7 +125,7 @@ export default function Modals9() {
                                                         </div>
                                                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-2 font-medium">
                                                             <div className="flex gap-3 sm:gap-2">
-                                                                <SwitchComponent className="w-10"></SwitchComponent>
+                                                                <SwitchComponent cssClass="w-10"></SwitchComponent>
                                                                 <label className="text-sm font-normal text-gray-900 dark:text-white">Enable or disable the feature</label>
                                                             </div>
                                                             <div className="flex flex-col sm:flex-row sm:items-center gap-1">

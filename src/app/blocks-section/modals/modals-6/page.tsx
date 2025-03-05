@@ -1,43 +1,108 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useRef } from "react";
-import { DialogComponent } from "@syncfusion/ej2-react-popups";
-import { TextBoxComponent, TextAreaComponent } from "@syncfusion/ej2-react-inputs";
-import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
-import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
-import { ButtonComponent, CheckBoxComponent } from "@syncfusion/ej2-react-buttons";
-import styles from "./page.module.css";
+import { useEffect, useState, useRef } from 'react';
+import { DialogComponent } from '@syncfusion/ej2-react-popups';
+import { GridComponent, ColumnsDirective, ColumnDirective, Inject, Sort, Filter } from '@syncfusion/ej2-react-grids';
+import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
+import styles from './page.module.css';
 
 export default function Modals6() {
     /* SB Code - Start */
-    const [theme, setTheme] = useState("tailwind");
+    const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
-    const [containerHeight, setContainerHeight] = useState("700px");
-    const dialog = useRef<DialogComponent | null>(null);
-    const textbox2 = useRef<TextBoxComponent | null>(null);
-    const textbox1 = useRef<TextBoxComponent | null>(null);
+    const [containerHeight, setContainerHeight] = useState("750px");
+    const dialog = useRef<DialogComponent>(null);
+
+    const data: any[] = [
+        {
+            id: 1,
+            transactionId: "TRX202401",
+            customerDetails: {
+                name: "Jane Smith",
+                email: "jane.smith@example.com",
+                avatar: "avatar-8.jpg"
+            },
+            invoiceNumber: "INV202401",
+            description: "Payment for invoice"
+        },
+        {
+            id: 2,
+            transactionId: "TRX202402",
+            customerDetails: {
+                name: "Mark Johnson",
+                email: "mark.johnson@example.com",
+                avatar: "avatar-1.jpg"
+            },
+            invoiceNumber: "INV202402",
+            description: "Subscription renewal"
+        },
+        {
+            id: 3,
+            transactionId: "TRX202403",
+            customerDetails: {
+                name: "Emily White",
+                email: "emily.white@example.com",
+                avatar: "avatar-9.jpg"
+            },
+            invoiceNumber: "INV202403",
+            description: "Consulting services"
+        },
+        {
+            id: 4,
+            transactionId: "TRX202404",
+            customerDetails: {
+                name: "Tom Harris",
+                email: "tom.harris@example.com",
+                avatar: "avatar-4.jpg"
+            },
+            invoiceNumber: "INV202404",
+            description: "Equipment purchase"
+        },
+        {
+            id: 5,
+            transactionId: "TRX202405",
+            customerDetails: {
+                name: "Lisa Green",
+                email: "lisa.green@example.com",
+                avatar: "avatar-10.jpg"
+            },
+            invoiceNumber: "INV202405",
+            description: "Event sponsorship"
+        },
+        {
+            id: 6,
+            transactionId: "TRX202406",
+            customerDetails: {
+                name: "David Clark",
+                email: "david.clark@example.com",
+                avatar: "avatar-5.jpg"
+            },
+            invoiceNumber: "INV202406",
+            description: "Online course registration"
+        }
+    ];
 
     const checkWindowSize = () => {
         const isMobile = window.innerWidth <= 640;
-        setContainerHeight(isMobile ? "598px" : "700px");
-        if (dialog) {
-            dialog.current?.show(isMobile);
-        }
+        setContainerHeight(isMobile ? "630px" : "750px");
+        dialog.current?.show(isMobile);
     };
 
-    const addIcon = (textbox: React.RefObject<TextBoxComponent> , icons: string) => {
-        if (textbox.current) {
-            textbox.current?.addIcon("prepend", `e-icons ${icons}`);
-        }
+    /* SB Code - Start */
+    const refreshDialog = (timeout: number) => {
+        setTimeout(() => {
+            dialog.current?.show(window.innerWidth <= 640);
+        }, timeout);
     };
     
-    /* SB Code - Start */
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
                 const blockData = JSON.parse(event.data);
-                if (blockData.name === "modals-6" && blockData.theme) {
+                if (blockData.name === 'modals-6' && blockData.theme) {
                     setTheme(blockData.theme);
+                    refreshDialog(200);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -63,142 +128,96 @@ export default function Modals6() {
 
     const getContent = () => {
         switch (theme) {
-            case "tailwind":
+            case 'tailwind':
                 return (
                     <section>
                         <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
-                            <DialogComponent id={styles["dialog"]} key={'modal-6-tw'} ref={dialog} className="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '598px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="548px" isModal={true}
+                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
+                            <DialogComponent id={styles["dialogs"]} ref={dialog} key={"modal-7-tw"} className="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '630px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="835px" isModal={true}
                                 header={() => (
-                                    <div className="flex gap-3">
-                                        <span className="e-avatar e-avater-large shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                                            <i className="e-icons e-flags text-xl text-gray-500 dark:text-gray-300"></i>
-                                        </span>
-                                        <div>
-                                            <p className="font-semibold leading-normal mb-0.5">Add Experience</p>
-                                            <p className="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Share where you've worked on your profile.</p>
-                                        </div>
-                                    </div>
-                                )}
-                                footerTemplate={() => (
-                                    <div className="flex justify-end gap-2 sm:gap-1 py-2">
-                                        <ButtonComponent cssClass="grow sm:grow-0 !ml-0" type="button">Discard</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary grow sm:grow-0" type="button">Save</ButtonComponent>
-                                    </div>
+                                    <p className="font-semibold leading-normal">Transaction Details</p>
                                 )}
                             >
                                 <div>
-                                    <form action="#" className="grid grid-cols-1 gap-4 sm:gap-3 text-xs font-medium leading-normal text-gray-700 dark:text-gray-200" onSubmit={(event) => event.preventDefault()}>
-                                        <div className="flex flex-col gap-1">
-                                            <label>Designation <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                            <TextBoxComponent type="text" placeholder="Enter the job title"></TextBoxComponent>
+                                    <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center mb-5 sm:mb-6">
+                                        <CheckBoxComponent label="Export time fields in minutes formats"></CheckBoxComponent>
+                                        <div className="flex flex-row justify-end gap-3">
+                                            <ButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-export" type="button">Export</ButtonComponent>
+                                            <DropDownButtonComponent cssClass="grow sm:grow-0 e-outline" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="flex flex-col gap-1 order-1 sm:order-none">
-                                                <label>Company <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                                <TextBoxComponent ref={textbox1} type="text" placeholder="Enter the company name" created={()=>{addIcon(textbox1, "e-search !pr-0")}}></TextBoxComponent>
-                                            </div>
-                                            <div className="flex flex-col gap-1">
-                                                <label>Website</label>
-                                                <TextBoxComponent type="url" placeholder="https://www.example.com"></TextBoxComponent>
-                                            </div>
-                                        </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="flex flex-col gap-1 order-1 sm:order-none">
-                                                <label>Location <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                                <TextBoxComponent className="ml-0" type="text" ref={textbox2} placeholder="Enter the city or state" created={()=>{addIcon(textbox2, "e-location !pr-0")}}></TextBoxComponent>
-                                            </div>
-                                            <div className="flex flex-col gap-1">
-                                                <label>Employment type <span className="text-red-600 dark:text-red-400 font-normal">*</span></label>
-                                                <DropDownListComponent placeholder="Select the employment type"></DropDownListComponent>
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col gap-1">
-                                            <label>Description</label>
-                                            <TextAreaComponent rows={5} resizeMode="None" placeholder="Provide a brief overview of your role"></TextAreaComponent>
-                                        </div>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="flex flex-col gap-1">
-                                                <label>Start Date</label>
-                                                <DatePickerComponent placeholder="MM/DD/YYYY"></DatePickerComponent>
-                                            </div>
-                                            <div className="flex flex-col gap-1">
-                                                <label>End Date</label>
-                                                <DatePickerComponent placeholder="MM/DD/YYYY"></DatePickerComponent>
-                                            </div>
-                                        </div>
-                                        <CheckBoxComponent label="I currently work here"></CheckBoxComponent>
-                                    </form>
+                                    </div>
+                                    <GridComponent cssClass="e-bigger mb-1.5" dataSource={data} width="100%" allowSorting={true} allowFiltering={true} filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
+                                        <ColumnsDirective>
+                                            <ColumnDirective field="transactionId" headerText="Transaction ID" width={165} template={(data: any) => (
+                                                <p className="text-sm text-gray-700 dark:text-gray-200">{data.transactionId}</p>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} allowFiltering={false} template={(data: any) => (
+                                                <div className="flex gap-2 items-center py-1.5">
+                                                    <div className="w-8 h-8">
+                                                        <span className="e-avatar e-avatar-circle e-avatar-small" style={{ backgroundImage: `url("/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.customerDetails.avatar}")` }}></span>
+                                                    </div>
+                                                    <div className="flex flex-col text-sm">
+                                                        <p className="text-gray-900 dark:text-white">{data.customerDetails.name}</p>
+                                                        <p className="text-gray-700 dark:text-gray-200">{data.customerDetails.email}</p>
+                                                    </div>
+                                                </div>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={170} template={(data: any) => (
+                                                <a href="#" className="text-sm text-primary-700 dark:text-primary-500 font-medium underline">{data.invoiceNumber}</a>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="description" headerText="Description" width={190} template={(data: any) => (
+                                                <p className="text-sm text-gray-700 dark:text-gray-200">{data.description}</p>
+                                            )}></ColumnDirective>
+                                        </ColumnsDirective>
+                                        <Inject services={[Sort, Filter]} />
+                                    </GridComponent>
                                 </div>
                             </DialogComponent>
                         </div>
                     </section>
-                );
-            case "bootstrap5":
+                ); 
+            case 'bootstrap5':
                 return (
                     <section>
                         <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: containerHeight }}>
-                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Experience</ButtonComponent>
-                            <DialogComponent className="rounded-3 m-sm-2" key={'modal-6-bs'} ref={dialog} target="#dialog-container" isModal={true} showCloseIcon={true} width="548px" open={(event) => (event.preventFocus = true)} beforeOpen={(event) => (event.maxHeight = "598px")}
-                                header={() =>
-                                    <div className="d-flex gap-2">
-                                        <span className="e-avatar e-avatar-large flex-shrink-0 rounded-3 bg-body-secondary">
-                                            <i className="e-icons e-flags fs-5 text-body-secondary"></i>
-                                        </span>
-                                        <div className="ms-1">
-                                            <p className="fw-bold mb-0 text-body">Add Experience</p>
-                                            <p className="small fw-normal text-wrap text-body text-opacity-50 mb-0">Share where you've worked on your profile.</p>
-                                        </div>
-                                    </div>
-                                }
-                                footerTemplate={() => 
-                                   <div className="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                                        <ButtonComponent cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button">Discard</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button">Save</ButtonComponent>
-                                    </div>
-                                }
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Transaction Details</ButtonComponent>
+                            <DialogComponent id={styles["dialogs"]} key={"modal-7-bs"} ref={dialog} className="rounded-3 m-sm-2 overflow-hidden" target="#dialog-container" beforeOpen={(e) => { e.maxHeight = '638px' }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="865px" isModal={true}
+                                header={() => (
+                                    <p className="fw-bold text-body mb-0 lh-sm">Transaction Details</p>
+                                )}
                             >
-                                <form action="#" className="d-flex flex-column gap-3 gap-sm-2 text-body-secondary small" onSubmit={(e) => e.preventDefault()}>
-                                    <div className="d-flex flex-column gap-1">
-                                        <label>Designation <span className="text-danger">*</span></label>
-                                        <TextBoxComponent type="text" placeholder="Enter the job title"></TextBoxComponent>
-                                    </div>
-                                    <div className="row flex-column-reverse flex-sm-row gap-3 gap-sm-0 gx-3 mt-sm-1">
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>Company <span className="text-danger">*</span></label>
-                                            <TextBoxComponent ref={textbox1} type="text" placeholder="Enter the company name" created={()=>{addIcon(textbox1, "e-search")}}></TextBoxComponent>
-                                        </div>
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>Website</label>
-                                            <TextBoxComponent type="url" placeholder="https://www.example.com"></TextBoxComponent>
+                                <div>
+                                    <div className="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-sm-center mb-4 mb-sm-3">
+                                        <CheckBoxComponent label="Export time fields in minutes formats"></CheckBoxComponent>
+                                        <div className="d-flex flex-row justify-content-end gap-3 gap-sm-2">
+                                            <ButtonComponent className="flex-grow-1 flex-sm-grow-0 e-outline" iconCss="e-icons e-export" type="button">Export</ButtonComponent>
+                                            <DropDownButtonComponent className="flex-grow-1 flex-sm-grow-0 e-outline ms-sm-1" iconCss="e-icons e-user" beforeOpen={(e) => e.cancel = true} type="button">Contact</DropDownButtonComponent>
                                         </div>
                                     </div>
-                                    <div className="row flex-column-reverse flex-sm-row gap-3 gap-sm-0 gx-3 mt-sm-1">
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>Location <span className="text-danger">*</span></label>
-                                            <TextBoxComponent ref={textbox2} type="text" placeholder="Enter the city or state" created={()=>{addIcon(textbox2, "e-location fs-6")}}></TextBoxComponent>
-                                        </div>
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>Employment type <span className="text-danger">*</span></label>
-                                            <DropDownListComponent placeholder="Select the employment type" aria-label="choose an employment type"></DropDownListComponent>
-                                        </div>
-                                    </div>
-                                    <div className="d-flex flex-column gap-1 mt-sm-1">
-                                        <label>Description</label>
-                                        <TextAreaComponent placeholder="Provide a brief overview of your role" resizeMode="None" rows={5}></TextAreaComponent>
-                                    </div>
-                                    <div className="row gap-3 gap-sm-0 gx-3 mt-sm-1">
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>Start Date</label>
-                                            <DatePickerComponent placeholder="MM/DD/YYYY" aria-label="enter a start date here"></DatePickerComponent>
-                                        </div>
-                                        <div className="col-12 col-sm-6 d-flex flex-column gap-1">
-                                            <label>End Date</label>
-                                            <DatePickerComponent placeholder="MM/DD/YYYY" aria-label="enter an end date here"></DatePickerComponent>
-                                        </div>
-                                    </div>
-                                    <CheckBoxComponent cssClass="mt-sm-2" label="I currently work here"></CheckBoxComponent>
-                                </form>
+                                    <GridComponent cssClass="e-bigger mb-1" dataSource={data} width="100%" allowSorting={true} allowFiltering={true} filterSettings={{ type: 'Menu' }} gridLines="None" rowHeight={44}>
+                                        <ColumnsDirective>
+                                            <ColumnDirective field="transactionId" headerText="Transaction ID" width={168} template={(data: any) => (
+                                                <p className="text-body mb-0">{data.transactionId}</p>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="customerDetails" headerText="Customer Name" textAlign="Left" width={260} allowFiltering={false} template={(data: any) => (
+                                                <div className="d-flex gap-2 align-items-center py-1">
+                                                    <span className="e-avatar e-avatar-circle e-avatar-small flex-shrink-0" style={{ backgroundImage: `url("/react/essential-ui-kit/blocks/assets/images/common/avatar/${data.customerDetails.avatar}")` }}></span>
+                                                    <div className="small ms-1 lh-base">
+                                                        <p className="text-body mb-0">{data.customerDetails.name}</p>
+                                                        <p className="text-body-secondary mb-0">{data.customerDetails.email}</p>
+                                                    </div>
+                                                </div>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="invoiceNumber" headerText="Invoice Number" width={186} template={(data: any) => (
+                                                <a className="small text-primary fw-medium text-decoration-underline" href="#">{data.invoiceNumber}</a>
+                                            )}></ColumnDirective>
+                                            <ColumnDirective field="description" headerText="Description" width={200} template={(data: any) => (
+                                                <p className="text-body mb-0">{data.description}</p>
+                                            )}></ColumnDirective>
+                                        </ColumnsDirective>
+                                        <Inject services={[Sort, Filter]} />
+                                    </GridComponent>
+                                </div>
                             </DialogComponent>
                         </div>
                     </section>

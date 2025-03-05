@@ -104,9 +104,7 @@
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-
-/*
+}/*
 ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -143,16 +141,16 @@ html,
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4; /* 3 */
-  font-family: 
-    Inter, 
+  tab-size: 4; /* 3 */
+  font-family:
+    Inter,
     ui-sans-serif,
     system-ui,
     sans-serif,
     "Apple Color Emoji",
     "Segoe UI Emoji",
     "Segoe UI Symbol",
-    "Noto Color Emoji"; /* 4 */
+    "Noto Color Emoji";
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
   -webkit-tap-highlight-color: transparent; /* 7 */
@@ -1399,6 +1397,9 @@ video {
 .self-end {
   align-self: flex-end;
 }
+.self-center {
+  align-self: center;
+}
 .self-stretch {
   align-self: stretch;
 }
@@ -1930,6 +1931,9 @@ video {
 }
 .\!pl-3 {
   padding-left: 0.75rem !important;
+}
+.\!pr-0 {
+  padding-right: 0px !important;
 }
 .\!pr-3 {
   padding-right: 0.75rem !important;

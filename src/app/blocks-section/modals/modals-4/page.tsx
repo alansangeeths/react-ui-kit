@@ -1,36 +1,33 @@
 'use client';
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 import { DialogComponent } from '@syncfusion/ej2-react-popups';
-import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-import { ButtonComponent, SwitchComponent } from '@syncfusion/ej2-react-buttons';
-import { StepperComponent, StepDirective, StepsDirective, AccordionComponent, AccordionItemDirective, AccordionItemsDirective} from '@syncfusion/ej2-react-navigations';
+import { ButtonComponent, CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
+import { ListViewComponent } from '@syncfusion/ej2-react-lists';
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 import styles from './page.module.css';
 
 export default function Modals4() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
-    const [stepperStyle, setStepperStyle] = useState({});
-    const [activeStep, setActiveStep] = useState(0);
-    const stepper = useRef<StepperComponent | null>(null);
     const dialog = useRef<DialogComponent>(null);
-    const accordions = useRef<AccordionComponent>(null);
+    const listView = useRef<ListViewComponent>(null);
+
+    const data: any[] = [
+        { id: 1, name: 'Jane Smith', email: 'jane.smith@example.com', status: 'Active', role: 'Admin' },
+        { id: 2, name: 'Mark Johnson', email: 'mark.johnson@example.com', status: 'Active', role: 'Editor' },
+        { id: 3, name: 'Emily White', email: 'emily.white@example.com', status: 'Pending', role: 'Viewer' },
+        { id: 4, name: 'Tom Harris', email: 'tom.harris@example.com', status: 'Active', role: 'Editor' },
+        { id: 5, name: 'Lisa Green', email: 'lisa.green@example.com', status: 'Active', role: 'Viewer' }
+    ];
 
     const checkWindowSize = () => {
-        if (!stepper.current) return;
-        const isVertical = window.innerWidth <= 640;
-        stepper.current.orientation = isVertical ? 'vertical' : 'horizontal';
-        stepper.current.labelPosition = isVertical ? 'end' : 'bottom';
-        setStepperStyle(isVertical ? { minHeight: '286px' } : {});
-        setTimeout(()=>{
-            stepper.current?.refresh();
-        }, 300);
-        dialog.current?.show(isVertical);
+        const isMobile = window.innerWidth <= 640;
+        dialog.current?.show(isMobile)
     }
 
-   /* SB Code - Start */
+    /* SB Code - Start */
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
@@ -47,17 +44,17 @@ export default function Modals4() {
 
     useEffect(() => {
         /* SB Code - Start */
-        window.addEventListener('message', handleMessageEvent);
+        window.addEventListener("message", handleMessageEvent);
         /* SB Code - End */
         checkWindowSize();
         window.addEventListener("resize", checkWindowSize);
-       
+
         return () => {
             /* SB Code - Start */
-            window.removeEventListener('message', handleMessageEvent);
+            window.removeEventListener("message", handleMessageEvent);
             /* SB Code - End */
             window.removeEventListener("resize", checkWindowSize);
-        }
+        };
     }, []);
 
     const getContent = () => {
@@ -65,384 +62,94 @@ export default function Modals4() {
             case 'tailwind':
                 return (
                     <section>
-                        <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: "600px" }}>
-                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Add Team Member</ButtonComponent>
-                            <DialogComponent id={styles["dialogs"]} className="rounded-none sm:rounded-lg sm:m-4" width="545px" ref={dialog} isModal={true} target="#dialog-container" showCloseIcon={true} open={(e) => { e.preventFocus = true; }}
+                        <div id="dialog-container" className="relative flex justify-center" style={{ minHeight: "660px" }}>
+                            <ButtonComponent className="h-fit my-5" type="button" onClick={() => dialog.current?.show()}>Manage Access</ButtonComponent>
+                            <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '660px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="540px" isModal={true}
                                 header={() => (
                                     <div>
-                                        <p className="mb-0.5 font-semibold leading-normal">Add Team Member</p>
-                                        <p className="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Complete all sections to add a new team member.</p>
+                                        <h3 className="font-semibold leading-normal mb-0.5">Manage Access</h3>
+                                        <p className="text-xs leading-normal text-gray-500 dark:text-gray-400">Update team member permissions.</p>
                                     </div>
                                 )}
                                 footerTemplate={() =>
-                                    <div className="flex justify-end gap-2 sm:gap-1 py-2">
-                                        <ButtonComponent cssClass="grow sm:grow-0 !ml-0" type="button">Cancel</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary grow sm:grow-0" type="button">Add Member</ButtonComponent>
+                                    <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 sm:gap-1 py-2">
+                                        <p className="text-left text-sm text-gray-500 dark:text-gray-400">Changes will be logged for audit purposes</p>
+                                        <div className="flex gap-2 sm:gap-1">
+                                            <ButtonComponent cssClass="grow sm:grow-0 !ml-0" type="button">Cancel</ButtonComponent>
+                                            <ButtonComponent cssClass="e-primary grow sm:grow-0" type="button">Apply Changes</ButtonComponent>
+                                        </div>
                                     </div>
                                 }
                             >
-                                <div className="space-y-5 sm:space-y-4">
-                                    <div className="py-2" style={stepperStyle}>
-                                        <StepperComponent cssClass="e-small" ref={stepper} stepChanged={(e) => setActiveStep(e.activeStep)} labelPosition="bottom">
-                                            <StepsDirective>
-                                                <StepDirective iconCss="e-icons" label="User Information"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Workspace Access"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Security Settings"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Resource Access"></StepDirective>
-                                            </StepsDirective>
-                                        </StepperComponent>
+                                <div>
+                                    <div>
+                                        <div className="e-input-group mb-6">
+                                            <input className="e-input" type="text" placeholder="Search by name or email address"/>
+                                            <span className="e-input-group-icon e-icons e-search border-0"></span>
+                                        </div>
+                                        <CheckBoxComponent cssClass="mb-2.5" label="Select all" change={(args) => listView.current && (args.checked ? listView.current.checkAllItems() : listView.current.uncheckAllItems())}></CheckBoxComponent>
                                     </div>
-                                    <div className="sm:overflow-y-scroll" style={{ height: "298px", scrollbarWidth: "none" }}>
-                                        <AccordionComponent expandMode="Single" className="border-0" ref={accordions}>
-                                            <AccordionItemsDirective>
-                                                <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={activeStep === 0}
-                                                    header={() =>
-                                                        <div className="flex gap-2.5 items-center mr-4">
-                                                            <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-users text-xl"></i></span>
-                                                            <div className="flex flex-col gap-0.5">
-                                                                <p className="text-base">User Information</p>
-                                                                <p className="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Basic details about the team member</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="flex flex-col gap-3 p-1 pt-3">
-                                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                                                <div className="flex flex-col gap-1">
-                                                                    <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                        First Name <span className="text-red-600 font-normal dark:text-red-400">*</span>
-                                                                    </label>
-                                                                    <TextBoxComponent type="text" placeholder="Enter first name"></TextBoxComponent>
-                                                                </div>
-                                                                <div className="flex flex-col gap-1">
-                                                                    <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                        Last Name <span className="text-red-600 font-normal dark:text-red-400">*</span>
-                                                                    </label>
-                                                                    <TextBoxComponent type="text" placeholder="Enter last name"></TextBoxComponent>
-                                                                </div>
-                                                            </div>
-                                                            <div className="flex flex-col gap-1">
-                                                                <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                    Work Email <span className="text-red-600 font-normal dark:text-red-400">*</span>
-                                                                </label>
-                                                                <TextBoxComponent type="email" placeholder="name@company.com"></TextBoxComponent>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={activeStep === 1}
-                                                    header={() =>
-                                                        <div className="flex gap-2.5 items-center mr-4">
-                                                            <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-building-03 text-xl"></i></span>
-                                                            <div className="flex flex-col gap-0.5">
-                                                                <p className="text-base">Workspace Access</p>
-                                                                <p className="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Workspace and role assignment</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="grid grid-cols-1 gap-3 p-1 pt-3">
-                                                            <div className="flex flex-col gap-1">
-                                                                <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                Workspace <span className="text-red-600 font-normal dark:text-red-400">*</span>
-                                                                </label>
-                                                                <DropDownListComponent placeholder="Select a workspace"></DropDownListComponent>
-                                                            </div>
-                                                            <div className="flex flex-col gap-1">
-                                                                <label className="text-xs font-medium text-gray-700 dark:text-gray-200">
-                                                                    Role <span className="text-red-600 font-normal dark:text-red-400">*</span>
-                                                                </label>
-                                                                <DropDownListComponent dataSource={[{ Id: "value1", value: "Select role" }]} fields={{ text: "value", value: "Id" }} value="value1"></DropDownListComponent>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={stepper.current?.activeStep === 2}
-                                                    header={() =>
-                                                        <div className="flex gap-2.5 items-center mr-4">
-                                                            <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-shield text-xl"></i></span>
-                                                            <div className="flex flex-col gap-0.5">
-                                                                <p className="text-base">Security Settings</p>
-                                                                <p className="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure security and authentication</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="p-1 pt-1.5 space-y-5">
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">SSO Authentication</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Enable single sign-on access</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0" checked={true}></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">Two-Factor Authentication</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Require 2FA for account access</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0" checked={true}></SwitchComponent>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="mb-3 !border !rounded-lg" expanded={stepper.current?.activeStep === 3}
-                                                    header={() =>
-                                                        <div className="flex gap-2.5 items-center mr-4">
-                                                            <span className="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i className="e-icons sf-icon-laptop-01 text-xl"></i></span>
-                                                            <div className="flex flex-col gap-0.5">
-                                                                <p className="text-base">Resource Access</p>
-                                                                <p className="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure access to various tools</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="p-1 pt-1.5 space-y-5">
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">GitHub Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to code repositories and version control.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">AWS Console</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to cloud computing services and resources.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">Slack Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to team communication and collaboration tools.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">JIRA Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to project management and issue tracking.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">Google Drive Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to cloud storage and shared documents.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">Salesforce Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to customer relationship management tools.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                            <div className="flex items-center justify-between gap-4">
-                                                                <div>
-                                                                    <p className="font-medium mb-1">VPN Access</p>
-                                                                    <p className="text-gray-500 dark:text-gray-400">Access to secure internal networks.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="w-10 shrink-0"></SwitchComponent>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                ></AccordionItemDirective>
-                                            </AccordionItemsDirective>
-                                        </AccordionComponent>
-                                    </div>
+                                    <ListViewComponent id={styles["checkboxs"]} ref={listView} className="!border-0" cssClass="e-list-template" showCheckBox={true} dataSource={data} template={(data: any) => (
+                                        <div className="e-list-wrapper grow e-list-multi-line flex flex-wrap gap-x-1 gap-y-4 items-center !px-0 !py-5 sm:!py-3">
+                                            <div className="e-list-content !flex items-center justify-between grow gap-4">
+                                                <div className="text-sm">
+                                                    <div className="e-list-item-header">{data.name}</div>
+                                                    <div>{data.email}</div>
+                                                </div>
+                                                <span className={`e-badge e-badge-pill sm:mr-3 ${data.status === "Active" ? "e-badge-success" : "e-badge-warning"}`}>{data.status}</span>
+                                            </div>
+                                            <DropDownButtonComponent className="mr-1 e-outline" type="button" content={data.role} beforeOpen={(e) => (e.cancel = true)} style={{ width: "100px" }}></DropDownButtonComponent>
+                                        </div>
+                                    )}
+                                    ></ListViewComponent>
                                 </div>
                             </DialogComponent>
                         </div>
                     </section>
-                );
+                ); 
             case 'bootstrap5':
                 return (
                     <section>
-                        <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: "600px" }}>
-                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Add Team Member</ButtonComponent>
-                            <DialogComponent id={styles["dialogs"]} className="rounded-3 m-sm-2" ref={dialog} isModal={true} showCloseIcon={true} width="545px" target="#dialog-container" open={(e) => { e.preventFocus = true; }}
+                        <div id="dialog-container" className="position-relative d-flex align-items-start" style={{ minHeight: "660px" }}>
+                            <ButtonComponent className="mx-auto my-3 e-outline" type="button" onClick={() => dialog.current?.show()}>Manage Access</ButtonComponent>
+                            <DialogComponent id={styles["dialog"]} ref={dialog} className="rounded-3 m-sm-2" target="#dialog-container" beforeOpen={(event) => { event.maxHeight = '660px'; }} open={(e) => { e.preventFocus = true; }} showCloseIcon={true} width="540px" isModal={true}
                                 header={() => (
                                     <div>
-                                        <p className="fw-bold text-body mb-0">Add Team Member</p>
-                                        <p className="small fw-normal text-body text-opacity-50 text-wrap mb-0">Complete all sections to add a new team member.</p>
+                                        <h3 className="fw-bold mb-0 text-body">Manage Access</h3>
+                                        <p className="small fw-normal text-body text-opacity-50 mb-0">Update team member permissions.</p>
                                     </div>
                                 )}
-                                footerTemplate={() => (
-                                    <div className="d-flex justify-content-end gap-2 py-1">
-                                        <ButtonComponent className="flex-grow-1 flex-sm-grow-0 ms-0 e-outline" type="button">Cancel</ButtonComponent>
-                                        <ButtonComponent cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button">Add Member</ButtonComponent>
+                                footerTemplate={() =>
+                                    <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 py-1">
+                                        <p className="text-body text-opacity-50 text-start mb-0">Changes will be logged for audit purposes</p>
+                                        <div className="d-flex justify-content-end gap-2 gap-sm-1">
+                                            <ButtonComponent cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button">Cancel</ButtonComponent>
+                                            <ButtonComponent cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button">Apply Changes</ButtonComponent>
+                                        </div>
                                     </div>
-                                )}
+                                }
                             >
-                                <div className="d-flex flex-column gap-4 mt-2">
-                                    <div className="mt-sm-1 mb-2 mb-sm-0 mb-md-3" style={stepperStyle}>
-                                        <StepperComponent cssClass="e-small" ref={stepper} stepChanged={(e) => setActiveStep(e.activeStep)} labelPosition="bottom">
-                                            <StepsDirective>
-                                                <StepDirective iconCss="e-icons" label="User Information"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Workspace Access"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Security Settings"></StepDirective>
-                                                <StepDirective iconCss="e-icons" label="Resource Access"></StepDirective>
-                                            </StepsDirective>
-                                        </StepperComponent>
+                                <div>
+                                    <div>
+                                        <div className="e-input-group mb-4">
+                                            <input className="e-input" type="text" placeholder="Search by name or email address" />
+                                            <span className="e-input-group-icon e-icons e-search border-0"></span>
+                                        </div>
+                                        <CheckBoxComponent cssClass="mb-3" label="Select all" change={(args) => listView.current && (args.checked ? listView.current.checkAllItems() : listView.current.uncheckAllItems())}></CheckBoxComponent>
                                     </div>
-                                    <div className="overflow-auto" style={{ height: "298px", scrollbarWidth: "none" }}>
-                                        <AccordionComponent className="border-0" expandMode="Single">
-                                            <AccordionItemsDirective>
-                                                <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 0} 
-                                                    header={() =>
-                                                        <div className="d-flex gap-2 align-items-center me-3">
-                                                            <span className="e-avatar e-avatar rounded-3 border bg-body-secondary"><i className="e-icons sf-icon-users fs-4"></i></span>
-                                                            <div className="d-flex flex-column ms-1">
-                                                                <p className="fs-6 fw-medium mb-0">User Information</p>
-                                                                <p className="text-body text-wrap text-opacity-50 text-truncate mb-0" style={{ display: "-webkit-box", WebkitLineClamp: 1, WebkitBoxOrient: "vertical", overflow: "hidden" }}>Basic details about the team member</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="d-flex flex-column gap-2 p-1 mt-1 small text-body-secondary">
-                                                            <div className="row gap-1 gap-sm-0 gy-2 gy-sm-0 gx-3">
-                                                                <div className="col-sm-6 d-flex flex-column gap-1">
-                                                                    <label>First Name <span className="text-danger">*</span></label>
-                                                                    <TextBoxComponent type="text" placeholder="Enter first name"></TextBoxComponent>
-                                                                </div>
-                                                                <div className="col-sm-6 d-flex flex-column gap-1">
-                                                                    <label>Last Name <span className="text-danger">*</span></label>
-                                                                    <TextBoxComponent type="text" placeholder="Enter last name"></TextBoxComponent>
-                                                                </div>
-                                                            </div>
-                                                            <div className="d-flex flex-column gap-1 mt-1">
-                                                                <label>Work Email <span className="text-danger">*</span></label>
-                                                                <TextBoxComponent type="email" placeholder="name@company.com"></TextBoxComponent>
-                                                            </div>
-                                                        </div>
-                                                    } 
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 1}
-                                                    header={() =>
-                                                        <div className="d-flex gap-2 align-items-center me-3">
-                                                            <span className="e-avatar e-avatar rounded-3 border bg-body-secondary"><i className="e-icons sf-icon-building-03 fs-4"></i></span>
-                                                            <div className="d-flex flex-column ms-1">
-                                                                <p className="fs-6 fw-medium mb-0">Workspace Access</p>
-                                                                <p className="text-body text-wrap text-opacity-50 text-truncate mb-0" style={{ display: "-webkit-box", WebkitLineClamp: 1, WebkitBoxOrient: "vertical", overflow: "hidden" }}>Workspace and role assignment</p>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                    content={() =>
-                                                        <div className="d-flex flex-column gap-2 p-1 mt-1 small text-body-secondary">
-                                                            <div className="d-flex flex-column gap-1 mt-1">
-                                                                <label>Workspace <span className="text-danger">*</span></label>
-                                                                <DropDownListComponent placeholder="Select a workspace"></DropDownListComponent>
-                                                            </div>
-                                                            <div className="d-flex flex-column gap-1 mt-1">
-                                                                <label>Role <span className="text-danger">*</span></label>
-                                                                <DropDownListComponent dataSource={[{ Id: "value1", value: "Select role" }]} fields={{ text: "value", value: "Id" }} value="value1"></DropDownListComponent>
-                                                            </div>
-                                                        </div>
-                                                    }
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="mb-3 border rounded-3 overflow-hidden" expanded={activeStep === 2}
-                                                    header={() => (
-                                                        <div className="d-flex gap-2 align-items-center me-3">
-                                                            <span className="e-avatar e-avatar rounded-3 border bg-body-secondary">
-                                                                <i className="e-icons sf-icon-shield fs-4"></i>
-                                                            </span>
-                                                            <div className="d-flex flex-column ms-1">
-                                                                <p className="fs-6 fw-medium mb-0">Security Settings</p>
-                                                                <p className="text-body text-wrap text-opacity-50 text-truncate mb-0" style={{ display: "-webkit-box", WebkitLineClamp: 1, WebkitBoxOrient: "vertical", overflow: "hidden" }}>Configure security and authentication</p>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                    content={() => (
-                                                        <div className="d-flex flex-column gap-3 p-1 mt-1">
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">SSO Authentication</p>
-                                                                    <p className="text-body-secondary mb-0">Enable single sign-on access</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" checked={true} style={{ width: 36 }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">Two-Factor Authentication</p>
-                                                                    <p className="text-body-secondary mb-0">Require 2FA for account access</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" checked={true} style={{ width: 36 }}></SwitchComponent>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                ></AccordionItemDirective>
-                                                <AccordionItemDirective cssClass="border rounded-3 overflow-hidden" expanded={activeStep === 3}
-                                                    header={() => (
-                                                        <div className="d-flex gap-2 align-items-center me-3">
-                                                            <span className="e-avatar e-avatar rounded-3 border bg-body-secondary">
-                                                                <i className="e-icons sf-icon-laptop-01 fs-4"></i>
-                                                            </span>
-                                                            <div className="d-flex flex-column ms-1">
-                                                                <p className="fs-6 fw-medium mb-0">Resource Access</p>
-                                                                <p className="text-body text-wrap text-opacity-50 text-truncate mb-0" style={{ display: "-webkit-box", WebkitLineClamp: 1, WebkitBoxOrient: "vertical", overflow: "hidden" }}>Configure access to various tools</p>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                    content={() => (
-                                                        <div className="d-flex flex-column gap-3 p-1 mt-1">
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">GitHub Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to code repositories and version control.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">AWS Console</p>
-                                                                    <p className="text-body-secondary mb-0">Access to cloud computing services and resources.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">Slack Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to team communication and collaboration tools.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">JIRA Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to project management and issue tracking.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">Google Drive Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to cloud storage and shared documents.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">Salesforce Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to customer relationship management tools.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                            <div className="d-flex align-items-center justify-content-between gap-3">
-                                                                <div>
-                                                                    <p className="fw-medium text-body mb-1">VPN Access</p>
-                                                                    <p className="text-body-secondary mb-0">Access to secure internal networks.</p>
-                                                                </div>
-                                                                <SwitchComponent cssClass="flex-shrink-0" style={{ width: "36px" }}></SwitchComponent>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                ></AccordionItemDirective>
-                                            </AccordionItemsDirective>
-                                        </AccordionComponent>
-                                    </div>
+                                    <ListViewComponent id={styles["checkboxs"]} ref={listView} className="border-0" cssClass="e-list-template" showCheckBox={true} dataSource={data} template={(data: any) => (
+                                        <div className="e-list-wrapper e-list-multi-line d-flex flex-wrap flex-grow-1 row-gap-3 align-items-center px-0 py-3 py-sm-2 mb-2 mb-sm-1">
+                                            <div className="e-list-content d-flex align-items-center justify-content-between flex-grow-1 gap-2">
+                                                <div>
+                                                    <div className="e-list-item-header text-body fw-medium">{data.name}</div>
+                                                    <div className="text-body text-opacity-50">{data.email}</div>
+                                                </div>
+                                                <span className={`e-badge e-badge-pill me-2 me-sm-3 ${data.status === "Active" ? "e-badge-success" : "e-badge-warning"}`}>{data.status}</span>
+                                            </div>
+                                            <DropDownButtonComponent className="me-1 e-outline" content={data.role} type="button" beforeOpen={(event) => (event.cancel = true)} style={{ width: "100px" }} />
+                                        </div>
+                                    )}
+                                    ></ListViewComponent>
                                 </div>
                             </DialogComponent>
                         </div>
@@ -450,6 +157,6 @@ export default function Modals4() {
                 );
         };
     };
- 
+
     return getContent();
 }

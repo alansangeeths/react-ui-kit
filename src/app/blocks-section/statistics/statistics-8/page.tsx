@@ -1,32 +1,36 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Statistics8() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
-
+    
     const metricsData: any[] = [
         {
-            metricName: 'Total Revenue',
-            currentValue: 4185.82,
-            valueDescription: '+1.23% (45.32)'
+            metricName: 'Incoming Calls',
+            callCount: 435,
+            currentPercentage: 3.5,
+            trend: 'up'
         },
         {
-            metricName: 'Trending Volume',
-            currentValue: 2.38,
-            valueDescription: 'Shares Traded'
+            metricName: 'Answered Calls',
+            callCount: 245,
+            currentPercentage: 4.2,
+            trend: 'up'
         },
         {
-            metricName: 'Market Breadth',
-            currentValue: 1.5,
-            valueDescription: 'Advance / Decline Ratio'
+            metricName: 'Abandoned Calls',
+            callCount: 146,
+            currentPercentage: -0.9,
+            trend: 'down'
         },
         {
-            metricName: 'VIX',
-            currentValue: 18.62,
-            valueDescription: '-0.54 (-282%)'
+            metricName: 'Total Calls',
+            callCount: 413,
+            currentPercentage: 3.7,
+            trend: 'up'
         }
     ];
 
@@ -65,13 +69,18 @@ export default function Statistics8() {
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
-                                            <div className="e-card-header !py-0 !justify-between items-center">
-                                                <h4 className="text-base text-gray-800 dark:text-gray-100 font-medium">{data.metricName}</h4>
-                                                <span className={`text-2xl leading-none ${data.metricName === 'Total Revenue' ? 'text-green-700 dark:text-green-500 sf-icon-arrow-missed-right' : ''} ${data.metricName === 'Market Breadth' ? 'text-orange-700 dark:text-orange-500 sf-icon-pie-chart' : ''} ${data.metricName === 'Trending Volume' ? 'text-indigo-600 dark:text-indigo-400 e-chart' : ''} ${data.metricName === 'VIX' ? 'text-gray-500 dark:text-gray-300 e-critical-path' : ''} ${['Trending Volume', 'VIX'].includes(data.metricName) ? 'e-icons' : ''}`}></span>
+                                            <div className="e-card-header !py-0 !justify-start !flex-col">
+                                                <span className={`e-avatar e-avatar-large rounded-lg ${data.metricName === "Incoming Calls" ? "bg-red-100 dark:bg-red-800 text-red-600 dark:text-red-400" : data.metricName === "Answered Calls" ? "bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-500" : data.metricName === "Abandoned Calls" ? "bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-500" : "bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400" }`}>
+                                                    <span className={`text-2xl ${data.metricName === "Incoming Calls" ? "sf-icon-phone-call-incoming" : data.metricName === "Answered Calls" ? "sf-icon-phone-call-outgoing" : data.metricName === "Abandoned Calls" ? "sf-icon-phone-call-missed" : "sf-icon-phone"}`}></span>
+                                                </span>
+                                                <h4 className="text-base font-medium text-gray-800 dark:text-gray-300 mt-3">{data.metricName}</h4>
                                             </div>
-                                            <div className="e-card-content !pb-6">
-                                                <p className="mt-2 text-xl !leading-7 font-semibold text-gray-900 dark:text-white">{new Intl.NumberFormat().format(data.currentValue)}</p>
-                                                <p className={`mt-1 font-medium ${data.metricName === "Total Revenue" ? "text-green-700 dark:text-green-500" : data.metricName === "VIX" ? "text-red-600 dark:text-red-400" : "text-gray-800 dark:text-gray-100"}`}>{data.valueDescription}</p>
+                                            <div className="e-card-content !pb-6 !pt-2 flex">
+                                                <span className="text-xl font-semibold text-gray-900 dark:text-white mr-2">{data.callCount}K</span>
+                                                <span className={`gap-1 flex items-center ${data.trend === "up" ? "text-green-700 dark:text-green-500" : "text-red-600 dark:text-red-400"}`}>
+                                                    {data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37;
+                                                    <span className={`e-icons e-medium ${data.trend === "up" ? "e-arrow-up" : "e-arrow-down"}`}></span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -89,13 +98,18 @@ export default function Statistics8() {
                                     <div key={index} className="col-12 col-sm-6 col-lg-3">
                                         <div className="e-card rounded-3 e-bigger pt-4">
                                             <div className="e-card-stacked">
-                                                <div className="e-card-header py-0 px-4 d-flex justify-content-between align-items-center">
-                                                    <h4 className="fs-6 text-body-secondary lh-base fw-medium mb-0">{data.metricName}</h4>
-                                                    <span className={`fs-4 ${data.metricName === 'Total Revenue' ? 'text-success sf-icon-arrow-missed-right' : ''} ${data.metricName === 'Market Breadth' ? 'text-warning sf-icon-pie-chart' : ''} ${data.metricName === 'Trending Volume' ? 'text-primary e-chart' : ''} ${data.metricName === 'VIX' ? 'text-secondary e-critical-path' : ''} ${['Trending Volume', 'VIX'].includes(data.metricName) ? 'e-icons' : ''}`}></span>
+                                                <div className="e-card-header py-0 px-4 d-flex flex-column align-items-start">
+                                                    <span className={`e-avatar e-avatar-large rounded-3 ${data.metricName === 'Incoming Calls' ? 'bg-danger-subtle text-danger' : data.metricName === 'Answered Calls' ? 'bg-success-subtle text-success' : data.metricName === 'Abandoned Calls' ? 'bg-warning-subtle text-warning-emphasis' : 'bg-body-secondary text-secondary'}`}>
+                                                        <span className={`fs-4 ${data.metricName === 'Incoming Calls' ? 'sf-icon-phone-call-incoming' : data.metricName === 'Answered Calls' ? 'sf-icon-phone-call-outgoing' : data.metricName === 'Abandoned Calls' ? 'sf-icon-phone-call-missed' : 'sf-icon-phone'}`}></span>
+                                                    </span>
+                                                    <h4 className="fs-6 fw-medium lh-base text-body-secondary mt-3 mb-0">{data.metricName}</h4>
                                                 </div>
-                                                <div className="e-card-content pb-4 pt-0 px-4">
-                                                    <p className="mt-2 fs-5 lh-sm fw-bold text-body mb-1">{new Intl.NumberFormat().format(data.currentValue)}</p>
-                                                    <p className={`fw-medium mb-0 lh-base ${data.metricName === 'Total Revenue' ? 'text-success' : ''} ${data.metricName === 'VIX' ? 'text-danger' : ''} ${['Market Breadth', 'Trending Volume'].includes(data.metricName) ? 'text-body-secondary' : ''}`}>{data.valueDescription}</p>
+                                                <div className="e-card-content pb-4 px-4 pt-2 d-flex align-items-center">
+                                                    <span className="fs-5 fw-bold lh-sm text-body me-2">{data.callCount}K</span>
+                                                    <span className={`d-flex align-items-center gap-1 ${data.trend === 'up' ? 'text-success' : 'text-danger'}`}>
+                                                        {data.currentPercentage > 0 ? '+' : ''}{data.currentPercentage}&#37;
+                                                        <span className={`e-icons e-medium ${data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'}`}></span>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>

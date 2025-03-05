@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function Statistics10() {
     /* SB Code - Start */
@@ -9,24 +9,32 @@ export default function Statistics10() {
 
     const metricsData: any[] = [
         {
-            metricName: 'Impressions',
-            currentValue: '23.5K',
-            currentPercentage: 3.5
+            metricName: 'Total Income',
+            currentValue: '$480,500',
+            currentPercentage: 12.95,
+            trend: 'up',
+            metricAssets: 'total-income.png'
         },
         {
-            metricName: 'Active Users',
-            currentValue: '432K',
-            currentPercentage: -0.5
+            metricName: 'Total Profit',
+            currentValue: '$72,375',
+            currentPercentage: 12.95,
+            trend: 'up',
+            metricAssets: 'total-profit.png'
         },
         {
-            metricName: 'User Engagements',
-            currentValue: '89%',
-            currentPercentage: 9
+            metricName: 'Total Revenue',
+            currentValue: '$425,000',
+            currentPercentage: 5.18,
+            trend: 'down',
+            metricAssets: 'total-revenue.png'
         },
         {
-            metricName: 'Total Orders',
-            currentValue: '56,312',
-            currentPercentage: 4
+            metricName: 'Total Conversion',
+            currentValue: '10.87%',
+            currentPercentage: 12.95,
+            trend: 'up',
+            metricAssets: 'total-conversion.png'
         }
     ];
 
@@ -48,7 +56,7 @@ export default function Statistics10() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-
+        
         return () => {
             window.removeEventListener('message', handleMessageEvent);
         }
@@ -61,24 +69,27 @@ export default function Statistics10() {
                 return (
                     <section className="bg-gray-50 dark:bg-gray-900">
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
-                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
+                            <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
+                                    <div key={index} className="e-card e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
-                                            <div className="e-card-header !py-0 !justify-between items-center">
-                                                <div className="flex items-center">
-                                                    <span className={`e-avatar e-avatar-small e-avatar-circle ${data.metricName === "Impressions" ? "bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-500" : data.metricName === "Active Users" ? "bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-300" : data.metricName === "User Engagements" ? "bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-500" : "bg-cyan-100 dark:bg-sky-800 text-cyan-700 dark:text-sky-400"}`}>
-                                                        <span className={`text-base ${data.metricName === 'Impressions' ? 'e-critical-path' : ''} ${data.metricName === 'Active Users' ? 'sf-icon-users' : ''} ${data.metricName === 'User Engagements' ? 'e-chart' : ''} ${data.metricName === 'Total Orders' ? 'sf-icon-cart' : ''} ${data.metricName === 'Impressions' || data.metricName === 'User Engagements' ? 'e-icons' : ''}`}></span>
-                                                    </span>
-                                                    <h4 className="text-base font-medium text-gray-800 dark:text-gray-100 ml-3">{data.metricName}</h4>
-                                                </div>
-                                                <span className={`gap-1 flex items-center ${data.currentPercentage > 0 ? "text-green-700 dark:text-green-500" : "text-red-600 dark:text-red-400"}`}>
-                                                    <span className={`e-icons e-medium ${data.currentPercentage > 0 ? "e-arrow-up" : "e-arrow-down"}`}></span>{data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37;
+                                            <div className="e-card-header !flex-col !pb-2 !pt-5">
+                                                <span className={`e-avatar e-avatar-circle shrink-0 mb-6 h-11 w-11 ${data.metricAssets === "total-income.png" ? "bg-green-100 dark:bg-green-800" : ["total-profit.png", "total-revenue.png"].includes(data.metricAssets) ? "bg-orange-100 dark:bg-orange-800" : data.metricAssets === "total-conversion.png" ? "bg-cyan-100 dark:bg-sky-800" : ""}`}>
+                                                    <img className="!h-6 !w-6" src={`/react/essential-ui-kit/blocks/assets/images/stats/financial-performance/${data.metricAssets}`} alt="financial logo" />
                                                 </span>
+                                                <div className="e-card-header-title">
+                                                    <h3 className="font-medium text-gray-800 dark:text-gray-300 text-sm">{data.metricName}</h3>
+                                                </div>
                                             </div>
-                                            <div className="e-card-content !pb-6 !pt-4 flex items-center md:items-start lg:items-center md:flex-col lg:flex-row gap-2 md:gap-1 lg:gap-2">
-                                                <span className="text-xl font-semibold text-gray-900 dark:text-white">{data.currentValue}</span>
-                                                <span className="text-gray-500 dark:text-gray-300">vs last 7 days</span>
+                                            <div className="e-card-content !pb-5">
+                                                <div className="gap-1 flex items-center">
+                                                    <span className="text-2xl font-semibold text-gray-900 dark:text-white">{data.currentValue}</span>
+                                                    <span className={`flex items-center font-medium e-badge e-badge-pill ${data.trend === "up" ? "e-badge-success" : "e-badge-danger"}`}>
+                                                        <span className={`mr-1 e-icons ${data.trend === "up" ? "e-chevron-up-fill" : "e-chevron-down-fill"}`}></span>
+                                                        {data.currentPercentage}&#37;
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Compared to last month</p>
                                             </div>
                                         </div>
                                     </div>
@@ -86,30 +97,33 @@ export default function Statistics10() {
                             </div>
                         </div>
                     </section>
-                );
+                ); 
             case 'bootstrap5':
                 return (
                     <section className="bg-body-tertiary">
                         <div className="px-3 px-sm-4 px-xl-5 py-5">
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="col-12 col-sm-6 col-xl-3">
+                                    <div key={index} className="col-12 col-sm-6 col-lg-3">
                                         <div className="e-card rounded-3 e-bigger pt-4">
                                             <div className="e-card-stacked">
-                                                <div className="e-card-header py-0 px-4 justify-content-between align-items-center">
-                                                    <div className="d-flex align-items-center">
-                                                        <span className={`e-avatar e-avatar-small rounded-circle d-flex align-items-center justify-content-center ${data.metricName === 'Impressions' ? 'bg-warning-subtle text-warning-emphasis' : data.metricName === 'Active Users' ? 'bg-primary-subtle text-primary' : data.metricName === 'User Engagements' ? 'bg-success-subtle text-success' : 'bg-info-subtle text-info-emphasis'}`}>
-                                                            <span className={`fs-6 ${data.metricName === 'Impressions' ? 'e-critical-path' : ''} ${data.metricName === 'Active Users' ? 'sf-icon-users' : ''} ${data.metricName === 'User Engagements' ? 'e-chart' : ''} ${data.metricName === 'Total Orders' ? 'sf-icon-cart' : ''} ${data.metricName === 'Impressions' || data.metricName === 'User Engagements' ? 'e-icons' : ''}`}></span>
-                                                        </span>
-                                                        <h4 className="fs-6 lh-base fw-medium text-body-secondary ms-2 ps-1 mb-0">{data.metricName}</h4>
-                                                    </div>
-                                                    <span className={`d-flex align-items-center gap-1 ${data.currentPercentage > 0 ? 'text-success' : 'text-danger'}`}>
-                                                        <span className={`e-icons e-medium ${data.currentPercentage > 0 ? 'e-arrow-up' : 'e-arrow-down'}`}></span>{data.currentPercentage > 0 ? '+' : ''}{data.currentPercentage}&#37;
+                                                <div className="e-card-header d-flex flex-column pb-2 px-4 pt-0">
+                                                    <span className={`e-avatar e-avatar-circle flex-shrink-0 mb-4 d-flex align-items-center justify-content-center ${data.metricAssets === 'total-income.png' ? 'bg-success-subtle' : ['total-profit.png', 'total-revenue.png'].includes(data.metricAssets) ? 'bg-warning-subtle' : data.metricAssets === 'total-conversion.png'? 'bg-info-subtle' : ''}`} style={{ height: '44px', width: '44px' }}>
+                                                        <img src={`/react/essential-ui-kit/blocks/assets/images/stats/financial-performance/${data.metricAssets}`} alt="financial logo"style={{ height: '24px', width: '24px' }} />
                                                     </span>
+                                                    <div className="e-card-header-title">
+                                                        <h3 className="small fw-medium text-body-secondary mb-0 lh-base">{data.metricName}</h3>
+                                                    </div>
                                                 </div>
-                                                <div className="e-card-content pb-4 px-4 pt-3 d-flex align-items-center align-items-md-start align-items-lg-center flex-md-column flex-lg-row gap-2 gap-md-1 gap-lg-2">
-                                                    <span className="fs-5 lh-sm fw-bold text-body">{data.currentValue}</span>
-                                                    <span className="text-body text-opacity-50">vs last 7 days</span>
+                                                <div className="e-card-content pb-4 px-4 pt-0">
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <span className="fs-4 lh-sm fw-bold text-body">{data.currentValue}</span>
+                                                        <span className={`d-flex align-items-center font-medium e-badge e-badge-pill ${data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'}`}>
+                                                            <span className={`${data.trend === 'up'? 'e-icons e-chevron-up-fill' : 'e-icons e-chevron-down-fill'} me-1`}></span>
+                                                            {data.currentPercentage}&#37;
+                                                        </span>
+                                                    </div>
+                                                    <p className="text-body text-opacity-50 mb-0 mt-2">Compared to last month</p>
                                                 </div>
                                             </div>
                                         </div>

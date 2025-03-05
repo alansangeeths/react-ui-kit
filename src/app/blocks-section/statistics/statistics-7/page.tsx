@@ -1,103 +1,42 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, SplineAreaSeries, Inject } from '@syncfusion/ej2-react-charts';
+import { useEffect, useState } from "react";
 
 export default function Statistics7() {
     /* SB Code - Start */
     const [theme, setTheme] = useState('tailwind');
     /* SB Code - End */
-    const chartsRef = useRef<(ChartComponent | null)[]>([]);
 
     const metricsData: any[] = [
         {
             metricName: 'Total Revenue',
-            currentValue: '$54,231',
-            currentPercentage: 14.5,
-            metricPoints: [
-                { x: 1, y: 0.3 },
-                { x: 2, y: 1.1 },
-                { x: 3, y: 1.1 },
-                { x: 4, y: 0.9 },
-                { x: 5, y: 1.8 },
-                { x: 6, y: 2.2 },
-                { x: 7, y: 2.0 },
-                { x: 8, y: 2.0 },
-                { x: 9, y: 2.5 },
-                { x: 10, y: 3.0 }
-            ]
+            currentValue: 4185.82,
+            valueDescription: '+1.23% (45.32)'
         },
         {
-            metricName: 'Total Orders',
-            currentValue: '1,234',
-            currentPercentage: 5.2,
-            metricPoints: [
-                { x: 1, y: 3.0 },
-                { x: 2, y: 2.5 },
-                { x: 3, y: 2.0 },
-                { x: 4, y: 2.0 },
-                { x: 5, y: 2.2 },
-                { x: 6, y: 1.8 },
-                { x: 7, y: 0.9 },
-                { x: 8, y: 1.1 },
-                { x: 9, y: 1.1 },
-                { x: 10, y: 0.3 }
-            ]
+            metricName: 'Trending Volume',
+            currentValue: 2.38,
+            valueDescription: 'Shares Traded'
         },
         {
-            metricName: 'Conversion Rate',
-            currentValue: '3.8%',
-            currentPercentage: 18.8,
-            metricPoints: [
-                { x: 1, y: 0.3 },
-                { x: 2, y: 1.1 },
-                { x: 3, y: 1.1 },
-                { x: 4, y: 0.9 },
-                { x: 5, y: 1.8 },
-                { x: 6, y: 2.2 },
-                { x: 7, y: 2.0 },
-                { x: 8, y: 2.0 },
-                { x: 9, y: 2.5 },
-                { x: 10, y: 3.0 }
-            ]
+            metricName: 'Market Breadth',
+            currentValue: 1.5,
+            valueDescription: 'Advance / Decline Ratio'
         },
         {
-            metricName: 'New Customers',
-            currentValue: '321',
-            currentPercentage: 18.5,
-            metricPoints: [
-                { x: 1, y: 3.0 },
-                { x: 2, y: 2.5 },
-                { x: 3, y: 2.0 },
-                { x: 4, y: 2.0 },
-                { x: 5, y: 2.2 },
-                { x: 6, y: 1.8 },
-                { x: 7, y: 0.9 },
-                { x: 8, y: 1.1 },
-                { x: 9, y: 1.1 },
-                { x: 10, y: 0.3 }
-            ]
+            metricName: 'VIX',
+            currentValue: 18.62,
+            valueDescription: '-0.54 (-282%)'
         }
     ];
 
     /* SB Code - Start */
-    const refreshChart = () => {
-        chartsRef.current.forEach((chartInstance) => {
-            setTimeout(() => {
-                if (chartInstance) {
-                    chartInstance.refresh();
-                }
-            }, 1200);
-        });
-    };  
-
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'statistics-7' && blockData.theme) {
                     setTheme(blockData.theme);
-                    refreshChart();
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -109,7 +48,6 @@ export default function Statistics7() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        refreshChart();
 
         return () => {
             window.removeEventListener('message', handleMessageEvent);
@@ -125,23 +63,15 @@ export default function Statistics7() {
                         <div className="px-4 sm:px-6 xl:px-11 py-12">
                             <div className="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
                                 {metricsData.map((data, index) => (
-                                    <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 !dark:border-gray-600">
+                                    <div key={index} className="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
                                         <div className="e-card-stacked">
                                             <div className="e-card-header !py-0 !justify-between items-center">
-                                                <h4 className="text-sm text-gray-800 dark:text-gray-300 font-medium">{data.metricName}</h4>
-                                                <span className={`text-2xl leading-none text-gray-500 dark:text-gray-400 ${data.metricName === "Total Revenue" ? "sf-icon-dollar" : data.metricName === "Total Orders" ? "sf-icon-cart" : data.metricName === "Conversion Rate" ? "e-icons e-critical-path" : data.metricName === "New Customers" ? "sf-icon-users" : ""}`}></span>
+                                                <h4 className="text-base text-gray-800 dark:text-gray-100 font-medium">{data.metricName}</h4>
+                                                <span className={`text-2xl leading-none ${data.metricName === 'Total Revenue' ? 'text-green-700 dark:text-green-500 sf-icon-arrow-missed-right' : ''} ${data.metricName === 'Market Breadth' ? 'text-orange-700 dark:text-orange-500 sf-icon-pie-chart' : ''} ${data.metricName === 'Trending Volume' ? 'text-indigo-600 dark:text-indigo-400 e-chart' : ''} ${data.metricName === 'VIX' ? 'text-gray-500 dark:text-gray-300 e-critical-path' : ''} ${['Trending Volume', 'VIX'].includes(data.metricName) ? 'e-icons' : ''}`}></span>
                                             </div>
-                                            <div className="e-card-content pb-6">
-                                                <p className="leading-7 mt-2 text-xl font-semibold text-gray-900 dark:text-white">{data.currentValue}</p>
-                                                <p className="mt-1 text-gray-800 dark:text-gray-300">{data.currentPercentage > 0 ? "+" : ""}{data.currentPercentage}&#37; from last month</p>
-                                                <div>
-                                                    <ChartComponent ref={(chartInstance) => {chartsRef.current[index] = chartInstance as ChartComponent | null;}} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}style={{ display: "block" }}>
-                                                        <Inject services={[SplineAreaSeries]} />
-                                                        <SeriesCollectionDirective>
-                                                            <SeriesDirective dataSource={data.metricPoints} type="SplineArea" xName="x" yName="y" opacity={0.2} width={2} border={{ color: data.metricName === "Total Revenue" ? "#91BD34" : data.metricName === "Total Orders" ? "#01A8B5" : data.metricName === "Conversion Rate" ? "#FFB900" : data.metricName === "New Customers" ? "#91BD34" : "#000000", width: 2 }} fill={data.metricName === "Total Revenue" ? "#91BD34" : data.metricName === "Total Orders" ? "#01A8B5" : data.metricName === "Conversion Rate" ? "#FFB900" : data.metricName === "New Customers" ? "#91BD34" : "#000000"}></SeriesDirective>
-                                                        </SeriesCollectionDirective>
-                                                    </ChartComponent>
-                                                </div>
+                                            <div className="e-card-content !pb-6">
+                                                <p className="mt-2 text-xl !leading-7 font-semibold text-gray-900 dark:text-white">{new Intl.NumberFormat().format(data.currentValue)}</p>
+                                                <p className={`mt-1 font-medium ${data.metricName === "Total Revenue" ? "text-green-700 dark:text-green-500" : data.metricName === "VIX" ? "text-red-600 dark:text-red-400" : "text-gray-800 dark:text-gray-100"}`}>{data.valueDescription}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -157,23 +87,15 @@ export default function Statistics7() {
                             <div className="row g-4 g-lg-3">
                                 {metricsData.map((data, index) => (
                                     <div key={index} className="col-12 col-sm-6 col-lg-3">
-                                        <div className="e-card rounded-3 e-bigger">
+                                        <div className="e-card rounded-3 e-bigger pt-4">
                                             <div className="e-card-stacked">
-                                                <div className="e-card-header justify-content-between align-items-center pt-4 px-4">
-                                                    <h4 className="small text-body-secondary fw-medium lh-base mb-0">{data.metricName}</h4>
-                                                    <span className={`fs-4 text-secondary ${data.metricName === "Total Revenue" ? "sf-icon-dollar" : data.metricName === "Total Orders" ? "sf-icon-cart" : data.metricName === "Conversion Rate" ? "e-icons e-critical-path" : data.metricName === "New Customers" ? "sf-icon-users" : ""}`}></span>
+                                                <div className="e-card-header py-0 px-4 d-flex justify-content-between align-items-center">
+                                                    <h4 className="fs-6 text-body-secondary lh-base fw-medium mb-0">{data.metricName}</h4>
+                                                    <span className={`fs-4 ${data.metricName === 'Total Revenue' ? 'text-success sf-icon-arrow-missed-right' : ''} ${data.metricName === 'Market Breadth' ? 'text-warning sf-icon-pie-chart' : ''} ${data.metricName === 'Trending Volume' ? 'text-primary e-chart' : ''} ${data.metricName === 'VIX' ? 'text-secondary e-critical-path' : ''} ${['Trending Volume', 'VIX'].includes(data.metricName) ? 'e-icons' : ''}`}></span>
                                                 </div>
-                                                <div className="e-card-content pb-4 px-4 pt-3">
-                                                    <p className="fs-5 lh-sm fw-bold text-body mb-2">{data.currentValue}</p>
-                                                    <p className="text-body-secondary mb-0">{data.currentPercentage > 0 ? '+' : ''}{data.currentPercentage}&#37; from last month</p>
-                                                    <div>
-                                                        <ChartComponent ref={(chartInstance) => {chartsRef.current[index] = chartInstance as ChartComponent | null;}} chartArea={{ border: { width: 0 } }} primaryXAxis={{ visible: false, lineStyle: { width: 0 }, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} primaryYAxis={{ visible: false, lineStyle: { width: 0 }, minimum: 0, maximum: 4, interval: 1, majorGridLines: { width: 0 }, minorGridLines: { width: 0 } }} height="70" margin={{ left: 0, right: 0, top: 0, bottom: 0 }} legendSettings={{ visible: false }}>
-                                                            <Inject services={[SplineAreaSeries]} />
-                                                            <SeriesCollectionDirective>
-                                                                <SeriesDirective dataSource={data.metricPoints} type="SplineArea" xName="x" yName="y" opacity={0.2} width={2} border={{ color: (data.metricName === 'Total Revenue' ? '#0EAB44' : data.metricName === 'Total Orders' ? '#00EFA7' : data.metricName === 'Conversion Rate' ? '#FF9900' : data.metricName === 'New Customers' ? '#0EAB44' : '#000000'), width: 2 }} fill={data.metricName === 'Total Revenue' ? '#0EAB44' : data.metricName === 'Total Orders' ? '#00EFA7' : data.metricName === 'Conversion Rate' ? '#FF9900' : data.metricName === 'New Customers' ? '#0EAB44' : '#000000'}></SeriesDirective>
-                                                            </SeriesCollectionDirective>
-                                                        </ChartComponent>
-                                                    </div>
+                                                <div className="e-card-content pb-4 pt-0 px-4">
+                                                    <p className="mt-2 fs-5 lh-sm fw-bold text-body mb-1">{new Intl.NumberFormat().format(data.currentValue)}</p>
+                                                    <p className={`fw-medium mb-0 lh-base ${data.metricName === 'Total Revenue' ? 'text-success' : ''} ${data.metricName === 'VIX' ? 'text-danger' : ''} ${['Market Breadth', 'Trending Volume'].includes(data.metricName) ? 'text-body-secondary' : ''}`}>{data.valueDescription}</p>
                                                 </div>
                                             </div>
                                         </div>

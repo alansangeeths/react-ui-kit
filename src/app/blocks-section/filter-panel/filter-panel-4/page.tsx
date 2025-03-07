@@ -23,13 +23,21 @@ export default function FilterPanel4() {
         setWidth(window.innerWidth < 400 ? '100%' : '320px')
     }
 
-    /* SB Code - Start */    
+    /* SB Code - Start */  
+    const refreshDialog = (timeout: number) => {
+        setTimeout(() => {
+            requesterAccordion.current?.refresh();
+            ticketAccordion.current?.refresh();
+        }, timeout);
+    }
+   
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'filter-panel-4' && blockData.theme) {
                     setTheme(blockData.theme);
+                    refreshDialog(400);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -41,10 +49,7 @@ export default function FilterPanel4() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        setTimeout(() => {
-            requesterAccordion.current?.refresh();
-            ticketAccordion.current?.refresh();
-        }, 800);
+        refreshDialog(1200);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 

@@ -290,13 +290,13 @@ export default function Demo({ blockName, componentUrl }: DemoProps) {
             tailwindlight: {
                 'syncfusion-style': 'https://cdn.syncfusion.com/ej2/27.2.4/tailwind.css',
                 'font-icon-style': '/react/essential-ui-kit/blocks/assets/font-icons/tailwind/tailwind-icons.css',
-                'framework-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/tailwind.css',
+                'framework-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/tailwind_v2.css',
                 'framework-support-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/indigo.css',
             },
             tailwinddark: {
                 'syncfusion-style': 'https://cdn.syncfusion.com/ej2/27.2.4/tailwind-dark.css',
                 'font-icon-style': '/react/essential-ui-kit/blocks/assets/font-icons/tailwind/tailwind-icons.css',
-                'framework-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/tailwind.css',
+                'framework-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/tailwind_v2.css',
                 'framework-support-style': '/react/essential-ui-kit/blocks/assets/themes/tailwind/cyan.css',
             },
             bootstrap5light: {

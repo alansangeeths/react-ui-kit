@@ -19,12 +19,21 @@ export default function FilterPanel8() {
     }
 
     /* SB Code - Start */
+    const refreshDialog = (timeout: number) => {
+        setTimeout(() => {
+            gettingStartedAccordion.current?.refresh();
+            billingAccordion.current?.refresh();
+            supportAccordion.current?.refresh();
+        }, timeout);
+    }
+
     const handleMessageEvent = (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'filter-panel-8' && blockData.theme) {
                     setTheme(blockData.theme);
+                    refreshDialog(500);
                 }
             } catch (error) {
                 console.log('Error parsing message data: ', error);
@@ -36,11 +45,7 @@ export default function FilterPanel8() {
     useEffect(() => {
         /* SB Code - Start */
         window.addEventListener('message', handleMessageEvent);
-        setTimeout(() => {
-            gettingStartedAccordion.current?.refresh();
-            billingAccordion.current?.refresh();
-            supportAccordion.current?.refresh();
-        }, 800);
+        refreshDialog(1400);
         /* SB Code - End */
         window.addEventListener('resize', setSidebarWidth);
 
